@@ -14,8 +14,9 @@ for other operating systems are available from the
 `SysAdm Website <https://sysadm.us/>`_.
 
 .. note:: By default, |sysadm| does not allow for remote access to the
-   system. Please review the |sysadm| server handbook for instructions
-   on initializing the remote access elements of |sysadm|.
+   system. Please review the
+   `server handbook <http://sysadm.us/handbook/server/>`_ for
+   instructions on initializing the remote access elements of |sysadm|.
 
 A number of utilities have been removed from Control Panel as they are
 now available in the |sysadm| client:
