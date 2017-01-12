@@ -11,48 +11,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../basics.rst:13
+#: ../../basics.rst:14
 msgid "Getting Started"
 msgstr ""
 
-#: ../../basics.rst:15
-msgid ""
-"Beginning with SysAdm™ is a relatively simple process. SysAdm™ files are "
-"currently available from the `github repository "
-"<https://github.com/trueos/sysadm>`_"
-msgstr ""
-
-#: ../../basics.rst:51
+#: ../../basics.rst:54
 msgid "To run under rc(8)"
 msgstr ""
 
-#: ../../basics.rst:63
+#: ../../basics.rst:66
 msgid "To run under jobd(8)"
 msgstr ""
 
-#: ../../basics.rst:76
+#: ../../basics.rst:79
 msgid "Port 12149 for WebSocket interaction."
 msgstr ""
 
-#: ../../basics.rst:77
+#: ../../basics.rst:80
 msgid "Port 12150 for the REST interface."
 msgstr ""
 
-#: ../../basics.rst:85
+#: ../../basics.rst:89
 msgid "Bridge Initialization"
 msgstr ""
 
-#: ../../basics.rst:94
+#: ../../basics.rst:98
 msgid ""
 "A list of current commands is available by typing :command:`-h` after the "
 "utility name (Example: :command:`sysadm-bridge -h`)."
 msgstr ""
 
-#: ../../basics.rst:100
-msgid "Server and Bridge Initialization"
-msgstr ""
-
-#: ../../basics.rst:102
+#: ../../basics.rst:107
 msgid ""
 "To initialize the server and bridge, begin with the server. Run "
 ":command:`sudo sysadm-binary bridge_export_key [optional absolute file "
@@ -60,14 +49,14 @@ msgid ""
 "with the bridge."
 msgstr ""
 
-#: ../../basics.rst:107
+#: ../../basics.rst:112
 msgid ""
 "For both server and client, give SSL key files an easy to remember name and "
 "location to simplify the process of finding those files for import to the "
 "bridge."
 msgstr ""
 
-#: ../../basics.rst:111
+#: ../../basics.rst:116
 msgid ""
 "Now, we must transition to the bridge to import the server key. Login to the"
 " bridge as the administrator (or root), then type :command:`sysadm-bridge "
@@ -76,13 +65,13 @@ msgid ""
 "successfully imported, start the bridge (if not already running)."
 msgstr ""
 
-#: ../../basics.rst:118
+#: ../../basics.rst:123
 msgid ""
 "The bridge can import SSL files regardless of its active state with no "
 "negative effects."
 msgstr ""
 
-#: ../../basics.rst:121
+#: ../../basics.rst:126
 msgid ""
 "Back on the server, run :command:`sudo sysadm-binary bridge_add <nickname> "
 "<URL>` to point the server at the bridge. A bridge runs on **port 12149** by"
@@ -94,11 +83,11 @@ msgid ""
 "to the mix which will communicate with the server through the bridge."
 msgstr ""
 
-#: ../../basics.rst:134
+#: ../../basics.rst:140
 msgid "Adding a Client to the Server/Bridge Connection"
 msgstr ""
 
-#: ../../basics.rst:140
+#: ../../basics.rst:146
 msgid ""
 "In the client UI, create or import an SSL key bundle as prompted by the UI. "
 "Once the new SSL keys are created, open :menuselection:`Setup SSL --> View "
@@ -110,7 +99,7 @@ msgid ""
 "request for server/bridge access."
 msgstr ""
 
-#: ../../basics.rst:150
+#: ../../basics.rst:156
 msgid ""
 "Moving to the bridge, as the administrator (or root), run :command:`sysadm-"
 "bridge import_ssl_file <nickname> <filepath>` for the requesting client's "
@@ -118,7 +107,7 @@ msgid ""
 "but the client/server connection still needs to be established."
 msgstr ""
 
-#: ../../basics.rst:156
+#: ../../basics.rst:162
 msgid ""
 "On the server, run :command:`sudo sysadm-binary import_ssl_key <username> "
 "<filepath> [<email>]` to import the client -> server SSL key file. This "
@@ -126,7 +115,7 @@ msgid ""
 "permissions as <user>."
 msgstr ""
 
-#: ../../basics.rst:160
+#: ../../basics.rst:166
 msgid ""
 "Back in the user client, open the connection manager and choose "
 ":guilabel:`Bridge Relay` as the connection option. Input the established "
@@ -136,45 +125,45 @@ msgid ""
 "note the connection is still being relayed through the bridge."
 msgstr ""
 
-#: ../../basics.rst:22
+#: ../../basics.rst:24
 msgid "Building |sysadm|"
 msgstr ""
 
-#: ../../basics.rst:24
+#: ../../basics.rst:26
 msgid "Several Qt Modules are required before attempting to build |sysadm|:"
 msgstr ""
 
-#: ../../basics.rst:33
+#: ../../basics.rst:35
 msgid ""
 "Building the prototype version of |sysadm| assumes you have access to "
 "github.com."
 msgstr ""
 
-#: ../../basics.rst:46
+#: ../../basics.rst:49
 msgid "Starting |sysadm|"
 msgstr ""
 
-#: ../../basics.rst:48
+#: ../../basics.rst:51
 msgid ""
 "|sysadm| can be started one of two ways: the traditional rc(8) mechanism or "
 "using the new jobd(8) mechanism"
 msgstr ""
 
-#: ../../basics.rst:73
+#: ../../basics.rst:76
 msgid ""
 "Several ports on the system firewall will need to be opened for |sysadm| to "
 "have remote access functionality:"
 msgstr ""
 
-#: ../../basics.rst:78
+#: ../../basics.rst:81
 msgid "Port 12151 for the |sysadm| bridge server."
 msgstr ""
 
-#: ../../basics.rst:80
+#: ../../basics.rst:83
 msgid "The user can also designate their own ports for |sysadm|."
 msgstr ""
 
-#: ../../basics.rst:87
+#: ../../basics.rst:91
 msgid ""
 "Configuring and connecting to a bridge can be a complicated process. "
 "Thankfully, there are several steps that are done the first time a server "
@@ -184,12 +173,32 @@ msgid ""
 "server and bridge."
 msgstr ""
 
-#: ../../basics.rst:136
+#: ../../basics.rst:142
 msgid ""
 "If you have an old SSL bundle from a pre-alpha version of |sysadm| created "
 "before June 2016, it will need to be removed prior to proceeding with the "
 "client initialization process."
 msgstr ""
+
+#: ../../basics.rst:16
+msgid ""
+"Beginning with |sysadm| is a relatively simple process. |sysadm| files are "
+"currently available from the `github repository "
+"<https://github.com/trueos/sysadm>`_"
+msgstr ""
+
+#: ../../basics.rst:105
+msgid "Server and Bridge"
+msgstr ""
+
+#~ msgid ""
+#~ "Beginning with SysAdm™ is a relatively simple process. SysAdm™ files are "
+#~ "currently available from the `github repository "
+#~ "<https://github.com/trueos/sysadm>`_"
+#~ msgstr ""
+
+#~ msgid "Server and Bridge Initialization"
+#~ msgstr ""
 
 #~ msgid "Building SysAdm™"
 #~ msgstr ""

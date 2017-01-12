@@ -34,9 +34,14 @@ msgstr ""
 
 #: ../../manage.rst:48
 msgid ""
-"Please note these default options are subject to change as the |sysadm| "
-"utility is developed."
+"These default options are subject to change as the |sysadm| utility is "
+"developed."
 msgstr ""
+
+#~ msgid ""
+#~ "Please note these default options are subject to change as the |sysadm| "
+#~ "utility is developed."
+#~ msgstr ""
 
 #~ msgid "Managing SysAdm™"
 #~ msgstr ""
