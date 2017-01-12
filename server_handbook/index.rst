@@ -1,10 +1,6 @@
-.. Systems Administrator Utility User Guide documentation master file, created by
-   sphinx-quickstart on Fri Mar 25 14:47:22 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Welcome to the SysAdm Server Handbook!
-====================================================================
+Welcome to the |sysadm| Server Handbook!
+========================================
 
 Contents:
 

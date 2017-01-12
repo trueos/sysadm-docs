@@ -1,5 +1,5 @@
-SysAdm™ API Reference Guide
-===========================
+|sysadm| API Reference Guide
+============================
 
 .. toctree::
    :numbered:

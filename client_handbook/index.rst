@@ -1,5 +1,5 @@
-Welcome to SysAdm™ Client Handbook's documentation!
-===================================================
+Welcome to the |sysadm| Client Handbook!
+========================================
 
 Contents:
 
