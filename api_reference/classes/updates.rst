@@ -1,3 +1,4 @@
+.. index:: update class
 .. _update:
 
 update
@@ -9,7 +10,7 @@ updates.
 Every update class request contains several parameters:
 
 +----------------+------------+---------------------------------------+
-| **Parameter**  | **Value**  | **Description**                       |
+| Parameter      | Value      | Description                           |
 |                |            |                                       |
 +================+============+=======================================+
 | id             |            | Any unique value for the request,     |
@@ -31,7 +32,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: changesettings, update
-
 .. _Change Settings:
 
 Change Settings
@@ -80,7 +80,6 @@ settings (maxbe, package_set, package_url, auto_update).
  }
 
 .. index:: checkupdates, update
-
 .. _Check for Updates:
 
 Check for Updates
@@ -147,7 +146,6 @@ installed software packages.
  }
 
 .. index:: listbranches, update
-
 .. _List Branches:
 
 List Branches
@@ -209,7 +207,6 @@ listed as "active".
  }
 
 .. index:: listsettings, update
-
 .. _List Settings:
 
 List Settings
@@ -256,7 +253,6 @@ List Settings
  }
 
 .. index:: startupdate, update
-
 .. _Start Updates:
 
 Start Updates
@@ -355,7 +351,6 @@ targets are:
  }
 
 .. index:: stopupdate, update
-
 .. _Stop Updates:
 
 Stop Updates

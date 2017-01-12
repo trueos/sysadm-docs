@@ -1,3 +1,4 @@
+.. index:: logs class
 .. _logs:
 
 logs
@@ -9,7 +10,7 @@ SysAdm™ server.
 Every logs class request contains the following parameters:
 
 +---------------+-----------+-----------------------------------------+
-| **Parameter** | **Value** | **Description**                         |
+| Parameter     | Value     | Description                             |
 |               |           |                                         |
 +===============+===========+=========================================+
 | id            |           | Any unique value for the request,       |
@@ -29,7 +30,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: read_logs, logs
-
 .. _Read Logs:
 
 Read Logs

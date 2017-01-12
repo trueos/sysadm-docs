@@ -1,4 +1,5 @@
-.. _dispatcher:
+.. index:: dispatcher
+.. _dispatcher class:
 
 dispatcher
 **********
@@ -9,7 +10,7 @@ such as a user running a custom system setup script.
 Every dispatcher class request contains several parameters:
 
 +---------------+------------+--------------------------------------+
-| **Parameter** | **Value**  | **Description**                      |
+| Parameter     | Value      | Description                          |
 |               |            |                                      |
 +===============+============+======================================+
 | id            |            | Any unique value for the request,    |
@@ -84,7 +85,6 @@ within the dispatcher queues. Possible queues are "no_queue",
  }
 
 .. index:: kill, dispatcher
-
 .. _Kill Processes:
 
 Kill Processes

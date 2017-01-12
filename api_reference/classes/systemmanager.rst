@@ -1,3 +1,4 @@
+.. index:: systemmanager class
 .. _systemmanager:
 
 systemmanager
@@ -7,7 +8,7 @@ The systemmanager class is used to retrieve information about the system.
 Every systemmanager class request contains several parameters:
 
 +---------------+---------------+---------------------------------------+
-| **Parameter** | **Value**     | **Description**                       |
+| Parameter     | Value         | Description                           |
 |               |               |                                       |
 +===============+===============+=======================================+
 | id            |               | Any unique value for the request,     |
@@ -31,7 +32,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: memorystats, systemmanager
-
 .. _Memory Statistics:
 
 Memory Statistics
@@ -98,7 +98,6 @@ of active, cached, free, inactive, and total physical (wired) memory.
  }
 
 .. index:: cpupercentage, systemmanager
-
 .. _CPU Usage:
 
 CPU Usage
@@ -180,7 +179,6 @@ The "cpupercentage" action returns the usage percentage of each CPU.
  }
 
 .. index:: cputemps, systemmanager
-
 .. _CPU Temperature:
 
 CPU Temperature
@@ -244,7 +242,6 @@ The "cputemps" action returns the temperature of each CPU.
  }
 
 .. index:: procinfo, systemmanager
-
 .. _Process Information:
 
 Process Information
@@ -328,7 +325,6 @@ listed by this action.
  }
 
 .. index:: killproc, systemmanager
-
 .. _Kill a Process:
 
 Kill a Process
@@ -396,7 +392,6 @@ QUIT, ABRT, KILL, ALRM, or TERM.
  }
 
 .. index:: batteryinfo, systemmanager
-
 .. _Battery Information:
 
 Battery Information
@@ -457,7 +452,6 @@ estimated time left (in seconds).
  }
 
 .. index:: externalmounts, systemmanager
-
 .. _List External Mounts:
 
 List External Mounts
@@ -526,7 +520,6 @@ device name, filesystem, mount path, and device type.
  }
 
 .. index:: systemmanager
-
 .. _System Information:
 
 System Information
@@ -603,7 +596,6 @@ system's uptime.
  }
 
 .. index:: sysctllist, systemmanager
-
 .. _List Sysctls:
 
 List Sysctls
@@ -679,7 +671,6 @@ section have been truncated.
  }
 
 .. index:: setsysctl, systemmanager
-
 .. _Set a Sysctl:
 
 Set a Sysctl
@@ -747,7 +738,6 @@ to the new value.
  }
 
 .. index:: halt, systemmanager
-
 .. _Halt the System:
 
 Halt the System
@@ -793,7 +783,6 @@ The "halt" action shuts down the system.
  }
 
 .. index:: reboot, systemmanager
-
 .. _Reboot the System:
 
 Reboot the System

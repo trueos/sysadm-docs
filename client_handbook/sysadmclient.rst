@@ -1,8 +1,8 @@
-.. index:: configuration
-.. _SysAdm™ Client:
+.. index:: introduction
+.. _What is SysAdm:
 
-|sysadm| Client
-***************
+What is |sysadm|?
+*****************
 
 Beginning with |trueos| 11, most of the system management utilities that
 were previously available in the |pcbsd| Control Panel have been
@@ -23,7 +23,7 @@ now available in the |sysadm| client:
 
 **Application Management**
 
-* :ref:`AppCafe®`
+* :ref:`AppCafe`
 
 * :ref:`Update Manager`
 
@@ -53,11 +53,11 @@ client and all of its functionality, beginning with |appcafe|.
 .. note:: Instructions for using the API in your own scripts can be
    found in the `SysAdm™ API Reference Guide <http://api.sysadm.us/>`_.
 
-.. index:: software, configuration, sysadm
-.. _AppCafe®:
+.. index:: sysadm, appcafe, software
+.. _AppCafe:
 
 |appcafe|
-=========
+*********
 
 |appcafe| provides a graphical interface for installing and managing
 FreeBSD packages, which are pre-built applications that have been tested
@@ -67,11 +67,11 @@ applications.
 
 The rest of this section describes how to manage software using |appcafe|.
 
-.. index:: AppCafe®
+.. index:: appcafe, find software
 .. _Finding Software:
 
 Finding Software
-----------------
+================
 
 The "Browse" tab, shown in
 :numref:`Figure %s <appcafe1>`, is used to find
@@ -212,10 +212,11 @@ the information.
 * **Shared Libraries (Required):** lists the names of the libraries
   that this application requires.
 
+.. index:: appcafe, manage software
 .. _Manage Installed Software:
 
 Managing Installed Software
----------------------------
+===========================
 
 To view and manage the applications which are installed on the system,
 click the :guilabel:`Installed` tab.  An example is seen in
@@ -299,7 +300,7 @@ operation.
 .. _Update Manager:
 
 Update Manager
-==============
+**************
 
 Update Manager provides a graphical interface for keeping the |trueos|
 operating system and its installed applications up-to-date.
@@ -353,10 +354,11 @@ The following steps occur automatically during an update:
   you will return the system to its previous state, before the update
   was applied.
 
-.. _Managing Updates:
+.. index:: updates, updates tab
+.. _Updates Tab:
 
-Managing Updates
-----------------
+Updates Tab
+===========
 
 An example of the :guilabel:`Updates` tab is shown in
 :numref:`Figure %s <update1>`.
@@ -443,11 +445,11 @@ This tab contains several configurable options:
 Once all options are configured to their desired settings, click
 :guilabel:`Save Settings`.
 
-.. index:: updates
+.. index:: updates, upgrade
 .. _Upgrading from PCBSD 10.x to TrueOS:
 
 Upgrading from |pcbsd| 10.x to |trueos|
----------------------------------------
+=======================================
 
 .. warning:: If any user account uses PersonaCrypt, please be sure to
    save any encryption keys to a safe place (e.g. a thumb drive) before
@@ -514,11 +516,11 @@ section of the |trueos| Handbook to configure the new installation.
    Once logged in, use :ref:`User Manager` to recreate any other user
    accounts or to reassociate any PersonaCrypt accounts.
 
-.. index:: sysadm, configuration
+.. index:: sysadm, remote connections
 .. _Managing Remote Connections:
 
 Managing Remote Connections
-===========================
+***************************
 
 Use the |sysadm| GUI to create and manage an SSL key or certificate
 bundle, as seen in :numref:`Figure %s <ssl1>`.
@@ -621,7 +623,7 @@ click :guilabel:`Finished`.
 .. _Boot Environment Manager:
 
 Boot Environment Manager
-========================
+************************
 
 |trueos| supports a feature of ZFS known as multiple boot environments
 (BEs). With multiple BEs, the process of updating software becomes a
@@ -775,11 +777,11 @@ unless another BE is manually selected in this menu. Use the arrow keys
 to highlight the desired boot environment and press :kbd:`Enter` to
 continue booting into the selected boot environment.
 
-.. index:: sysadm, configuration
+.. index:: sysadm, configuration, firewall
 .. _Firewall Manager:
 
 Firewall Manager
-================
+****************
 
 The Firewall Manager is a simple interface used to configure ports and
 firewalls. In :numref:`Figure %s <firewall1>`, the Multicast DNS service
@@ -831,11 +833,11 @@ to confirm the selections and open the desired port.
 To close a port, select a port from the :guilabel:`Open Ports`
 column and press :guilabel:`Close Ports`.
 
-.. index:: sysadm, configuration
+.. index:: sysadm, configuration, services
 .. _Service Manager:
 
 Service Manager
-===============
+***************
 
 The Service Manager offers a view of all the system's installed
 services, as seen in :numref:`Figure %s <service1>`. There are also
@@ -876,11 +878,11 @@ Underneath the chart is a row with multiple buttons:
 Hovering over any of these icons will display a helpful description
 across the bottom of the window.
 
-.. index:: sysadm, configuration
+.. index:: sysadm, configuration, tasks
 .. _Task Manager:
 
 Task Manager
-============
+************
 
 Task Manager provides a graphical view of memory use, per-CPU use and
 a listing of currently running applications. An example is shown in
@@ -899,11 +901,11 @@ The "Running Programs:" section provides a graphical front-end to
 The :guilabel:`Kill Selected Process` button can be used to terminate
 the selected process.
 
-.. index:: configuration
+.. index:: sysadm, configuration, users
 .. _User Manager:
 
 User Manager
-============
+************
 
 The |trueos| User Manager utility allows you to easily add, configure,
 and delete users and groups. To access this utility in |sysadm|, click
@@ -1025,7 +1027,7 @@ attacker can not login to the system using that account name.
 .. _PersonaCrypt:
 
 PersonaCrypt
-------------
+============
 
 |trueos| provides support for a security feature known as PersonaCrypt.
 A PersonaCrypt device is a removable USB media, such as a USB flash
@@ -1049,7 +1051,7 @@ password.
 .. _GELI:
 
 GELI
-^^^^
+----
 
 PersonaCrypt uses GELI's ability to split the key into two parts: one
 being your passphrase, and the other being a key stored on disk.
@@ -1134,7 +1136,7 @@ password associated with the PersonaCrypt device.
 .. _PEFS Encryption:
 
 PEFS
-^^^^
+----
 
 `PEFS <http://pefs.io/>`_ stands for Private Encrypted File System. It
 is open source software freely available under the BSD license, and is
@@ -1176,11 +1178,11 @@ supports importing and exporting PEFS on-disk keyfiles with
 :command:`personacrypt export <username>` and
 :command:`personacrypt import <keyfile>`, respectively.
 
-.. index:: users
+.. index:: users, manage groups
 .. _Managing Groups:
 
 Managing Groups
----------------
+===============
 
 Click the :guilabel:`Groups` tab to view and manage the groups on the
 system. The :guilabel:`Standard` tab, seen in
@@ -1222,7 +1224,7 @@ To view all of the groups on the system, click :guilabel:`Advanced`.
 .. _Life Preserver:
 
 Life Preserver
-==============
+**************
 
 The Life Preserver utility is designed to take full advantage of the
 functionality provided by ZFS snapshots. This utility allows you to
@@ -1262,11 +1264,11 @@ go to :menuselection:`Utilities --> Life Preserver`. The rest of this
 section describes where to find and how to use the features built into
 Life Preserver.
 
-.. index:: snapshots, life preserver
-.. _Snapshots Tab:
+.. index:: sysadm, life preserver, snapshots
+.. _Snapshots:
 
-Snapshots Tab
--------------
+Snapshots
+=========
 
 :numref:`Figure %s <lpreserver1>` shows the :guilabel:`Snapshots` tab on
 a system not yet configured. This system has a "ZFS Pool" named "tank1".
@@ -1304,11 +1306,11 @@ selected pool or dataset to the point in time the snapshot was created.**
 This means files changes occurring after the snapshot was taken will be
 lost.
 
-.. index:: replication, life preserver
-.. _Replication Tab:
+.. index:: sysadm, life preserver, replication
+.. _Replication:
 
-Replication Tab
----------------
+Replication
+===========
 
 Life Preserver can be configured to replicate snapshots to another
 system over an encrypted SSH connection, though the backup itself is
@@ -1415,11 +1417,11 @@ uses:
   remote system and starts a new replication. This is useful if a
   replication gets stuck and will not complete.
 
-.. index:: configuration, life preserver
-.. _Schedules Tab:
+.. index:: sysadm, life preserver, schedules, configuration
+.. _Schedules:
 
-Schedules Tab
--------------
+Schedules
+=========
 
 This tab is used to manage when snapshots of the ZFS pool are created.
 Multiple snapshot schedules are supported if the system has multiple
@@ -1492,11 +1494,11 @@ Once you have created a scrub schedule, you can use the "gear" icon
 next to the "schedule scrub" icon to modify the highlighted schedule or
 the "X" icon to delete the highlighted schedule.
 
-.. index:: configuration, life preserver
-.. _Settings Tab:
+.. index:: sysadm, life preserver, settings, configuration
+.. _Settings:
 
-Settings Tab
--------------
+Settings
+========
 
 The :guilabel:`Settings` tab is shown in
 :numref:`Figure %s <lpreserver6>`.
@@ -1526,11 +1528,11 @@ and indicates the type of condition which will trigger an email message.
 If you make any changes in this screen, press :guilabel:`Save Settings`
 to apply them.
 
-.. index:: backup
-.. _Using the lpreserver CLI:
+.. index:: sysadm, life preserver, cli, backup
+.. _Using the CLI:
 
-Using the lpreserver CLI
-------------------------
+Using the CLI
+=============
 
 The :command:`lpreserver` command line utility can also be used to
 manage snapshots and replication. This command needs to be run as the
@@ -1651,10 +1653,11 @@ graphical options provided by the Life Preserver GUI.
    |              |             | replication status                 |
    +--------------+-------------+------------------------------------+
 
+.. index:: sysadm, life preserver, restore os
 .. _Restoring the Operating System:
 
 Restoring the Operating System
-------------------------------
+==============================
 
 If you have replicated the system's snapshots to a remote backup
 server, you can use a |trueos| installation media to perform an

@@ -1,3 +1,4 @@
+.. index:: fs class
 .. _fs:
 
 fs
@@ -8,7 +9,7 @@ The fs class is used to manage the files and directories on the system.
 Every fs class request contains several parameters:
 
 +---------------+-----------+--------------------------------------+
-| **Parameter** | **Value** | **Description**                      |
+| Parameter     | Value     | Description                          |
 |               |           |                                      |
 +===============+===========+======================================+
 | id            |           | Any unique value for the request,    |
@@ -28,7 +29,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: dirlist, fs
-
 .. _List Directory:
 
 List Directory

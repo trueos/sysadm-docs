@@ -1,3 +1,4 @@
+.. index:: zfs class
 .. _zfs:
 
 zfs
@@ -8,7 +9,7 @@ The zfs class is used to manage and retrieve information about ZFS pools.
 Every zfs class request contains several parameters:
 
 +---------------+-----------+-------------------------------------------+
-| **Parameter** | **Value** | **Description**                           |
+| Parameter     | Value     | Description                               |
 |               |           |                                           |
 +===============+===========+===========================================+
 | id            |           | Any unique value for the request,         |
@@ -28,7 +29,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: list_pools, zfs
-
 .. _List Pools:
 
 List Pools
@@ -91,7 +91,6 @@ total size. This action is the equivalent of running
  }
 
 .. index:: datasets, zfs
-
 .. _List Datasets:
 
 List Datasets

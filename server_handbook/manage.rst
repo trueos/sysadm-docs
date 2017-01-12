@@ -1,7 +1,7 @@
 .. _management:
 
 Managing |sysadm|
-=================
+*****************
 
 |sysadm| comes with a standard configuration file located in
 :file:`/usr/local/etc/sysadm.conf.dist`.
@@ -36,5 +36,5 @@ This default configuration also has blacklist options:
       counter)
   BLACKLIST_AUTH_FAIL_RESET_MINUTES=10
 
-Please note these default options are subject to change as the |sysadm|
-utility is developed.
+.. note:: These default options are subject to change as the |sysadm|
+   utility is developed.

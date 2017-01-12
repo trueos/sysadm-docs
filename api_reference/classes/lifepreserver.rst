@@ -1,3 +1,4 @@
+.. index:: lifepreserver class
 .. _lifepreserver:
 
 lifepreserver
@@ -9,7 +10,7 @@ scheduled snapshots and replication.
 Every lifepreserver class request contains the following parameters:
 
 +---------------+---------------+---------------------------------------+
-| **Parameter** | **Value**     | **Description**                       |
+| Parameter     | Value         | Description                           |
 |               |               |                                       |
 +===============+===============+=======================================+
 | id            |               | Any unique value for the request,     |
@@ -34,7 +35,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: listcron, Life Preserver
-
 .. _List Schedules:
 
 List Schedules
@@ -104,17 +104,16 @@ the time that ZFS scrubs occur.
  }
 
 .. index:: cronsnap, Life Preserver
-
 .. _Create a Snapshot Schedule:
 
 Create a Snapshot Schedule
 ==========================
 
 The "cronsnap" action is used to create snapshot schedules for Life
-Preserver. This action supports the following parameters:
+Preserver. This action supports these parameters:
 
 +---------------+------------------------------------------------------+
-| **Parameter** | **Description**                                      |
+| Parameter     | Description                                          |
 |               |                                                      |
 +===============+======================================================+
 | pool          | Name of the ZFS pool to snapshot.                    |
@@ -189,7 +188,6 @@ Preserver. This action supports the following parameters:
  }
 
 .. index:: cronscrub, Life Preserver
-
 .. _Create a Scrub Schedule:
 
 Create a Scrub Schedule
@@ -199,7 +197,7 @@ The "cronscrub" action is used to schedule a ZFS scrub. This action
 supports the following parameters:
 
 +---------------+----------------------------------------------------+
-| **Parameter** | **Description**                                    |
+| Parameter     | Description                                        |
 |               |                                                    |
 +===============+====================================================+
 | pool          | Name of ZFS pool to scrub.                         |
@@ -269,7 +267,6 @@ supports the following parameters:
  }
 
 .. index:: createsnap, Life Preserver
-
 .. _Create a Snapshot:
 
 Create a Snapshot
@@ -324,7 +321,6 @@ dataset.
  }
 
 .. index:: listsnap, Life Preserver
-
 .. _List Snapshots:
 
 List Snapshots
@@ -406,7 +402,6 @@ The "listsnap" action retrieves the list of saved snapshots.
  }
 
 .. index:: revertsnap, Life Preserver
-
 .. _Revert a Snapshot:
 
 Revert a Snapshot
@@ -477,7 +472,6 @@ taken.
  }
 
 .. index:: removesnap, Life Preserver
-
 .. _Remove a Snapshot:
 
 Remove a Snapshot
@@ -542,7 +536,6 @@ specified dataset or pool.
  }
 
 .. index:: addreplication, Life Preserver
-
 .. _Add Replication:
 
 Add Replication
@@ -552,7 +545,7 @@ The "addreplication" action is used to create a replication task in Life
 Preserver. This action supports several parameters:
 
 +---------------+-----------------------------------------------------+
-| **Parameter** | **Description**                                     |
+| Parameter     | Description                                         |
 |               |                                                     |
 +===============+=====================================================+
 | host          | Remote hostname or IP address.                      |
@@ -655,7 +648,6 @@ Preserver. This action supports several parameters:
  }
 
 .. index:: removereplication, Life Preserver
-
 .. _Remove Replication:
 
 Remove Replication
@@ -668,7 +660,7 @@ any already replicated data from the remote system.
 This action supports several parameters:
 
 +---------------+-----------------------------------------------------+
-| **Parameter** | **Description**                                     |
+| Parameter     | Description                                         |
 |               |                                                     |
 +===============+=====================================================+
 | host          | Remote hostname or IP address.                      |
@@ -734,7 +726,6 @@ This action supports several parameters:
  }
  
 .. index:: listreplication, Life Preserver
-
 .. _List Replications:
 
 List Replications
@@ -813,7 +804,6 @@ user account.
  }
 
 .. index:: runreplication, Life Preserver
-
 .. _Start Replication:
 
 Start Replication
@@ -878,7 +868,6 @@ specified dataset to the specified remote server.
  }
 
 .. index:: initreplication, Life Preserver
-
 .. _Initialize Replication:
 
 Initialize Replication
@@ -892,7 +881,7 @@ new replication.
 The "initreplication" action supports the following parameters:
 
 +---------------+-----------------------------------------------------+
-| **Parameter** | **Description**                                     |
+| Parameter     | Description                                         |
 |               |                                                     |
 +===============+=====================================================+
 | host          | Remote hostname or IP address.                      |
@@ -958,7 +947,6 @@ The "initreplication" action supports the following parameters:
  }
 
 .. index:: settings, Life Preserver
-
 .. _View Settings:
 
 View Settings
@@ -1030,7 +1018,6 @@ available setting.
  }
 
 .. index:: savesettings, Life Preserver
-
 .. _Save Settings:
 
 Save Settings
@@ -1041,7 +1028,7 @@ of the Life Preserver utility. This action supports the following
 parameters:
 
 +---------------+-----------------------------------------------------+
-| **Parameter** | **Description**                                     |
+| Parameter     | Description                                         |
 |               |                                                     |
 +===============+=====================================================+
 | duwarn        | Disk percentage (from 0-99) at which to warn of low |

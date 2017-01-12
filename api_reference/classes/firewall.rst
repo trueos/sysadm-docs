@@ -1,3 +1,4 @@
+.. index:: firewall class
 .. _firewall:
 
 firewall
@@ -10,7 +11,7 @@ The firewall class is used for managing the "ipfw" firewall on the system.
 Every user request will have several parameters:
 
 +---------------+-----------+---------------------------------------+
-| **Parameter** | **Value** | **Description**                       |
+| Parameter     | Value     | Description                           |
 |               |           |                                       |
 +===============+===========+=======================================+
 | id            |           | any unique value for the request;     |
@@ -30,7 +31,6 @@ Every user request will have several parameters:
 +---------------+-----------+---------------------------------------+
 
 .. index:: knownports, firewall
-
 .. _knownports:
 
 Known Ports
@@ -91,7 +91,6 @@ help match a port to a name or description.
  }
 
 .. index:: listopen, firewall
-
 .. _listopen:
 
 List Open
@@ -138,7 +137,6 @@ combinations for the firewall.
  }
 
 .. index:: status, firewall
-
 .. _status:
 
 Status
@@ -183,7 +181,6 @@ Status
  }
 
 .. index:: open, firewall
-
 .. _open:
 
 Open
@@ -236,7 +233,6 @@ action requires the argument::
  }
 
 .. index:: close, firewall
-
 .. _close:
 
 Close
@@ -289,7 +285,6 @@ additional statement is required: ::
  }
 
 .. index:: start, firewall
-
 .. _firewallstart:
 
 Start
@@ -333,7 +328,6 @@ Start
  }
 
 .. index:: stop, firewall
-
 .. _firewallstop:
 
 Stop
@@ -377,7 +371,6 @@ Stop
  }
 
 .. index:: restart, firewall
-
 .. _firewallrestart:
 
 Restart
@@ -422,7 +415,6 @@ settings changes and is not generally needed.
  }
 
 .. index:: enable, firewall
-
 .. _firewallenable:
 
 Enable
@@ -466,7 +458,6 @@ Enable
  }
 
 .. index:: disable, firewall
-
 .. _firewalldisable:
 
 Disable
@@ -510,7 +501,6 @@ Disable
  }
 
 .. index:: resetdefaults, firewall
-
 .. _resetdefaults:
 
 Reset Defaults

@@ -1,16 +1,18 @@
+.. index:: first steps
 .. _gettingstarted:
 
 Getting Started
-===============
+***************
 
-Beginning with SysAdm™ is a relatively simple process.
-SysAdm™ files are currently available from the
+Beginning with |sysadm| is a relatively simple process. |sysadm| files
+are currently available from the
 `github repository <https://github.com/trueos/sysadm>`_
 
+.. index:: build SysAdm
 .. _building:
 
 Building |sysadm|
------------------
+=================
 
 Several Qt Modules are required before attempting to build
 |sysadm|:
@@ -31,10 +33,11 @@ github.com.
   % /usr/local/lib/qt5/bin/qmake -recursive
   % make && sudo make install
 
+.. index:: starting SysAdm
 .. _starting:
 
 Starting |sysadm|
------------------
+=================
 
 |sysadm| can be started one of two ways: the traditional rc(8)
 mechanism or using the new jobd(8) mechanism
@@ -70,10 +73,11 @@ To run under jobd(8)
    
    The user can also designate their own ports for |sysadm|.
 
+.. index:: Bridge initialization
 .. _bridge init:
 
 Bridge Initialization
----------------------
+=====================
 
 Configuring and connecting to a bridge can be a complicated process.
 Thankfully, there are several steps that are done the first time a
@@ -85,10 +89,11 @@ now configured server and bridge.
 .. tip:: A list of current commands is available by typing :command:`-h`
    after the utility name (Example: :command:`sysadm-bridge -h`).
 
+.. index:: Server and Bridge
 .. _serverbridge init:
 
-Server and Bridge Initialization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Server and Bridge
+-----------------
 
 To initialize the server and bridge, begin with the server. Run
 :command:`sudo sysadm-binary bridge_export_key [optional absolute file path]`.
@@ -119,10 +124,11 @@ server and bridge will now be communicating with each other. At this
 point, clients can be added to the mix which will communicate with the
 server through the bridge.
 
+.. index:: Add client
 .. _add client:
 
 Adding a Client to the Server/Bridge Connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 
 .. danger:: If you have an old SSL bundle from a pre-alpha version of
    |sysadm| created before June 2016, it will need to be removed prior to

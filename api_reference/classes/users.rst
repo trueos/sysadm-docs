@@ -1,3 +1,4 @@
+.. index:: users class
 .. _users:
 
 users
@@ -7,7 +8,7 @@ The users class is used to manage users and groups on the system.
 Every user request will have several parameters:
 
 +----------------+------------+----------------------------------------+
-| **Parameter**  | **Value**  | **Description**                        |
+| Parameter      | Value      | Description                            |
 |                |            |                                        |
 +================+============+========================================+
 | id             |            | any unique value for the request;      |
@@ -27,7 +28,6 @@ Every user request will have several parameters:
 +----------------+------------+----------------------------------------+
 
 .. index:: groupadd, users
-
 .. _groupadd:
 
 Group Add
@@ -74,7 +74,6 @@ field is required, the "gid" and "users" fields are optional.
  }
 
 .. index:: groupdelete, users
-
 .. _groupdelete:
 
 Group Delete
@@ -120,7 +119,6 @@ Group Delete
  }
 
 .. index:: groupmod, users
-
 .. _groupmod:
 
 Group Modify
@@ -176,7 +174,6 @@ choices:
  }
 
 .. index:: groupshow, users
-
 .. _groupshow:
 
 Group Show
@@ -250,7 +247,6 @@ ones the current user is in (if limited access).
  }
 
 .. index:: personacryptlistdevs, users
-
 .. _personacryptlistdevs:
 
 Personacrypt List Devices
@@ -296,7 +292,6 @@ removeable devices which may be used as PC devices.
  }
 
 .. index:: useradd, users
-
 .. _useradd:
 
 User Add
@@ -307,8 +302,8 @@ are a number of required and optional fields to add to the initial
 request:
 
 +---------------+----------------+----------------------------------------------------+
-| **Name**      | **Required/**  |        **Description**                             |
-|               | **Optional**   |                                                    |
+| Name          | Required/      | Description                                        |
+|               | Optional       |                                                    |
 +===============+================+====================================================+
 | change        | Optional       | Sets a time for the password to expire on the new  |
 |               |                | account.                                           |
@@ -385,7 +380,6 @@ request:
  }
 
 .. index:: userdelete, users
-
 .. _userdelete:
 
 User Delete
@@ -435,7 +429,6 @@ directory and all files within it. Its default value is "true".
  }
 
 .. index:: usermod, users
-
 .. _usermod:
 
 User Mod
@@ -488,7 +481,6 @@ the request to alter the existing user name.
  }
 
 .. index:: usershow, users
-
 .. _usershow:
 
 User Show

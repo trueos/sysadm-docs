@@ -1,3 +1,4 @@
+.. index:: beadm
 .. _beadm:
 
 beadm
@@ -8,7 +9,7 @@ The beadm class is used to manage boot environments.
 Every beadm class request contains several parameters:
 
 +---------------+-----------+----------------------------------------+
-| **Parameter** | **Value** | **Description**                        |
+| Parameter     | Value     | Description                            |
 |               |           |                                        |
 +===============+===========+========================================+
 | id            |           | Any unique value for the request,      |
@@ -29,7 +30,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: listbes, beadm
-
 .. _List Boot Environments:
 
 List Boot Environments
@@ -91,7 +91,6 @@ was created, its mount point, its nickname, and its size.
  }
 
 .. index:: renamebe, beadm
-
 .. _Rename a Boot Environment:
 
 Rename a Boot Environment
@@ -144,7 +143,6 @@ environment as the "target".
  }
 
 .. index:: activatebe, beadm
-
 .. _Activate Boot Environment:
 
 Activate Boot Environment
@@ -193,7 +191,6 @@ The "activatebe" action activates the specified boot environment
  }
 
 .. index:: createbe, beadm
-
 .. _Create Boot Environment:
 
 Create Boot Environment
@@ -247,7 +244,6 @@ also include "clonefrom" to specify which boot environment to clone from.
  }
 
 .. index:: destroybe, beadm
-
 .. _Destroy a Boot Environment:
 
 Destroy a Boot Environment
@@ -296,7 +292,6 @@ and forcefully unmounts it.
  } 
 
 .. index:: mountbe, beadm
-
 .. _Mount a Boot Environment:
 
 Mount a Boot Environment
@@ -348,7 +343,6 @@ optional "mountpoint" argument to specify the mount point.
  }
 
 .. index:: umountbe, beadm
-
 .. _Unmount a Boot Environment:
 
 Unmount a Boot Environment

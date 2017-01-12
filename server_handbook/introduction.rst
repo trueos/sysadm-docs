@@ -1,32 +1,22 @@
+.. index:: introduction
 .. _intro:
 
 Introduction
-============
+************
 
-**Preface**
-
-Written by users of the |sysadm| management utility.
-
-Version |version|
-
-Copyright © 2016 iXSystems®.
-
-The |sysadm| Server Handbook is freely available for sharing and
-redistribution under the terms of the
-`Creative Commons Attribution License <https://creativecommons.org/licenses/by/4.0/>`_.
-This means you have permission to copy, distribute, translate, and adapt
-the work as long as you attribute the |lumina| Project as the original
-source of the Handbook.
-
-Welcome to |sysadm|! This documentation is intended to educate the user
-on initializing and configuring the |sysadm| remote management options.
-Initialization and management will be documented in two separate
-chapters, :ref:`gettingstarted`, and :ref:`management`.
+Welcome to |sysadm|! This handbook is intended to educate the user on
+initializing and configuring the |sysadm| remote management options.
+These options are documented in two separate chapters,
+:ref:`gettingstarted`, and :ref:`management`.
 
 .. warning:: |sysadm| is still under heavy development, and all
    information contained in the documentation is subject to change.
 
-**What is SysAdm™?**
+.. index:: SysAdm overview
+.. _What is SysAdm:
+
+What is |sysadm|?
+=================
 
 |sysadm| is a middleware utility designed to streamline system management
 with options for both local and remote access.
@@ -52,7 +42,11 @@ considered "untrusted" and several layers of encryption are added to all
 traffic flowing through the bridge to ensure it can not be used to
 record or alter critical information flow.
 
-**Would you like to know more?**
+.. index:: additional information
+.. _Would you like to know more:
+
+Would you like to know more?
+============================
 
 Documentation for the |sysadm| project is split amongst three handbooks:
 

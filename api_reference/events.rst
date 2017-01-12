@@ -1,3 +1,4 @@
+.. index:: events
 .. _Events:
 
 Events
@@ -17,7 +18,7 @@ Every events request contains several parameters, seen here in
 .. table:: Event Request Parameters
 
    +---------------+-----------+--------------------------------------+
-   | **Parameter** | **Value** | **Description**                      |
+   | Parameter     | Value     | Description                          |
    |               |           |                                      |
    +===============+===========+======================================+
    | id            |           | Any unique value for the request,    |
@@ -69,6 +70,9 @@ Here is an example reply from the Life Preserver subsystem:
        "class" : "[snapshot/replication]"
      }
  }
+
+.. index:: dispatcher
+.. _dispatcher:
 
 Dispatcher
 ----------
@@ -187,6 +191,9 @@ generalized sample:
 For specific details on these special types of events please refer to
 the :ref:`classes` section of this guide.
 
+.. index:: life preserver
+.. _Life Preserver:
+
 Life Preserver
 --------------
 
@@ -217,6 +224,9 @@ Subscribe to the Life Preserver subsystem for event updates with this:
     "class" : "snapshot/replication"
   }
  }
+
+.. index:: system state
+.. _System State:
 
 System State
 ------------
@@ -264,6 +274,9 @@ error has occurred:
     }
   }
  }
+
+.. index:: bridge
+.. _Bridge:
 
 Bridge
 ------

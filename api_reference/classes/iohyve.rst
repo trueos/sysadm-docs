@@ -1,3 +1,4 @@
+.. index:: iohyve class
 .. _iohyve:
 
 iohyve
@@ -9,7 +10,7 @@ bhyve type 2 hypervisor.
 Every iohyve class request contains the following parameters:
 
 +---------------+-----------+------------------------------------------------+
-| **Parameter** | **Value** | **Description**                                |
+| Parameter     | Value     | Description                                    |
 |               |           |                                                |
 +===============+===========+================================================+
 | id            |           | Any unique value for the request,              |
@@ -33,7 +34,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: listvms, iohyve
-
 .. _List VMs:
 
 List VMs
@@ -105,7 +105,6 @@ loaded into memory.
  }
 
 .. index:: fetchiso, iohyve
-
 .. _Fetch ISO:
 
 Fetch ISO
@@ -182,7 +181,6 @@ with *http://*, *ftp://*, or *file://*.
  }
 
 .. index:: listisos, iohyve
-
 .. _List ISOs:
 
 List ISOs
@@ -228,7 +226,6 @@ The "listisos" action lists all the known ISO files which iohyve can use.
  }
 
 .. index:: renameiso, iohyve
-
 .. _Rename ISO:
 
 Rename ISO
@@ -280,7 +277,6 @@ Specify the existing name with "source" and the new name with "target".
  }
 
 .. index:: rmiso, iohyve
-
 .. _Remove ISO:
 
 Remove ISO
@@ -329,7 +325,6 @@ Specify the ISO's name as the "target".
  }
 
 .. index:: setup, iohyve
-
 .. _Setup iohyve:
 
 Setup iohyve
@@ -382,7 +377,6 @@ use.
  }
 
 .. index:: issetup, iohyve
-
 .. _Determine iohyve Setup:
 
 Determine iohyve Setup
@@ -429,7 +423,6 @@ The "issetup" action queries if iohyve has been setup and returns either
  }
 
 .. index:: create, iohyve
-
 .. _Create Guest:
 
 Create Guest
@@ -481,7 +474,6 @@ and "size".
  }
 
 .. index:: install, iohyve
-
 .. _Install Guest:
 
 Install Guest
@@ -535,7 +527,6 @@ the system.
  }
 
 .. index:: start, iohyve
-
 .. _Start VM:
 
 Start VM
@@ -583,7 +574,6 @@ The "start" action starts the specified VM.
  }
 
 .. index:: stop, iohyve
-
 .. _Stop VM:
 
 Stop VM
@@ -631,7 +621,6 @@ The "stop" action stops the specified VM.
  }
 
 .. index:: delete, iohyve
-
 .. _Delete a VM:
 
 Delete a VM
@@ -679,7 +668,6 @@ The "delete" action deletes the specified iohyve guest.
  }
 
 .. index:: adddisk, iohyve
-
 .. _Add a Disk:
 
 Add a Disk
@@ -731,7 +719,6 @@ The "adddisk" action adds and creates a disk for a VM.
  }
 
 .. index:: listdisks, iohyve
-
 .. _List Disks:
 
 List Disks
@@ -779,7 +766,6 @@ The "listdisks" action lists the disks connected to the specified VM.
  }
 
 .. index:: resizedisk, iohyve
-
 .. _Resize a Disk:
 
 Resize a Disk
@@ -835,7 +821,6 @@ size.
  }
 
 .. index:: deletedisk, iohyve
-
 .. _Delete a Disk:
 
 Delete a Disk
@@ -885,8 +870,7 @@ The "deletedisk" action removes the specified disk from the specified VM.
   "namespace": "sysadm"
  }
 
- .. index:: version, iohyve
-
+.. index:: version, iohyve
 .. _List Version:
 
 List Version
@@ -932,7 +916,6 @@ The "version" action displays the iohyve version.
  }
 
 .. index:: getprops, iohyve
-
 .. _List Guest Properties:
 
 List Guest Properties
@@ -995,7 +978,6 @@ The "getprops" action lists the properties for the specified guest.
  }
 
 .. index:: setprop, iohyve
-
 .. _Set Guest Properties:
 
 Set Guest Properties

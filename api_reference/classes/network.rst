@@ -1,3 +1,4 @@
+.. index:: network class
 .. _network:
 
 network
@@ -9,7 +10,7 @@ Ethernet and wireless network devices.
 Every network class request contains the following parameters:
 
 +---------------+-----------+-------------------------------------------+
-| **Parameter** | **Value** | **Description**                           |
+| Parameter     | Value     | Description                               |
 |               |           |                                           |
 +===============+===========+===========================================+
 | id            |           | Any unique value for the request,         |
@@ -29,7 +30,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: list-devices, network
-
 .. _List Devices:
 
 List Devices

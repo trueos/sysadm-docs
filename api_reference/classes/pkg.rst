@@ -1,3 +1,4 @@
+.. index:: pkg class
 .. _pkg:
 
 pkg
@@ -8,7 +9,7 @@ The pkg class is used to manage software packages.
 Every pkg class request contains several parameters:
 
 +---------------+-----------+-------------------------------------------+
-| **Parameter** | **Value** | **Description**                           |
+| Parameter     | Value     | Description                               |
 |               |           |                                           |
 +===============+===========+===========================================+
 | id            |           | Any unique value for the request,         |
@@ -34,7 +35,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: pkg_info, pkg
-
 .. _Package Information:
 
 Package Information
@@ -168,7 +168,6 @@ relevant information. The following arguments are optional:
  }
 
 .. index:: pkg_search, pkg
-
 .. _Search Packages:
 
 Search Packages
@@ -352,7 +351,6 @@ match the given "search_term" (required). These parameters are optional:
  }
 
 .. index:: list_categories, pkg
-
 .. _List Categories:
 
 List Categories
@@ -453,7 +451,6 @@ local repository.
  }
 
 .. index:: list_repos, pkg
-
 .. _List Repositories:
 
 List Repositories
@@ -503,7 +500,6 @@ argument for the other pkg API actions.
  }
 
 .. index:: pkg_audit, pkg
-
 .. _Audit Packages:
 
 Audit Packages
@@ -584,7 +580,6 @@ packages which are impacted by those vulnerabilities.
  }
 
 .. index:: pkg_upgrade, pkg
-
 .. _Upgrade Packages:
 
 Upgrade Packages
@@ -659,7 +654,6 @@ to and query dispatcher events.
  }  
 
 .. index:: pkg_check_upgrade, pkg
-
 .. _Check Packages:
 
 Check Packages
@@ -735,7 +729,6 @@ subscribe to and query dispatcher events.
  }
 
 .. index:: pkg_update, pkg
-
 .. _Update Package Database:
 
 Update Package Database
@@ -816,7 +809,6 @@ some time.
  }
 
 .. index:: pkg_lock, pkg_unlock, pkg
-
 .. _LockUnlock Packages:
 
 Lock/Unlock Packages
@@ -969,7 +961,6 @@ query dispatcher events.
  }
 
 .. index:: pkg_install, pkg
-
 .. _Install Packages:
 
 Install Packages
@@ -1051,7 +1042,6 @@ query dispatcher events.
  }
 
 .. index:: pkg_remove, pkg
-
 .. _Uninstall Packages:
 
 Uninstall Packages
@@ -1137,7 +1127,6 @@ and query dispatcher events.
  }
 
 .. index:: pkg_autoremove, pkg
-
 .. _Prune Packages:
 
 Prune Packages

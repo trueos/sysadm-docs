@@ -1,10 +1,11 @@
+.. index:: introduction
 .. _Getting Started:
 
 Getting Started
 ***************
 
-Welcome to the SysAdm™ API (application programming interface) 
-Reference Guide! SysAdm™ is a complex utility with many integral 
+Welcome to the |sysadm| API (application programming interface) 
+Reference Guide! |sysadm| is a complex utility with many integral 
 subsystems and classes, and this reference guide will attempt to
 accurately represent the initialization, core features, and intricacies
 of the utility.
@@ -14,13 +15,7 @@ JSON (JavaScript Object Notation) format. For detailed descriptions of
 these items, please refer to their respective websites at
 http://www.websocket.org and http://json.org/.
 
-The |sysadm| API Reference Guide is freely available for sharing and
-redistribution under the terms of the
-`Creative Commons Attribution License <https://creativecommons.org/licenses/by/4.0/>`_.
-This means you have permission to copy, distribute, translate, and adapt
-the work as long as you attribute the |lumina| Project as the original
-source of the Handbook.
-
+.. index:: authenticate
 .. _Authentication:
 
 Authentication
@@ -28,11 +23,11 @@ Authentication
 
 Once a websocket connection is made to the server, the client needs to
 use the authentication class to authenticate itself to obtain access to
-the SysAdm™ service. Every authentication class request contains the
-following parameters:
+the SysAdm™ service. Every authentication class request contains
+several parameters:
 
 +----------------+------------+---------------------------------------+
-| **Parameter**  | **Value**  | **Description**                       |
+| Parameter      | Value      | Description                           |
 |                |            |                                       |
 +================+============+=======================================+
 | id             |            | any unique value for the request;     |
@@ -49,9 +44,9 @@ following parameters:
 |                |            | request                               |
 +----------------+------------+---------------------------------------+
 
-There are three options for server authentication: username and password,
-token authentication, and pre-registered SSL certifications. SSL
-certification requests are handled by both server and bridge, while
+There are *three* options for server authentication: username and
+password, token authentication, and pre-registered SSL certifications.
+SSL certification requests are handled by both server and bridge, while
 token authentication and username/password requests are server side only.
 
 .. tip:: Individual servers can be configured to refuse username and
@@ -249,6 +244,7 @@ connection.
             "namespace","args"} will now be encrypted with the private
             key in one block prior to transport through the bridge.
 
+.. index:: ssl certificate management
 .. _SSL Certificate Management:
 
 SSL Certificate Management
@@ -258,7 +254,7 @@ Several actions are available for managing the SSL certificates used for
 authentication.
 
 +---------------+-----------+---------------------------------------------+
-| **Parameter** | **Value** | **Description**                             |
+| Parameter     | Value     | Description                                 |
 |               |           |                                             |
 +===============+===========+=============================================+
 | id            |           | Any unique value for the request; examples  |
@@ -278,7 +274,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: list_ssl_certs, settings
-
 .. _List SSL Certificates:
 
 List SSL Certificates
@@ -319,7 +314,6 @@ public key, and the certificate's details.
 .. note:: The "<key>" value is base64 encoded.
 
 .. index:: register_ssl_cert, settings
-
 .. _Register a SSL Certificate:
 
 Register a SSL Certificate
@@ -363,7 +357,6 @@ loaded into the server/client connection.
           be seen in all responses.
 
 .. index:: revoke_ssl_cert, settings
-
 .. _Revoke a SSL Certificate:
 
 Revoke a SSL Certificate
@@ -413,7 +406,6 @@ user.
           to manage the current user's certificates.
 
 .. index:: dispatcher, events
-
 .. _Dispatcher Subsystem:
 
 Dispatcher Subsystem
@@ -435,7 +427,7 @@ authority to directly submit new jobs for the dispatcher.
 The format of "dispatcher" event requests is as follows:
 
 +---------------+-------------+--------------------------------------+
-| **Parameter** | **Value**   | **Description**                      |
+| Parameter     | Value       | Description                          |
 |               |             |                                      |
 +===============+=============+======================================+
 | id            |             | Any unique value for the request,    |
@@ -493,7 +485,7 @@ This response indicates that a dispatcher event occurred:
 A "dispatcher" query contains several parameters:
 
 +---------------+------------+--------------------------------------+
-| **Parameter** | **Value**  | **Description**                      |
+| Parameter     | Value      | Description                          |
 |               |            |                                      |
 +===============+============+======================================+
 | id            |            | Any unique value for the request,    |
@@ -509,7 +501,7 @@ A "dispatcher" query contains several parameters:
 |               |            |                                      |
 +---------------+------------+--------------------------------------+
 
-Dispatcher events have the following syntax:
+Dispatcher events have a specific syntax:
 
 **Websocket Request**
 
@@ -529,8 +521,8 @@ Dispatcher events have the following syntax:
   }
  }
 
-Any user within the *wheel* group can use the "run" action to submit a
-new job to the dispatcher:
+Any user within the *wheel* group can use the :command:`run` action to
+submit a new job to the dispatcher:
 
 **REST Request**
 
@@ -614,6 +606,7 @@ remember:
 * A chain of commands is useful for multi-step operations but is not
   considered a replacement for a good shell script on the server.
 
+.. index:: server subsystems
 .. _Server Subsystems:
 
 Server Subsystems
@@ -623,7 +616,7 @@ The RPC namespace can be used to get information about SysAdm™ server
 subsystems. This namespace supports the following parameters:
 
 +---------------+-----------+------------------------------------------+
-| **Parameter** | **Value** | **Description**                          |
+| Parameter     | Value     | Description                              |
 |               |           |                                          |
 +===============+===========+==========================================+
 | id            |           | Any unique value for the request,        |
@@ -643,7 +636,6 @@ The rest of this section provides examples of the available *names* for
 each type of request, along with their responses.
 
 .. index:: query, rpc
-
 .. _Query Subsystems:
 
 Query Subsystems
@@ -705,15 +697,14 @@ access the user has. This subsystem is used only by the server.
  }
 
 .. index:: identify, rpc
-
 .. _Identify Subsystem:
 
 Identify Subsystem
 ------------------
 
-To identify the type of SysAdm™ system, use :command:`identify`. Possible
-identities are "server", "bridge", and "client," with all three system
-types using this subsystem.
+To identify the type of |sysadm| system, use :command:`identify`.
+Possible identities are "server", "bridge", and "client," with all three
+system types using this subsystem.
 
 **REST Request**
 
@@ -748,13 +739,12 @@ types using this subsystem.
  }
 
 .. index:: list_ssl_checksums, rpc
-
 .. _List SSL Checksums:
 
 List SSL Checksums
 ------------------
 
-Used by both server and client, :command:`list_ssl_checksums` will list
+Used by both server and client, :command:`list_ssl_checksums` lists
 the MD5 checksums of all known SSL keys.
 
 **REST Request**

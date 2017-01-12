@@ -56,8 +56,9 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ Client Handbook'
-copyright = u'2017, SysAdm™ Users'
+copyright = u'2017, iX Systems'
 author = u'SysAdm™ Users'
+editor = u'Tim Moore'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

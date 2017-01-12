@@ -1,3 +1,4 @@
+.. index:: iocage class
 .. _iocage:
 
 iocage
@@ -10,7 +11,7 @@ services.
 Every iocage class request contains the following parameters:
 
 +---------------+-----------+------------------------------------------------------+
-| **Parameter** | **Value** | **Description**                                      |
+| Parameter     | Value     | Description                                          |
 |               |           |                                                      |
 +===============+===========+======================================================+
 | id            |           | Any unique value for the request,                    |
@@ -34,7 +35,6 @@ The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
 .. index:: getdefaultsettings, iocage
-
 .. _Default Settings:
 
 Default Settings
@@ -313,7 +313,6 @@ apply to all jails.
  }
 
 .. index:: listjails, iocage
-
 .. _List Jails:
 
 List Jails
@@ -390,7 +389,6 @@ thickjail).
  }
 
 .. index:: getjailsettings, iocage
-
 .. _Jail Settings:
 
 Jail Settings
@@ -663,7 +661,6 @@ jail, as both modes produce identical outputs:
  }
 
 .. index:: df, iocage
-
 .. _List Resource Usage:
 
 List Resource Usage
@@ -727,7 +724,6 @@ name).
  }
 
 .. index:: startjail, iocage
-
 .. _Start a Jail:
 
 Start a Jail
@@ -796,7 +792,6 @@ The "startjail" action starts the specified jail.
  }
 
 .. index:: stopjail, iocage
-
 .. _Stop a Jail:
 
 Stop a Jail
@@ -867,7 +862,6 @@ The "stopjail" action stops the specified jail.
  }
 
 .. index:: capjail, iocage
-
 .. _Cap a Jail:
 
 Cap a Jail
@@ -917,7 +911,6 @@ want to apply the changes without restarting the jail.
  }
 
 .. index:: clonejail, iocage
-
 .. _Clone a Jail:
 
 Clone a Jail
@@ -1023,7 +1016,6 @@ values and the props returned in the response is empty:
  }
 
 .. index:: createjail, iocage
-
 .. _Create a Jail:
 
 Create a Jail
@@ -1127,8 +1119,7 @@ for the list of available switches.
   "namespace": "sysadm"
  }
 
- .. index:: destroyjail, iocage
-
+.. index:: destroyjail, iocage
 .. _Destroy a Jail:
 
 Destroy a Jail
@@ -1180,7 +1171,6 @@ jail is running.
  }
 
 .. index:: execjail, iocage
-
 .. _Run Command:
 
 Run Command
@@ -1237,7 +1227,6 @@ output from the command.
  }
 
 .. index:: cleanjails, iocage
-
 .. _Clean Jails:
 
 Clean Jails
@@ -1284,7 +1273,6 @@ all data stored in the jails.
  }
 
 .. index:: cleanreleases, iocage
-
 .. _Clean Releases:
 
 Clean Releases
@@ -1336,7 +1324,6 @@ basejails still exist.
  }
 
 .. index:: cleantemplates, iocage
-
 .. _Clean Templates:
 
 Clean Templates
@@ -1382,7 +1369,6 @@ The "cleantemplates" action destroys all existing jail templates.
  }
 
 .. index:: cleanall, iocage
-
 .. _Clean All:
 
 Clean All
@@ -1428,7 +1414,6 @@ The "cleanall" action destroys everything associated with iocage.
  }
 
 .. index:: activatepool, iocage
-
 .. _Activate a Pool:
 
 Activate a Pool
@@ -1547,7 +1532,6 @@ These examples show responses when the pool is not specified:
  }
 
 .. index:: deactivatepool, iocage
-
 .. _Deactivate a Pool:
 
 Deactivate a Pool
