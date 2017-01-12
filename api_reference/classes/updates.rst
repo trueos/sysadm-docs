@@ -9,24 +9,24 @@ updates.
 
 Every update class request contains several parameters:
 
-+----------------+------------+---------------------------------------+
-| Parameter      | Value      | Description                           |
-|                |            |                                       |
-+================+============+=======================================+
-| id             |            | Any unique value for the request,     |
-|                |            | including a hash, checksum, or uuid.  |
-+----------------+------------+---------------------------------------+
-| name           | update     |                                       |
-|                |            |                                       |
-+----------------+------------+---------------------------------------+
-| namespace      | sysadm     |                                       |
-|                |            |                                       |
-+----------------+------------+---------------------------------------+
-| action         |            | Actions include "changesettings",     |
-|                |            | "checkupdates", "listbranches",       |
-|                |            | "listsettings", "startupdate",        |
-|                |            | "stopupdate"                          |
-+----------------+------------+---------------------------------------+
++----------------+------------+----------------------------------------+
+| Parameter      | Value      | Description                            |
+|                |            |                                        |
++================+============+========================================+
+| id             |            | Any unique value for the request,      |
+|                |            | including a hash, checksum, or uuid.   |
++----------------+------------+----------------------------------------+
+| name           | update     |                                        |
+|                |            |                                        |
++----------------+------------+----------------------------------------+
+| namespace      | sysadm     |                                        |
+|                |            |                                        |
++----------------+------------+----------------------------------------+
+| action         |            | Actions include "changesettings",      |
+|                |            | "checkupdates", "listbranches",        |
+|                |            | "listlogs", "listsettings", "readlogs" |
+|                |            | , "startupdate", "stopupdate"          |
++----------------+------------+----------------------------------------+
 
 The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
@@ -206,6 +206,60 @@ listed as "active".
   "namespace": "sysadm"
  }
 
+.. index:: update, listlogs
+.. _listlogs:
+
+List Logs
+=========
+
+:command:`listlogs` shows all saved log files.
+
+**REST Request**
+
+::
+
+ PUT /sysadm/update
+ {
+   "action" : "listlogs"
+ }
+
+**Websocket Request**
+
+.. code-block:: json
+
+ {
+   "namespace" : "sysadm",
+   "name" : "update",
+   "args" : {
+      "action" : "listlogs"
+   },
+   "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "listlogs": {
+      "pc-updatemanager.log": {
+        "finished": "1484127618",
+        "name": "pc-updatemanager.log",
+        "started": "1484127618"
+      },
+      "pc-updatemanager.log.prev": {
+        "finished": "1484109171",
+        "name": "pc-updatemanager.log.prev",
+        "started": "1484109171"
+      }
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
 .. index:: listsettings, update
 .. _List Settings:
 
@@ -245,6 +299,57 @@ List Settings
      "listsettings": {
        "maxbe": " 5",
        "package_set": " EDGE"
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: readlogs, update
+.. _readlogs:
+
+Read Logs
+=========
+
+:command:`readlogs` displays the content of the available log files.
+
+**REST Request**
+
+::
+
+ PUT /sysadm/update
+ {
+    "logs" : [
+       "pc-updatemanager.log"
+    ],
+    "action" : "readlogs"
+ }
+
+**Websocket Request**
+
+.. code-block:: json
+
+ {
+    "id" : "fooid",
+    "namespace" : "sysadm",
+    "name" : "update",
+    "args" : {
+       "logs" : [
+          "pc-updatemanager.log"
+       ],
+       "action" : "readlogs"
+    }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "readlogs": {
+       "pc-updatemanager.log": "pc-updatemanager: Tue Jan 10 23:32:51 EST 2017\nChecking for updates to ports-mgmt/pkg..\nUpdating the package repo database...\nCleaning old pkg upgrade cache...\n<Shortened For Example>\nDetermine new BE name...\nCleanup mounts..."
      }
    },
    "id": "fooid",
