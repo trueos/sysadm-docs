@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ Client Handbook'
-copyright = u'2016, SysAdm™ Users'
+copyright = u'2017, SysAdm™ Users'
 author = u'SysAdm™ Users'
 
 # The version info for the project you're documenting, acts as replacement for

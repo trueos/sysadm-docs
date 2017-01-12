@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 #
-# FreeNAS documentation build configuration file, created by
-# sphinx-quickstart on Mon Sep  9 10:34:28 2013.
-#
 # This file is execfile()d with the current directory set to its containing dir.
 #
 # Note that not all possible configuration values are present in this
@@ -41,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ Server Handbook'
-copyright = u'2016, iXsystems'
+copyright = u'2017, iXsystems'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
