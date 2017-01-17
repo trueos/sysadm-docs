@@ -296,7 +296,7 @@ operation.
 
    : |appcafe| - Viewing the Status of the Operation
 
-.. index:: updates
+.. index:: update manager
 .. _Update Manager:
 
 Update Manager
@@ -354,7 +354,7 @@ The following steps occur automatically during an update:
   you will return the system to its previous state, before the update
   was applied.
 
-.. index:: updates, updates tab
+.. index:: update manager updates tab
 .. _Updates Tab:
 
 Updates Tab
@@ -365,10 +365,10 @@ An example of the :guilabel:`Updates` tab is shown in
 
 .. _update1:
 
-.. figure:: images/update1.png
+.. figure:: images/update1a.png
    :scale: 100%
 
-   : Managing Updates
+   : Update Manager "Updates" tab
 
 In this example, updates are available for installed packages. If a
 security update is available, it will be listed as such. Apply the
@@ -393,15 +393,21 @@ The :guilabel:`Latest Check` field indicates the date and time the
 system last checked for updates. To manually check for updates, click
 :guilabel:`Check for Updates`.
 
+.. index:: Update manager settings tab
+.. _Settings Tab:
+
+Settings Tab
+============
+
 The :guilabel:`Settings` tab is shown in
-:numref:`Figure %s <update4>`.
+:numref:`Figure %s <update2>`.
 
-.. _update4:
+.. _update2:
 
-.. figure:: images/update4a.png
+.. figure:: images/update2b.png
    :scale: 100%
 
-   : Update Manager Settings Tab
+   : Update Manager "Settings" tab
 
 This tab contains several configurable options:
 
@@ -445,7 +451,29 @@ This tab contains several configurable options:
 Once all options are configured to their desired settings, click
 :guilabel:`Save Settings`.
 
-.. index:: updates, upgrade
+.. index:: update manager recent updates
+.. _Recent Updates:
+
+Recent Updates
+==============
+
+The :guilabel:`Recent Updates` tab provides additional data about
+previous update attempts. :numref:`Figure %s <recups>` shows two window
+areas: one to display the available :file:`.log` files, and another to
+show the contents of the selected :file:`.log`.
+
+.. _recups:
+
+.. figure:: images/update3.png
+   :scale: 100%
+   
+   : Update Manager "Recent Updates" tab
+
+This tab is useful to review previous updates for errors and check when
+previous updates were applied. These timestamps are especially useful
+when using :ref:`Life Preserver` to roll back to a previous update.
+
+.. index:: upgrade from PCBSD
 .. _Upgrading from PCBSD 10.x to TrueOS:
 
 Upgrading from |pcbsd| 10.x to |trueos|
