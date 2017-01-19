@@ -6,25 +6,30 @@ beadm
 
 The beadm class is used to manage boot environments.
 
-Every beadm class request contains several parameters:
+Every beadm class request contains several parameters, seen here in
+:numref:`Table %s <beadmreqpar>`:
 
-+---------------+-----------+----------------------------------------+
-| Parameter     | Value     | Description                            |
-|               |           |                                        |
-+===============+===========+========================================+
-| id            |           | Any unique value for the request,      |
-|               |           | including a hash, checksum, or uuid.   |
-+---------------+-----------+----------------------------------------+
-| name          | beadm     |                                        |
-|               |           |                                        |
-+---------------+-----------+----------------------------------------+
-| namespace     | sysadm    |                                        |
-|               |           |                                        |
-+---------------+-----------+----------------------------------------+
-| action        |           | Supported actions include "listbes",   |
-|               |           | "renamebe", "activatebe", "createbe",  |
-|               |           | "destroybe", "mountbe", and "umountbe" |
-+---------------+-----------+----------------------------------------+
+.. _beadmreqpar:
+
+.. table:: : Beadm Request Parameters
+
+   +---------------+-----------+----------------------------------------+
+   | Parameter     | Value     | Description                            |
+   |               |           |                                        |
+   +===============+===========+========================================+
+   | id            |           | Any unique value for the request,      |
+   |               |           | including a hash, checksum, or uuid.   |
+   +---------------+-----------+----------------------------------------+
+   | name          | beadm     |                                        |
+   |               |           |                                        |
+   +---------------+-----------+----------------------------------------+
+   | namespace     | sysadm    |                                        |
+   |               |           |                                        |
+   +---------------+-----------+----------------------------------------+
+   | action        |           | Supported actions include "listbes",   |
+   |               |           | "renamebe", "activatebe", "createbe",  |
+   |               |           | "destroybe", "mountbe", and "umountbe" |
+   +---------------+-----------+----------------------------------------+
 
 The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
