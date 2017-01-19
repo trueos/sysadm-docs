@@ -28,6 +28,8 @@ and provides per-device input device management.
    | action        |           | "list_devices", "list_devices_active", |
    |               |           | "list_device_options",                 |
    |               |           | "read_device_options",                 |
+   |               |           | "set_device_active",                   |
+   |               |           | "set_device_inactive",                 |
    |               |           | "set_device_options"                   |
    +---------------+-----------+----------------------------------------+
 
@@ -255,6 +257,102 @@ for a given device. There is one required argument:
        "resolution": "medium-low",
        "terminate_drift_threshold_pixels": "0",
        "virtual_scrolling": "false"
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: moused set_device_active
+.. _Set Device Active:
+
+Set Device Active
+=================
+
+The :command:`set_device_active` action enables a device for use. The
+:samp:`"device":"<device_id>"` argument is required.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/moused
+ {
+    "device" : "ums0",
+    "action" : "set_device_active"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+    "args" : {
+       "device" : "ums0",
+       "action" : "set_device_active"
+    },
+    "namespace" : "sysadm",
+    "name" : "moused",
+    "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "set_device_active": {
+       "started": "ums0"
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: moused set_device_inactive
+.. _set device inactive:
+
+Set Device Inactive
+===================
+
+The :command:`set_device_inactive` action turns a specified mouse device
+off. The argument :samp:`"device":"<device id>"` is required.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/moused
+ {
+    "device" : "ums0",
+    "action" : "set_device_inactive"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+    "namespace" : "sysadm",
+    "args" : {
+       "action" : "set_device_inactive",
+       "device" : "ums0"
+    },
+    "name" : "moused",
+    "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "set_device_inactive": {
+       "stopped": "ums0"
      }
    },
    "id": "fooid",
