@@ -1,3 +1,8 @@
+.. warning:: The iocage class is deactivated due to a rework of iocage.
+   The actions are being re-enabled as the iocage changes are added to
+   |sysadm|. Currently (last check: 2/27/17), **"activatepool"** and
+   **"deactivatepool"** are the only functional actions.
+
 .. index:: iocage class
 .. _iocage:
 
@@ -10,307 +15,29 @@ services.
 
 Every iocage class request contains the following parameters:
 
-+---------------+-----------+------------------------------------------------------+
-| Parameter     | Value     | Description                                          |
-|               |           |                                                      |
-+===============+===========+======================================================+
-| id            |           | Any unique value for the request,                    |
-|               |           | including a hash, checksum, or uuid.                 |
-+---------------+-----------+------------------------------------------------------+
-| name          | iocage    |                                                      |
-|               |           |                                                      |
-+---------------+-----------+------------------------------------------------------+
-| namespace     | sysadm    |                                                      |
-|               |           |                                                      |
-+---------------+-----------+------------------------------------------------------+
-| action        |           | Actions include "activatepool", "capjail",           |
-|               |           | "cleanall", "cleanjails", "cleanreleases",           |
-|               |           | "cleantemplates", "clonejail", "createjail",         |
-|               |           | "deactivatepool", "destroyjail", "df",               |
-|               |           | "execjail", "getdefaultsettings", "getjailsettings", |
-|               |           | "listjails", "startjail", and "stopjail".            |
-+---------------+-----------+------------------------------------------------------+
++---------------+-----------+----------------------------------------------+
+| Parameter     | Value     | Description                                  |
+|               |           |                                              |
++===============+===========+==============================================+
+| id            |           | Any unique value for the request,            |
+|               |           | including a hash, checksum, or uuid.         |
++---------------+-----------+----------------------------------------------+
+| name          | iocage    |                                              |
+|               |           |                                              |
++---------------+-----------+----------------------------------------------+
+| namespace     | sysadm    |                                              |
+|               |           |                                              |
++---------------+-----------+----------------------------------------------+
+| action        |           | Actions include "activatepool", "capjail",   |
+|               |           | "cleanall", "cleanjails", "cleanreleases",   |
+|               |           | "cleantemplates", "clonejail", "createjail", |
+|               |           | "deactivatepool", "destroyjail", "df",       |
+|               |           | "execjail", "getjailsettings", "listjails",  |
+|               |           | "startjail", and "stopjail".                 |
++---------------+-----------+----------------------------------------------+
 
 The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
-
-.. index:: getdefaultsettings, iocage
-.. _Default Settings:
-
-Default Settings
-================
-
-The "getdefaultsettings" action lists all of the global settings that
-apply to all jails.
-
-**REST Request**
-
-::
-
- PUT /sysadm/iocage
- {
-   "action" : "getdefaultsettings"
- }
-
-**REST Response**
-
-.. code-block:: json
-
- {
-    "args": {
-        "getdefaultsettings": {
-            "defaults": {
-                "allow_chflags": "0",
-                "allow_mount": "0",
-                "allow_mount_devfs": "0",
-                "allow_mount_nullfs": "0",
-                "allow_mount_procfs": "0",
-                "allow_mount_tmpfs": "0",
-                "allow_mount_zfs": "0",
-                "allow_quotas": "0",
-                "allow_raw_sockets": "0",
-                "allow_set_hostname": "1",
-                "allow_socket_af": "0",
-                "allow_sysvipc": "0",
-                "available": "426G",
-                "boot": "off",
-                "bpf": "off",
-                "children_max": "0",
-                "compression": "lz4",
-                "compressratio": "1.00x",
-                "coredumpsize": "off",
-                "count": "1",
-                "cpuset": "off",
-                "cputime": "off",
-                "datasize": "off",
-                "dedup": "off",
-                "defaultrouter": "none",
-                "defaultrouter6": "none",
-                "devfs_ruleset": "4",
-                "dhcp": "off",
-                "enforce_statfs": "2",
-                "exec_clean": "1",
-                "exec_fib": "0",
-                "exec_jail_user": "root",
-                "exec_poststart": "/usr/bin/true",
-                "exec_poststop": "/usr/bin/true",
-                "exec_prestart": "/usr/bin/true",
-                "exec_prestop": "/usr/bin/true",
-                "exec_start": "/bin/sh /etc/rc",
-                "exec_stop": "/bin/sh /etc/rc.shutdown",
-                "exec_system_jail_user": "0",
-                "exec_system_user": "root",
-                "exec_timeout": "60",
-                "ftpfiles": "base.txz doc.txz lib32.txz src.txz",
-                "ftphost": "ftp.freebsd.org",
-                "gitlocation": "https://github.com",
-                "hack88": "0",
-                "host_domainname": "none",
-                "host_hostname": "442a5843-c6bd-11e5-bbe9-fcaa14deb15d",
-                "host_hostuuid": "442a5843-c6bd-11e5-bbe9-fcaa14deb15d",
-                "hostid": "4145fbb8-c5b6-11e5-9f2f-fcaa14deb15d",
-                "interfaces": "vnet0:bridge0,vnet1:bridge1",
-                "ip4": "new",
-                "ip4_addr": "none",
-                "ip4_autoend": "none",
-                "ip4_autostart": "none",
-                "ip4_autosubnet": "none",
-                "ip4_saddrsel": "1",
-                "ip6": "new",
-                "ip6_addr": "none",
-                "ip6_saddrsel": "1",
-                "istemplate": "no",
-                "jail_zfs": "off",
-                "jail_zfs_dataset": "iocage/jails/442a5843-c6bd-11e5-bbe9-fcaa14deb15d/data",
-                "jail_zfs_mountpoint": "none",
-                "last_started": "none",
-                "login_flags": "-f root",
-                "maxproc": "off",
-                "memorylocked": "off",
-                "memoryuse": "8G:log",
-                "mount_devfs": "1",
-                "mount_fdescfs": "1",
-                "mount_linprocfs": "0",
-                "mount_procfs": "0",
-                "mountpoint": "/iocage/.defaults",
-                "msgqqueued": "off",
-                "msgqsize": "off",
-                "nmsgq": "off",
-                "notes": "none",
-                "nsemop": "off",
-                "nshm": "off",
-                "nthr": "off",
-                "openfiles": "off",
-                "origin": "-",
-                "owner": "root",
-                "pcpu": "off",
-                "pkglist": "none",
-                "priority": "99",
-                "pseudoterminals": "off",
-                "quota": "none",
-                "release": "11.0-CURRENTJAN2016",
-                "reservation": "none",
-                "resolver": "none",
-                "rlimits": "off",
-                "securelevel": "2",
-                "shmsize": "off",
-                "stacksize": "off",
-                "stop_timeout": "30",
-                "swapuse": "off",
-                "sync_target": "none",
-                "sync_tgt_zpool": "none",
-                "tag": "2016-01-29@14:19:49",
-                "type": "basejail",
-                "used": "96K",
-                "vmemoryuse": "off",
-                "vnet": "off",
-                "vnet0_mac": "none",
-                "vnet1_mac": "none",
-                "vnet2_mac": "none",
-                "vnet3_mac": "none",
-                "wallclock": "off"
-            }
-        }
-    }
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "args" : {
-      "action" : "getdefaultsettings"
-   },
-   "id" : "fooid",
-   "name" : "iocage",
-   "namespace" : "sysadm"
- }
-
-**WebSocket Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "getdefaultsettings": {
-      "defaults": {
-        "allow_chflags": "0",
-        "allow_mount": "0",
-        "allow_mount_devfs": "0",
-        "allow_mount_nullfs": "0",
-        "allow_mount_procfs": "0",
-        "allow_mount_tmpfs": "0",
-        "allow_mount_zfs": "0",
-        "allow_quotas": "0",
-        "allow_raw_sockets": "0",
-        "allow_set_hostname": "1",
-        "allow_socket_af": "0",
-        "allow_sysvipc": "0",
-        "available": "426G",
-        "boot": "off",
-        "bpf": "off",
-        "children_max": "0",
-        "compression": "lz4",
-        "compressratio": "1.00x",
-        "coredumpsize": "off",
-        "count": "1",
-        "cpuset": "off",
-        "cputime": "off",
-        "datasize": "off",
-        "dedup": "off",
-        "defaultrouter": "none",
-        "defaultrouter6": "none",
-        "devfs_ruleset": "4",
-        "dhcp": "off",
-        "enforce_statfs": "2",
-        "exec_clean": "1",
-        "exec_fib": "0",
-        "exec_jail_user": "root",
-        "exec_poststart": "/usr/bin/true",
-        "exec_poststop": "/usr/bin/true",
-        "exec_prestart": "/usr/bin/true",
-        "exec_prestop": "/usr/bin/true",
-        "exec_start": "/bin/sh /etc/rc",
-        "exec_stop": "/bin/sh /etc/rc.shutdown",
-        "exec_system_jail_user": "0",
-        "exec_system_user": "root",
-        "exec_timeout": "60",
-        "ftpfiles": "base.txz doc.txz lib32.txz src.txz",
-        "ftphost": "ftp.freebsd.org",
-        "gitlocation": "https://github.com",
-        "hack88": "0",
-        "host_domainname": "none",
-        "host_hostname": "442a5843-c6bd-11e5-bbe9-fcaa14deb15d",
-        "host_hostuuid": "442a5843-c6bd-11e5-bbe9-fcaa14deb15d",
-        "hostid": "4145fbb8-c5b6-11e5-9f2f-fcaa14deb15d",
-        "interfaces": "vnet0:bridge0,vnet1:bridge1",
-        "ip4": "new",
-        "ip4_addr": "none",
-        "ip4_autoend": "none",
-        "ip4_autostart": "none",
-        "ip4_autosubnet": "none",
-        "ip4_saddrsel": "1",
-        "ip6": "new",
-        "ip6_addr": "none",
-        "ip6_saddrsel": "1",
-        "istemplate": "no",
-        "jail_zfs": "off",
-        "jail_zfs_dataset": "iocage/jails/442a5843-c6bd-11e5-bbe9-fcaa14deb15d/data",
-        "jail_zfs_mountpoint": "none",
-        "last_started": "none",
-        "login_flags": "-f root",
-        "maxproc": "off",
-        "memorylocked": "off",
-        "memoryuse": "8G:log",
-        "mount_devfs": "1",
-        "mount_fdescfs": "1",
-        "mount_linprocfs": "0",
-        "mount_procfs": "0",
-        "mountpoint": "/iocage/.defaults",
-        "msgqqueued": "off",
-        "msgqsize": "off",
-        "nmsgq": "off",
-        "notes": "none",
-        "nsemop": "off",
-        "nshm": "off",
-        "nthr": "off",
-        "openfiles": "off",
-        "origin": "-",
-        "owner": "root",
-        "pcpu": "off",
-        "pkglist": "none",
-        "priority": "99",
-        "pseudoterminals": "off",
-        "quota": "none",
-        "release": "11.0-CURRENTJAN2016",
-        "reservation": "none",
-        "resolver": "none",
-        "rlimits": "off",
-        "securelevel": "2",
-        "shmsize": "off",
-        "stacksize": "off",
-        "stop_timeout": "30",
-        "swapuse": "off",
-        "sync_target": "none",
-        "sync_tgt_zpool": "none",
-        "tag": "2016-01-29@14:19:49",
-        "type": "basejail",
-        "used": "96K",
-        "vmemoryuse": "off",
-        "vnet": "off",
-        "vnet0_mac": "none",
-        "vnet1_mac": "none",
-        "vnet2_mac": "none",
-        "vnet3_mac": "none",
-        "wallclock": "off"
-      }
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
 
 .. index:: listjails, iocage
 .. _List Jails:
@@ -1419,87 +1146,75 @@ The "cleanall" action destroys everything associated with iocage.
 Activate a Pool
 ===============
 
-The "activatepool" action can be used to specify the ZFS pool to store
-jails. If you do not specify the pool, the response will indicate the
-current setting.
+The :command:`activatepool` action can be used to specify the ZFS pool
+to store jails. If a pool is not specified, the response indicates
+the current setting.
 
 These examples specify the pool to use:
 
 **REST Request**
 
-::
+.. code-block:: none
 
- PUT /sysadm/iocage
- {
-   "action" : "activatepool",
-   "pool" : "tank"
- }
-
-**REST Response**
-
-.. code-block:: json
-
- {
-    "args": {
-        "activatepool": {
-            "success": "pool tank activated."
-        }
-    }
- }
+   PUT /sysadm/iocage
+   {
+      "action" : "activatepool",
+      "pool" : "tank1"
+   }
 
 **WebSocket Request**
 
 .. code-block:: json
 
- {
-   "args" : {
-      "action" : "activatepool",
-      "pool" : "tank"
-   },
-   "name" : "iocage",
-   "id" : "fooid",
-   "namespace" : "sysadm"
- }
+   {
+      "name" : "iocage",
+      "args" : {
+         "pool" : "tank1",
+         "action" : "activatepool"
+      },
+      "id" : "fooid",
+      "namespace" : "sysadm"
+   }
 
-**WebSocket Response**
+**Response**
 
 .. code-block:: json
 
- {
-  "args": {
-    "activatepool": {
-      "success": "pool tank activated."
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
+   {
+     "args": {
+       "activatepool": {
+         "success": "pool tank1 activated."
+       }
+     },
+     "id": "fooid",
+     "name": "response",
+     "namespace": "sysadm"
+   }
 
 These examples show responses when the pool is not specified:
 
 **REST Request**
 
-::
+.. code-block:: none
 
- PUT /sysadm/iocage
- {
-   "action" : "activatepool"
- }
+   PUT /sysadm/iocage
+   {
+      "action" : "activatepool"
+   }
 
 **REST Response**
 
 .. code-block:: json
 
- {
-    "args": {
-        "activatepool": {
-            "currently active": {
-                "pool": " tank"
-            }
-        }
-    }
- }
+   {
+      "args": {
+          "activatepool": {
+              "currently active": {
+                 "pool": " tank"
+              }
+          }
+      }
+   }
 
 **WebSocket Request**
 
@@ -1537,60 +1252,48 @@ These examples show responses when the pool is not specified:
 Deactivate a Pool
 =================
 
-Since only one pool can be active, the "deactivatepool" action can be
-used to deactivate a currently active pool. This should be done before
-using the "activatepool" action to activate a different pool. When a
-pool is deactivated, no data is removed. However, you won't have access
-to its jails unless you move those datasets to the newly activated pool
-or activate the old pool again.
+Since only one pool can be active, the :command:`"deactivatepool"`
+action is used to deactivate a currently active pool. Run this action
+before using :command:`"activatepool"` to activate a different pool.
+When a pool is deactivated, no data is removed. However, you won't have
+access to its jails unless you move those datasets to the newly
+activated pool or activate the old pool again.
 
 **REST Request**
 
-::
+.. code-block:: none
 
- PUT /sysadm/iocage
- {
-   "action" : "deactivatepool",
-   "pool" : "tank"
- }
-
-**REST Response**
-
-.. code-block:: json
-
- {
-    "args": {
-        "deactivatepool": {
-            "success": "pool tank deactivated."
-        }
-    }
- }
+   PUT /sysadm/iocage
+   {
+      "pool" : "tank1",
+      "action" : "deactivatepool"
+   }
 
 **WebSocket Request**
 
 .. code-block:: json
 
- {
-   "id" : "fooid",
-   "name" : "iocage",
-   "args" : {
-      "pool" : "tank",
-      "action" : "deactivatepool"
-   },
-   "namespace" : "sysadm"
- }
+   {
+      "name" : "iocage",
+      "args" : {
+         "action" : "deactivatepool",
+         "pool" : "tank1"
+      },
+      "id" : "fooid",
+      "namespace" : "sysadm"
+   }
 
-**WebSocket Response**
+**Response**
 
 .. code-block:: json
 
- {
-  "args": {
-    "deactivatepool": {
-      "success": "pool tank deactivated."
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
+   {
+     "args": {
+       "deactivatepool": {
+         "success": "pool tank1 deactivated."
+       }
+     },
+     "id": "fooid",
+     "name": "response",
+     "namespace": "sysadm"
+   }
