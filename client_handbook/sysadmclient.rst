@@ -4,22 +4,22 @@
 What is |sysadm|?
 *****************
 
-Beginning with |trueos| 11, most of the system management utilities that
-were previously available in the |pcbsd| Control Panel have been
-rewritten to use the |sysadm| API. This API is designed to make it easy
-to manage any FreeBSD or |trueos| desktop or server system over a secure
-connection from any operating system that has the |sysadm| application
-installed. |sysadm| is built into |trueos|, but downloadable packages
-for other operating systems are available from the
-`SysAdm Website <https://sysadm.us/>`_.
+Beginning with |trueos|, most of the system management utilities
+previously available in the |pcbsd| Control Panel are rewritten to use
+the |sysadm| API. This API is designed to simplify the management of any
+FreeBSD, |trueos| desktop, or |trueos| server system, either locally or
+remotely. Remote management is done via a secure connection from any
+operating system with the |sysadm| application installed. |sysadm| is
+built into |trueos|, but downloadable packages for other operating
+systems are available from the `SysAdm Website <https://sysadm.us/>`_.
 
-.. note:: By default, |sysadm| does not allow for remote access to the
-   system. Please review the
+.. note:: By default, |sysadm| does **not** allow for remote access to
+   the system. Please review the
    `server handbook <http://sysadm.us/handbook/server/>`_ for
    instructions on initializing the remote access elements of |sysadm|.
 
-A number of utilities have been removed from Control Panel as they are
-now available in the |sysadm| client:
+A number of utilities were removed from the previous |pcbsd| Control
+Panel, as they are now available in the |sysadm| client:
 
 **Application Management**
 
@@ -34,6 +34,8 @@ now available in the |sysadm| client:
 **System Management**
 
 * :ref:`Boot Environment Manager`
+
+* :ref:`Mouse Settings`
 
 * :ref:`Firewall Manager`
 
@@ -79,7 +81,7 @@ available software.
 
 .. _appcafe1:
 
-.. figure:: images/appcafe1.png
+.. figure:: images/appcafe1a.png
    :scale: 100%
 
    : Browse Tab of |appcafe|
@@ -131,10 +133,10 @@ installed.
 
 .. _appcafe2:
 
-.. figure:: images/appcafe2.png
+.. figure:: images/appcafe2a.png
    :scale: 100%
 
-   : |appcafe| - Viewing the Details of an Installed Application
+   : |appcafe| - Firefox Details
 
 As seen in this example, the information for an application includes
 the application's icon, name, and description. Click the application's
@@ -147,15 +149,15 @@ panes. The first (middle) pane displays the package description. The
 second (bottom) pane displays the message that appears when the
 package is installed.
   
-An example of the "?" tab is shown in 
+An example of the :guilabel:`?` tab is shown in 
 :numref:`Figure %s <appcafe3>`
 
 .. _appcafe3:
 
-.. figure:: images/appcafe3.png
+.. figure:: images/appcafe3a.png
    :scale: 100%
 
-   : |appcafe| - More Application Details
+   : |appcafe| - More Firefox Details
 
 This tab displays a variety of information:
 
@@ -174,43 +176,45 @@ This tab displays a variety of information:
 
 * The application's download size.
 
-If the package includes screenshots of the application, you can click
-the next tab, which has an image icon, to view and scroll through the
-screenshots. An example is shown in
-:numref:`Figure %s <appcafe4>`
+If the package includes screenshots of the application, click the
+:guilabel:`image` tab to view and scroll through the
+screenshots. An example is shown in :numref:`Figure %s <appcafe4>`
 
 .. _appcafe4:
 
-.. figure:: images/appcafe4.png
+.. figure:: images/appcafe4a.png
    :scale: 100%
 
-   : |appcafe| - Viewing the Application's Screenshots
+   : |appcafe| - Viewing Firefox's Screenshots
 
-An example of the last tab, which has a list icon, is shown in
+Use the arrows on the left side of the window to browse through the
+screenshots.
+
+An example of the :guilabel:`list` tab is shown in
 :numref:`Figure %s <appcafe5>`.
 
 .. _appcafe5:
 
-.. figure:: images/appcafe5.png
+.. figure:: images/appcafe5a.png
    :scale: 100%
 
-   : |appcafe| - Viewing the Details of an Installed Application
+   : |appcafe| - Firefox Build Options and Dependencies
 
-This tab contains the following information. Click the right arrow next
-to an entry to expand its information and the down arrow to collapse
-the information.
+This tab contains several categories of system related information.
+Click the arrow next to an entry to expand or collapse it. Here is the
+information available in this tab:
 
-* **Build Options:** shows the values of the make options that the
-  package was built with.
+* **Build Options:** Shows the values of the make options the package
+  was built with.
 
-* **Dependencies:** lists the dependent packages that this
-  application requires to be installed.
+* **Dependencies:** Lists the dependent packages this application
+  requires to be installed.
 
-* **Required By:** indicates the names of any other packages that
+* **Required By:** Indicates the names of any other packages that
   require this software to be installed.
 
-* **Shared Libraries (Required):** lists the names of the libraries
-  that this application requires.
+* **Shared Libraries (Required):** Lists the names of the libraries
+  this application requires.
 
 .. index:: appcafe, manage software
 .. _Manage Installed Software:
@@ -224,9 +228,10 @@ click the :guilabel:`Installed` tab.  An example is seen in
 
 .. _appcafe6:
 
-.. figure:: images/appcafe6.png
+.. figure:: images/appcafe6a.png
+   :scale: 100%
 
-   : |appcafe| - Installed Tab
+   : |appcafe| - "Installed" Tab
 
 This screen offers several actions:
 
@@ -276,10 +281,10 @@ has been locked, and :guilabel:`alsa-plugins` is an orphan (flag icon).
 
 .. _appcafe7:
 
-.. figure:: images/appcafe7.png
+.. figure:: images/appcafe7a.png
    :scale: 100%
 
-   : |appcafe| - Viewing Applications With All Options Checked
+   : |appcafe| - Viewing Applications (All Options Checked)
 
 If you install or uninstall any software, click the :guilabel:`Pending`
 tab to view the details of the operation. In the example shown in
@@ -294,7 +299,7 @@ operation.
 .. figure:: images/appcafe8.png
    :scale: 100%
 
-   : |appcafe| - Viewing the Status of the Operation
+   : |appcafe| - Installation Status
 
 .. index:: update manager
 .. _Update Manager:
@@ -404,7 +409,7 @@ The :guilabel:`Settings` tab is shown in
 
 .. _update2:
 
-.. figure:: images/update2b.png
+.. figure:: images/update2c.png
    :scale: 100%
 
    : Update Manager "Settings" tab
@@ -558,7 +563,7 @@ bundle, as seen in :numref:`Figure %s <ssl1>`.
 .. figure:: images/ssl1.png
    :scale: 100%
    
-   : Configure Certificates tab of the Setup SSL menu
+   : Setup SSL - "Configure Certificates" tab
 
 This window is accessible by clicking the |sysadm| tray icon, then
 :guilabel:`Manage Connections`. Press :guilabel:`Import Certificate`
@@ -578,9 +583,9 @@ export a public key for a Server or Bridge Certificate, seen in
 .. figure:: images/ssl2.png
    :scale: 100%
    
-   : View Public Certificates tab of the Setup SSL menu
+   : Setup SSL - "View Public Certificates" tab
 
-Once a certificate is created, the :guilabel:`Connections` Tab, seen in
+Once a certificate is created, the :guilabel:`Connections` menu, seen in
 :numref:`Figure %s <ssl3>`, immediately opens.
 
 .. _ssl3:
@@ -588,7 +593,7 @@ Once a certificate is created, the :guilabel:`Connections` Tab, seen in
 .. figure:: images/ssl3.png
    :scale: 100%
    
-   : |sysadm| SSL Connections Tab
+   : "Connections" menu
 
 :guilabel:`Connections` aids the user in creating and managing
 secure connections. A column on the left side of the window contains all
@@ -820,7 +825,7 @@ is active and using port 5353 is open, with the firewall started.
 .. figure:: images/firewall1.png
    :scale: 100%
 
-   : |sysadm| Firewall Manager
+   : Firewall Manager
 
 The top row of the interface has options to configure the firewall.
 :guilabel:`Start` turns on the firewall, :guilabel:`Restart` will turn
@@ -861,7 +866,51 @@ to confirm the selections and open the desired port.
 To close a port, select a port from the :guilabel:`Open Ports`
 column and press :guilabel:`Close Ports`.
 
-.. index:: sysadm, configuration, services
+.. index:: mouse settings
+.. _Mouse Settings:
+
+Mouse Settings
+**************
+
+Adjust the settings of any connected mouse using this tool.
+:numref:`Figure %s <mset1>` shows the various tunables:
+
+.. _mset1:
+.. figure:: /images/mset1.png
+   :scale: 100%
+   
+   : Mouse Settings Window
+
+Use the :guilabel:`Mouse Device` bar to choose the mouse to adjust.
+Activate or disable mice with the :guilabel:`Active` checkbox. If the
+desired mouse is unavailable in the drop-down menu, ensure the mouse is
+connected and press the :guilabel:`refresh` button.
+
+These are the adjustable mouse settings:
+
+* **Acceleration:** Adjusts the speed multiplier of the mouse as it is
+  moved faster. *Exponential* acceleration continuously increases cursor
+  speed as the mouse is moved. *Linear* acceleration maintains a 1:1
+  ratio between mouse move speed and cursor movement.
+
+* **Dots per Inch (DPI):** Unit of mouse sensitivity. Higher DPIs
+  increase cursor movement when the mouse is moved.
+
+* **Handedness:** Adjust to reflect which hand uses the mouse.
+
+* **Terminate Drift:** Designate a number of pixels the mouse must be
+  moved before the cursor on the screen is adjusted.
+
+* **Emulate Button 3:** When checked, clicking left and right mouse
+  buttons together is read as a third button input.
+
+* **Virtual Scrolling:** Enables holding the middle mouse button and
+  moving the mouse to move a scrollbar. The mouse acceleration settings
+  also effect scrolling speed when this is enabled.
+  
+Be sure to click :guilabel:`Apply Settings` to save any changes.
+
+.. index:: service manager
 .. _Service Manager:
 
 Service Manager
@@ -876,7 +925,7 @@ several options to configure these services.
 .. figure:: images/service1.png
    :scale: 100%
 
-   : |sysadm| Service Manager
+   : Service Manager
 
 Services are listed in a chart with four columns:
 
@@ -891,22 +940,23 @@ Services are listed in a chart with four columns:
 
 * **Description:** If available, displays text describing the server.
 
-Underneath the chart is a row with multiple buttons:
+Underneath the chart is a row with multiple buttons. They are, from
+left to right:
 
-* **Play Icon:** Starts the selected service.
+* **Play:** Starts the selected service.
 
-* **Pause Icon:** Stops the selected service.
+* **Pause:** Stops the selected service.
 
-* **Reload Icon:** Restarts the selected service.
+* **Reload:** Restarts the selected service.
 
-* **Power On Icon:** Enables the service to automatically start on boot.
+* **Power On:** Enables the service to automatically start on boot.
 
-* **Power Off Icon:** Disables the service from starting on boot.
+* **Power Off:** Disables the service from starting on boot.
 
-Hovering over any of these icons will display a helpful description
-across the bottom of the window.
+Hovering over any of these icons displays a helpful description across
+the bottom of the window.
 
-.. index:: sysadm, configuration, tasks
+.. index:: task manager
 .. _Task Manager:
 
 Task Manager
@@ -921,7 +971,7 @@ a listing of currently running applications. An example is shown in
 .. figure:: images/task1.png
    :scale: 100%
 
-   : |sysadm| Task Manager
+   : Task Manager
 
 The "Running Programs:" section provides a graphical front-end to
 `top(1) <https://www.freebsd.org/cgi/man.cgi?query=top>`_.
@@ -929,7 +979,7 @@ The "Running Programs:" section provides a graphical front-end to
 The :guilabel:`Kill Selected Process` button can be used to terminate
 the selected process.
 
-.. index:: sysadm, configuration, users
+.. index:: user manager
 .. _User Manager:
 
 User Manager
@@ -950,32 +1000,31 @@ installation.
 
    : Viewing User Accounts in User Manager
 
-The :guilabel:`Standard` view allows you to configure the following:
+The :guilabel:`Standard` view has several options:
 
-* **User Name:** The name the user will use when they log in to the
+* **User Name:** The name an individual uses when logging in to the
   system. It is case sensitive and can not contain any spaces.
 
 * **Full Name:** This field provides a description of the account and
   can contain spaces.
 
-* **Password:** This is where you can change the password for the
-  user. The password is case-sensitive and can contain symbols. If you
-  want to display the password as you change it, click the
-  :guilabel:`eye` icon. Click the icon again to show dots in place of
-  the actual password.
+* **Password:** Create or change a password for the user. The password
+  is case-sensitive and can contain symbols. To display the password as
+  it is changed, click the :guilabel:`eye`. Click it again to show dots
+  in place of the password's characters.
 
 * **UID:** This value is greyed out as it is assigned by the operating
   system and cannot be changed after the user is created.
 
-* **Home Dir Path:** If you change the user's home directory, input the
-  full path.
+* **Home Dir Path:** To change the user's home directory, input the full
+  pathway to the new directory.
 
-* **Shell Path:** If you change the user's default shell, input the
-  full path to an installed shell. The paths for each installed shell
-  can be found in :file:`/etc/shells`.
+* **Shell Path:** To change the user's default shell, input the full
+  path to an installed shell. The paths for each installed shell are
+  found in :file:`/etc/shells`.
 
-If you make any changes to a user's "Details", click the
-:guilabel:`Save` button to save them.
+After making any changes to a user's :guilabel:`Details`, click
+:guilabel:`Save`.
 
 :numref:`Figure %s <user2>` demonstrates how this screen changes when
 clicking :guilabel:`New User`.
@@ -1394,7 +1443,7 @@ To schedule the replication, click :guilabel:`+` to display the
 
    : Scheduling a Replication
 
-Input the following information:
+Input this information:
 
 * **Host IP:** The IP address of the remote system to store the
   replicated snapshots.
