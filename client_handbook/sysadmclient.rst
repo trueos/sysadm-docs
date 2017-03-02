@@ -9,9 +9,10 @@ previously available in the |pcbsd| Control Panel are rewritten to use
 the |sysadm| API. This API is designed to simplify the management of any
 FreeBSD, |trueos| desktop, or |trueos| server system, either locally or
 remotely. Remote management is done via a secure connection from any
-operating system with the |sysadm| application installed. |sysadm| is
-built into |trueos|, but downloadable packages for other operating
-systems are available from the `SysAdm Website <https://sysadm.us/>`_.
+operating system with the |sysadm| application installed. The |sysadm|
+client is built into |trueos|, but downloadable packages for other
+operating systems are available from the
+`SysAdm Website <https://sysadm.us/>`_.
 
 .. note:: By default, |sysadm| does **not** allow for remote access to
    the system. Please review the
