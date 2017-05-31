@@ -1,7 +1,8 @@
-.. warning:: The iocage class is deactivated due to a rework of iocage.
-   The actions are being re-enabled as the iocage changes are added to
-   |sysadm|. Currently (last check: 2/27/17), **"activatepool"** and
-   **"deactivatepool"** are the only functional actions.
+.. warning:: Most iocage class actions are deactivated due to a rework
+   of iocage. The actions are being re-enabled as the iocage changes are
+   added to |sysadm|. As of 5/31/17, **"activatepool"**,
+   **"deactivatepool"**, **"listplugins"**, and **"listreleases"** are
+   the only functional actions.
 
 .. index:: iocage class
 .. _iocage:
@@ -13,44 +14,236 @@ The iocage class is used to manage jails, which provide a light-weight,
 operating system-level virtualization for running applications or
 services.
 
-Every iocage class request contains the following parameters:
+Every iocage class request contains these parameters:
 
-+---------------+-----------+----------------------------------------------+
-| Parameter     | Value     | Description                                  |
-|               |           |                                              |
-+===============+===========+==============================================+
-| id            |           | Any unique value for the request,            |
-|               |           | including a hash, checksum, or uuid.         |
-+---------------+-----------+----------------------------------------------+
-| name          | iocage    |                                              |
-|               |           |                                              |
-+---------------+-----------+----------------------------------------------+
-| namespace     | sysadm    |                                              |
-|               |           |                                              |
-+---------------+-----------+----------------------------------------------+
-| action        |           | Actions include "activatepool", "capjail",   |
-|               |           | "cleanall", "cleanjails", "cleanreleases",   |
-|               |           | "cleantemplates", "clonejail", "createjail", |
-|               |           | "deactivatepool", "destroyjail", "df",       |
-|               |           | "execjail", "getjailsettings", "listjails",  |
-|               |           | "startjail", and "stopjail".                 |
-+---------------+-----------+----------------------------------------------+
++-----------+-----------+----------------------------------------------+
+| Parameter | Value     | Description                                  |
+|           |           |                                              |
++===========+===========+==============================================+
+| id        |           | Any unique value for the request,            |
+|           |           | including a hash, checksum, or uuid.         |
++-----------+-----------+----------------------------------------------+
+| name      | iocage    |                                              |
+|           |           |                                              |
++-----------+-----------+----------------------------------------------+
+| namespace | sysadm    |                                              |
+|           |           |                                              |
++-----------+-----------+----------------------------------------------+
+| action    |           | Actions include "activatepool", "capjail",   |
+|           |           | "cleanall", "cleanjails", "cleanreleases",   |
+|           |           | "cleantemplates", "clonejail", "createjail", |
+|           |           | "deactivatepool", "destroyjail", "df",       |
+|           |           | "execjail", "getjailsettings", "listjails",  |
+|           |           | "listplugins", "listreleases", "startjail",  |
+|           |           | and "stopjail".                              |
++-----------+-----------+----------------------------------------------+
 
 The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
-.. index:: listjails, iocage
+.. index:: iocage listreleases
+.. _List Releases:
+
+List Releases
+=============
+
+The "listreleases action displays all supported FreeBSD releases for
+iocage jails.
+
+**REST Request**
+
+::
+
+ PUT /sysadm/iocage
+ {
+    "action" : "listreleases"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+    "args" : {
+       "action" : "listreleases"
+    },
+    "name" : "iocage",
+    "id" : "fooid",
+    "namespace" : "sysadm"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "listreleases": {
+       "local": [
+         ""
+       ],
+       "remote": [
+         "9.3-RELEASE (EOL)",
+         "10.1-RELEASE (EOL)",
+         "10.2-RELEASE (EOL)",
+         "10.3-RELEASE",
+         "11.0-RELEASE"
+       ]
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: iocage listplugins
+.. _List Plugins:
+
+List Plugins
+============
+
+The "listplugins" action shows all available plugins for *iocage*.
+
+**REST Request**
+
+::
+
+ PUT /sysadm/iocage
+ {
+    "action" : "listplugins"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+    "namespace" : "sysadm",
+    "args" : {
+       "action" : "listplugins"
+    },
+    "name" : "iocage",
+    "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "listplugins": {
+       "remote": {
+         "btsync": {
+           "description": "Resilient, fast and scalable file sync software for enterprises and individuals.",
+           "id": "btsync",
+           "name": "BitTorrent Sync"
+         },
+         "couchpotato": {
+           "description": "CouchPotato is an automatic NZB and torrent downloader.",
+           "id": "couchpotato",
+           "name": "CouchPotato"
+         },
+         "crashplan": {
+           "description": "Computer backup and data storage made simple.",
+           "id": "crashplan",
+           "name": "Crashplan"
+         },
+         "deluge": {
+           "description": "Bittorrent client using Python, and libtorrent-rasterbar",
+           "id": "deluge",
+           "name": "Deluge"
+         },
+         "emby": {
+           "description": "Home media server built using mono and other open source technologies",
+           "id": "emby",
+           "name": "Emby"
+         },
+         "gitlab": {
+           "description": "Powerful features for modern software development",
+           "id": "gitlab",
+           "name": "GitLab"
+         },
+         "jenkins": {
+           "description": "Jenkins CI",
+           "id": "jenkins",
+           "name": "Jenkins"
+         },
+         "jenkins-lts": {
+           "description": "Jenkins CI (Long Term Support Version)",
+           "id": "jenkins-lts",
+           "name": "Jenkins (LTS)"
+         },
+         "madsonic": {
+           "description": "Open-source web-based media streamer and jukebox.",
+           "id": "madsonic",
+           "name": "MadSonic"
+         },
+         "nextcloud": {
+           "description": "Access, share and protect your files, calendars, contacts, communication & more at home and in your enterprise.",
+           "id": "nextcloud",
+           "name": "NextCloud"
+         },
+         "plexmediaserver": {
+           "description": "The Plex media server system",
+           "id": "plexmediaserver",
+           "name": "Plex Media Server"
+         },
+         "plexmediaserver-plexpass": {
+           "description": "The Plex media server system",
+           "id": "plexmediaserver-plexpass",
+           "name": "Plex Media Server (PlexPass)"
+         },
+         "quasselcore": {
+           "description": "Quassel Core is a daemon/headless IRC client, part of Quassel, that supports 24/7 connectivity. Quassel Client can be attached to it to.",
+           "id": "quasselcore",
+           "name": "Quasselcore"
+         },
+         "sickrage": {
+           "description": "Automatic Video Library Manager for TV Shows",
+           "id": "sickrage",
+           "name": "SickRage"
+         },
+         "sonarr": {
+           "description": "PVR for Usenet and BitTorrent users",
+           "id": "sonarr",
+           "name": "Sonarr"
+         },
+         "subsonic": {
+           "description": "Open-source web-based media streamer and jukebox.",
+           "id": "subsonic",
+           "name": "SubSonic"
+         },
+         "syncthing": {
+           "description": "Personal cloud sync",
+           "id": "syncthing",
+           "name": "Syncthing"
+         },
+         "transmission": {
+           "description": "Fast and lightweight daemon BitTorrent client",
+           "id": "transmission",
+           "name": "Transmission"
+         }
+       }
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: iocage listjails
 .. _List Jails:
 
 List Jails
 ==========
 
-The "listjails" action lists information about currently installed jails.
-For each jail, the response includes the UUID of the jail, whether or
-not the jail has been configured to start at system boot, the jail ID
-(only applies to running jails), whether or not the jail is running, a
-friendly name for the jail (tag), and the type of jail (basejail or
-thickjail).
+The "listjails" action lists information about currently installed
+jails. For each jail, the response includes the UUID of the jail,
+whether or not the jail has been configured to start at system boot,
+the jail ID (only applies to running jails), whether or not the jail is
+running, a friendly name for the jail (tag), and the type of jail
+(basejail or thickjail).
 
 **REST Request**
 
@@ -115,7 +308,7 @@ thickjail).
   "namespace": "sysadm"
  }
 
-.. index:: getjailsettings, iocage
+.. index:: iocage getjailsettings
 .. _Jail Settings:
 
 Jail Settings
@@ -387,7 +580,7 @@ jail, as both modes produce identical outputs:
   "namespace": "sysadm"
  }
 
-.. index:: df, iocage
+.. index:: iocage df
 .. _List Resource Usage:
 
 List Resource Usage
@@ -409,7 +602,7 @@ name).
 
 **WebSocket Request**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
    "namespace" : "sysadm",
@@ -422,7 +615,7 @@ name).
 
 **Response**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
   "args": {
@@ -450,7 +643,7 @@ name).
   "namespace": "sysadm"
  }
 
-.. index:: startjail, iocage
+.. index:: iocage startjail
 .. _Start a Jail:
 
 Start a Jail
@@ -518,7 +711,7 @@ The "startjail" action starts the specified jail.
   "namespace": "sysadm"
  }
 
-.. index:: stopjail, iocage
+.. index:: iocage stopjail
 .. _Stop a Jail:
 
 Stop a Jail
@@ -588,7 +781,7 @@ The "stopjail" action stops the specified jail.
   "namespace": "sysadm"
  }
 
-.. index:: capjail, iocage
+.. index:: iocage capjail
 .. _Cap a Jail:
 
 Cap a Jail
@@ -637,7 +830,7 @@ want to apply the changes without restarting the jail.
   "namespace": "sysadm"
  }
 
-.. index:: clonejail, iocage
+.. index:: iocage clonejail
 .. _Clone a Jail:
 
 Clone a Jail
@@ -664,7 +857,7 @@ has a different name than the jail it was cloned from.
 
 **WebSocket Request**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
    "namespace" : "sysadm",
@@ -679,7 +872,7 @@ has a different name than the jail it was cloned from.
 
 **Response**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
   "args": {
@@ -711,7 +904,7 @@ values and the props returned in the response is empty:
 
 **WebSocket Request**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
    "args" : {
@@ -725,7 +918,7 @@ values and the props returned in the response is empty:
 
 **Response**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
   "args": {
@@ -742,7 +935,7 @@ values and the props returned in the response is empty:
   "namespace": "sysadm"
  }
 
-.. index:: createjail, iocage
+.. index:: iocage createjail
 .. _Create a Jail:
 
 Create a Jail
@@ -846,7 +1039,7 @@ for the list of available switches.
   "namespace": "sysadm"
  }
 
-.. index:: destroyjail, iocage
+.. index:: iocage destroyjail
 .. _Destroy a Jail:
 
 Destroy a Jail
@@ -897,7 +1090,7 @@ jail is running.
   "namespace": "sysadm"
  }
 
-.. index:: execjail, iocage
+.. index:: iocage execjail
 .. _Run Command:
 
 Run Command
@@ -953,7 +1146,7 @@ output from the command.
   "namespace": "sysadm"
  }
 
-.. index:: cleanjails, iocage
+.. index:: iocage cleanjails
 .. _Clean Jails:
 
 Clean Jails
@@ -999,7 +1192,7 @@ all data stored in the jails.
   "namespace": "sysadm"
  }
 
-.. index:: cleanreleases, iocage
+.. index:: iocage cleanreleases
 .. _Clean Releases:
 
 Clean Releases
@@ -1050,7 +1243,7 @@ basejails still exist.
   "namespace": "sysadm"
  }
 
-.. index:: cleantemplates, iocage
+.. index:: iocage cleantemplates
 .. _Clean Templates:
 
 Clean Templates
@@ -1095,7 +1288,7 @@ The "cleantemplates" action destroys all existing jail templates.
   "namespace": "sysadm"
  }
 
-.. index:: cleanall, iocage
+.. index:: iocage cleanall
 .. _Clean All:
 
 Clean All
@@ -1140,7 +1333,7 @@ The "cleanall" action destroys everything associated with iocage.
   "namespace": "sysadm"
  }
 
-.. index:: activatepool, iocage
+.. index:: iocage activatepool
 .. _Activate a Pool:
 
 Activate a Pool
@@ -1156,40 +1349,40 @@ These examples specify the pool to use:
 
 .. code-block:: none
 
-   PUT /sysadm/iocage
-   {
-      "action" : "activatepool",
-      "pool" : "tank1"
-   }
+ PUT /sysadm/iocage
+ {
+    "action" : "activatepool",
+    "pool" : "tank1"
+ }
 
 **WebSocket Request**
 
 .. code-block:: json
 
-   {
-      "name" : "iocage",
-      "args" : {
-         "pool" : "tank1",
-         "action" : "activatepool"
-      },
-      "id" : "fooid",
-      "namespace" : "sysadm"
-   }
+ {
+    "name" : "iocage",
+    "args" : {
+       "pool" : "tank1",
+       "action" : "activatepool"
+    },
+    "id" : "fooid",
+    "namespace" : "sysadm"
+ }
 
 **Response**
 
 .. code-block:: json
 
-   {
-     "args": {
-       "activatepool": {
-         "success": "pool tank1 activated."
-       }
-     },
-     "id": "fooid",
-     "name": "response",
-     "namespace": "sysadm"
-   }
+ {
+   "args": {
+     "activatepool": {
+       "success": "pool tank1 activated."
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
 
 These examples show responses when the pool is not specified:
 
@@ -1197,24 +1390,24 @@ These examples show responses when the pool is not specified:
 
 .. code-block:: none
 
-   PUT /sysadm/iocage
-   {
-      "action" : "activatepool"
-   }
+ PUT /sysadm/iocage
+ {
+    "action" : "activatepool"
+ }
 
 **REST Response**
 
 .. code-block:: json
 
-   {
-      "args": {
-          "activatepool": {
-              "currently active": {
-                 "pool": " tank"
-              }
-          }
-      }
-   }
+ {
+    "args": {
+        "activatepool": {
+            "currently active": {
+               "pool": " tank"
+            }
+        }
+    }
+ }
 
 **WebSocket Request**
 
@@ -1246,7 +1439,7 @@ These examples show responses when the pool is not specified:
   "namespace": "sysadm"
  }
 
-.. index:: deactivatepool, iocage
+.. index:: iocage deactivatepool
 .. _Deactivate a Pool:
 
 Deactivate a Pool
@@ -1263,37 +1456,37 @@ activated pool or activate the old pool again.
 
 .. code-block:: none
 
-   PUT /sysadm/iocage
-   {
-      "pool" : "tank1",
-      "action" : "deactivatepool"
-   }
+ PUT /sysadm/iocage
+ {
+    "pool" : "tank1",
+    "action" : "deactivatepool"
+ }
 
 **WebSocket Request**
 
 .. code-block:: json
 
-   {
-      "name" : "iocage",
-      "args" : {
-         "action" : "deactivatepool",
-         "pool" : "tank1"
-      },
-      "id" : "fooid",
-      "namespace" : "sysadm"
-   }
+ {
+    "name" : "iocage",
+    "args" : {
+       "action" : "deactivatepool",
+       "pool" : "tank1"
+    },
+    "id" : "fooid",
+    "namespace" : "sysadm"
+ }
 
 **Response**
 
 .. code-block:: json
 
-   {
-     "args": {
-       "deactivatepool": {
-         "success": "pool tank1 deactivated."
-       }
-     },
-     "id": "fooid",
-     "name": "response",
-     "namespace": "sysadm"
-   }
+ {
+  "args": {
+    "deactivatepool": {
+      "success": "pool tank1 deactivated."
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
