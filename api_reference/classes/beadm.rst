@@ -294,7 +294,7 @@ and forcefully unmounts it.
   "id": "fooid",
   "name": "response",
   "namespace": "sysadm"
- } 
+ }
 
 .. index:: mountbe, beadm
 .. _Mount a Boot Environment:

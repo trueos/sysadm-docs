@@ -724,7 +724,7 @@ This action supports several parameters:
   "name": "response",
   "namespace": "sysadm"
  }
- 
+
 .. index:: listreplication, Life Preserver
 .. _List Replications:
 

@@ -90,7 +90,7 @@ Group Delete
     "action" : "groupdelete",
     "name" : "groupToDelete"
  }
- 
+
 **WebSocket Request**
 
 .. code-block:: json
@@ -104,7 +104,7 @@ Group Delete
     },
     "name" : "users"
  }
- 
+
 **Response**
 
 .. code-block:: json
@@ -140,7 +140,7 @@ choices:
 ::
 
  PUT sysadm/users
- 
+
  {
     "action": "groupmod"
  }
@@ -159,7 +159,7 @@ choices:
      "users":["user1","user2"]
    }
  }
- 
+
 **Response**
 
 .. code-block:: json
@@ -344,7 +344,7 @@ request:
 ::
 
  PUT /sysadm/users
- 
+
  {
     "password" : "test",
     "name" : "test2",
@@ -445,7 +445,7 @@ the request to alter the existing user name.
 ::
 
  PUT /sysadm/users
- 
+
  {
     "action" : "usermod",
     "comment" : "somecomment",
@@ -494,7 +494,7 @@ system, regardless of active/inactive status.
 ::
 
  PUT /sysadm/users
- 
+
  {
  "action" : "usershow"
  }

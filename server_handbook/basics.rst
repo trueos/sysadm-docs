@@ -66,11 +66,11 @@ To run under jobd(8)
 
 .. danger:: Several ports on the system firewall will need to be opened
    for |sysadm| to have remote access functionality:
-   
+
    * Port 12149 for WebSocket interaction.
    * Port 12150 for the REST interface.
    * Port 12151 for the |sysadm| bridge server.
-   
+
    The user can also designate their own ports for |sysadm|.
 
 .. index:: Bridge initialization
@@ -136,7 +136,7 @@ Adding a Client to the Server/Bridge Connection
 
 In the client UI, create or import an SSL key bundle as prompted by the
 UI. Once the new SSL keys are created, open
-:menuselection:`Setup SSL --> View Certificates` in the connection 
+:menuselection:`Setup SSL --> View Certificates` in the connection
 manager and click :guilabel:`Export Public Key` for both the server and
 bridge keys. This will export both SSL keys in file form, depositing
 them in either the :file:`Desktop` folder or home directory (depending

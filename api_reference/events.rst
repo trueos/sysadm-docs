@@ -260,7 +260,7 @@ error has occurred:
     "hostnamechanged" : "true",
     "zpools" : {
       "<poolname>" : {
-        "size" : "<107G>", 
+        "size" : "<107G>",
         "alloc" : "<13.1G>",
         "free" : "<93.9G>",
         "frag" : "<6%>",

@@ -6,7 +6,7 @@ firewall
 
 The firewall class is used for managing the "ipfw" firewall on the system.
 
-.. note:: This class does *not* manage a "pf" firewall. 
+.. note:: This class does *not* manage a "pf" firewall.
 
 Every user request will have several parameters:
 
@@ -102,7 +102,7 @@ combinations for the firewall.
 **REST Request**
 
 .. code-block:: none
- 
+
  PUT /sysadm/firewall
  {
     "action" : "list_open"

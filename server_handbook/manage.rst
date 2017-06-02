@@ -19,7 +19,7 @@ current default settings for |sysadm|:
   PORT=12150
   # - REST Server (started with the "-rest" CLI flag)
   PORT_REST=12151
-  
+
 This default configuration also has blacklist options:
 
 .. code-block:: none

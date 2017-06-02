@@ -82,7 +82,7 @@ Finding Software
 
 The "Browse" tab, shown in
 :numref:`Figure %s <appcafe1>`, is used to find
-available software. 
+available software.
 
 .. _appcafe1:
 
@@ -106,7 +106,7 @@ applications).
 click the "binoculars" icon. Alternately, enter a description. For
 example, a search for "browser" will display software with "browser"
 in the name as well as applications which provide browser
-functionality, such as Firefox. 
+functionality, such as Firefox.
 
 **Browse Categories:** This drop-down menu lists the available software
 categories. If you select a category, it will only display or show
@@ -153,8 +153,8 @@ Beneath this area are 4 tabs. The first tab on the left contains two
 panes. The first (middle) pane displays the package description. The
 second (bottom) pane displays the message that appears when the
 package is installed.
-  
-An example of the :guilabel:`?` tab is shown in 
+
+An example of the :guilabel:`?` tab is shown in
 :numref:`Figure %s <appcafe3>`
 
 .. _appcafe3:
@@ -278,7 +278,7 @@ allows you to select or deselect a number of options:
   Instead, whenever you uninstall an application, any orphans will also
   automatically uninstall.
 
-In the example shown in 
+In the example shown in
 :numref:`Figure %s <appcafe7>`,
 the user has checked all available options. In this example,
 :guilabel:`aalib` has dependencies (banner icon), :guilabel:`alsa-lib`
@@ -446,7 +446,7 @@ This tab contains several configurable options:
   the reboot time can be configured to a specific hour of the day.
   Highlight the hour number and either type a new hour, or use the
   :guilabel:`arrows` to increase or decrease the hour. Highlight
-  :guilabel:`AM/PM` to adjust this value. 
+  :guilabel:`AM/PM` to adjust this value.
 
 * **Repositories:** |trueos| uses two repositories for updates,
   :guilabel:`STABLE` and :guilabel:`UNSTABLE`. :guilabel:`STABLE` will
@@ -476,7 +476,7 @@ show the contents of the selected :file:`.log`.
 
 .. figure:: images/update3.png
    :scale: 100%
-   
+
    : Update Manager "Recent Updates" tab
 
 This tab is useful to review previous updates for errors and check when
@@ -496,7 +496,7 @@ bundle, as seen in :numref:`Figure %s <ssl1>`.
 
 .. figure:: images/ssl1.png
    :scale: 100%
-   
+
    : Setup SSL - "Configure Certificates" tab
 
 This window is accessible by clicking the |sysadm| tray icon, then
@@ -516,7 +516,7 @@ export a public key for a Server or Bridge Certificate, seen in
 
 .. figure:: images/ssl2.png
    :scale: 100%
-   
+
    : Setup SSL - "View Public Certificates" tab
 
 Once a certificate is created, the :guilabel:`Connections` menu, seen in
@@ -526,7 +526,7 @@ Once a certificate is created, the :guilabel:`Connections` menu, seen in
 
 .. figure:: images/ssl3.png
    :scale: 100%
-   
+
    : "Connections" menu
 
 :guilabel:`Connections` aids the user in creating and managing
@@ -682,7 +682,7 @@ Each entry contains the same information, displayed here in
    +------------+---------------------------------------------------------+
 
 Sort the list of BEs by clicking the column names.
-   
+
 Manage these boot environments using the buttons across the top bar as
 described in :numref:`Table %s <mbetable2>`
 
@@ -765,7 +765,7 @@ The top row of the interface has options to configure the firewall.
 :guilabel:`Start` turns on the firewall, :guilabel:`Restart` will turn
 the firewall off and on again, and :guilabel:`Stop` turns the firewall
 off. On the right side of the row are two buttons, :guilabel:`Power On`
-and :guilabel:`Power Off`. 
+and :guilabel:`Power Off`.
 
 .. note:: In :numref:`Figure %s <firewall1>`, the :guilabel:`Start`
    option is greyed out, as the firewall is currently active. Additionally,
@@ -812,7 +812,7 @@ Adjust the settings of any connected mouse using this tool.
 .. _mset1:
 .. figure:: /images/mset1.png
    :scale: 100%
-   
+
    : Mouse Settings Window
 
 Use the :guilabel:`Mouse Device` bar to choose the mouse to adjust.
@@ -841,7 +841,7 @@ These are the adjustable mouse settings:
 * **Virtual Scrolling:** Enables holding the middle mouse button and
   moving the mouse to move a scrollbar. The mouse acceleration settings
   also effect scrolling speed when this is enabled.
-  
+
 Be sure to click :guilabel:`Apply Settings` to save any changes.
 
 .. index:: service manager
@@ -1073,7 +1073,7 @@ worthless without the system it was paired with. GELI is used by default
 in |trueos| as it is more fully featured over PEFS.
 
 .. warning:: USB devices do eventually fail. Always backup any important
-   files stored on the PersonaCrypt device to another device or system. 
+   files stored on the PersonaCrypt device to another device or system.
 
 The :guilabel:`PersonaCrypt` tab can be used to initialize a
 PersonaCrypt device for any login user, **except** for the currently
@@ -1081,7 +1081,7 @@ logged in user. In the example shown in
 :numref:`Figure %s <user5>`, a new user, named *dlavigne*, has been
 created and the entry for the user has been clicked.
 
-.. _user5: 
+.. _user5:
 
 .. figure:: images/user5.png
    :scale: 100%
@@ -1478,7 +1478,7 @@ next to the "camera" icon to modify the highlighted schedule or the
 
 This screen can also be used to manage the ZFS scrub schedule. Scrubs
 are recommended as they can provide an early indication of a potential
-disk failure. Scrubs can be scheduled on a per-pool basis. 
+disk failure. Scrubs can be scheduled on a per-pool basis.
 
 .. tip:: If you have multiple pools, be sure to create a scrub schedule
    for each pool.

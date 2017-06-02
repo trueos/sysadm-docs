@@ -363,7 +363,7 @@ local repository.
 **REST Request**
 
 ::
- 
+
  PUT /sysadm/pkg
  {
    "repo" : "local",
@@ -651,7 +651,7 @@ to and query dispatcher events.
       "state" : "finished"
       }
     }
- }  
+ }
 
 .. index:: pkg_check_upgrade, pkg
 .. _Check Packages:

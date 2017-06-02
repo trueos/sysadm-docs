@@ -56,6 +56,6 @@ Documentation for the |sysadm| project is split amongst three handbooks:
 
 * **Client Handbook**: A detailed guide to all client side functions
   of |sysadm|.
-  
+
 * **Server Handbook**: A basic guide to initializing |sysadm| with
   a bridge and server connection.

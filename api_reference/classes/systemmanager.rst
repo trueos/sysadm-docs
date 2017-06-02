@@ -140,7 +140,7 @@ The "cpupercentage" action returns the usage percentage of each CPU.
 
 **WebSocket Request**
 
-.. code-block:: json 
+.. code-block:: json
 
  {
    "args" : {

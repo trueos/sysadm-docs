@@ -4,8 +4,8 @@
 Getting Started
 ***************
 
-Welcome to the |sysadm| API (application programming interface) 
-Reference Guide! |sysadm| is a complex utility with many integral 
+Welcome to the |sysadm| API (application programming interface)
+Reference Guide! |sysadm| is a complex utility with many integral
 subsystems and classes, and this reference guide will attempt to
 accurately represent the initialization, core features, and intricacies
 of the utility.
@@ -53,7 +53,7 @@ token authentication and username/password requests are server side only.
           password requests altogether.
 
 **1. Username and Password:**
-  
+
   **WebSocket Request: (Server only)**
 
   .. code-block:: json
@@ -62,9 +62,9 @@ token authentication and username/password requests are server side only.
     "namespace" : "rpc",
     "name" : "auth",
     "id" : "sampleID",
-    "args" : { 
-      "username" : "myuser", 
-      "password" : "mypassword" 
+    "args" : {
+      "username" : "myuser",
+      "password" : "mypassword"
       }
     }
 
@@ -81,7 +81,7 @@ token authentication and username/password requests are server side only.
     "namespace" : "rpc",
     "name" : "auth_token",
     "id" : "sampleID",
-    "args" : { 
+    "args" : {
           "token" : "MySavedAuthToken"
           }
     }
@@ -102,7 +102,7 @@ rather than direct user requests.
     "name" : "auth_ssl",
     "id" : "sampleID",
     "args" : ""
-    } 
+    }
 
   **WebSocket Reply (Stage 1)**
 
@@ -136,7 +136,7 @@ accurate transport back to the server.
       "encrypted_string" : "<base64-encoded string>"
       }
     }
-  
+
 A successful authentication will provide a similar reply:
 
   **WebSocket Reply**
@@ -180,7 +180,7 @@ has timed out due to inactivity will have a specific message:
     }
 
 To clear a pre-saved authentication token, such as signing out:
-  
+
 **WebSocket Request**
 
   .. code-block:: json
@@ -191,10 +191,8 @@ To clear a pre-saved authentication token, such as signing out:
     "id" : "sampleID",
     "args" : "junk argument"
     }
-  
 
-
-**3.2. Alternate SSL Certificate Authentication Initiation (server 
+**3.2. Alternate SSL Certificate Authentication Initiation (server
 through bridge)**
 
 This is an alternate method for stage 1 of the SSL Certificate
@@ -205,7 +203,7 @@ decrypt messages between client and server for the duration of the
 connection.
 
   **WebSocket Request (Stage 1 - Initial Request)**
-  
+
   .. code-block:: json
 
     {
@@ -216,8 +214,7 @@ connection.
       "action" : "auth_ssl",
       "md5_key" : "<base 64 encoded key>"
       }
-    } 
-
+    }
 
   **WebSocket Reply (Stage 1)**
 
@@ -233,16 +230,15 @@ connection.
       "namespace": "rpc"
     }
 
-
 .. danger:: In the reply above, both values for "test_string" and
-            "new_ssl_key" are encrypted with the public SSL key matching
-            the md5 sum from the initial request and then base 64
-            encoded for transport. All future messages are bulk
-            encrypted with the "new_ssl_key", which is a new randomly
-            generated private key only known to the server and client.
-            For example, the following section {"id", "name",
-            "namespace","args"} will now be encrypted with the private
-            key in one block prior to transport through the bridge.
+   "new_ssl_key" are encrypted with the public SSL key matching
+   the md5 sum from the initial request and then base 64
+   encoded for transport. All future messages are bulk
+   encrypted with the "new_ssl_key", which is a new randomly
+   generated private key only known to the server and client.
+   For example, the following section {"id", "name",
+   "namespace","args"} will now be encrypted with the private
+   key in one block prior to transport through the bridge.
 
 .. index:: ssl certificate management
 .. _SSL Certificate Management:
@@ -586,7 +582,7 @@ submit a new job to the dispatcher:
   "id": "fooid",
   "name": "response",
   "namespace": "rpc"
- } 
+ }
 
 When submitting a job to the dispatcher, there are several points to
 remember:
