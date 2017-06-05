@@ -926,24 +926,18 @@ msgid ""
 "Multiple snapshot schedules are supported if the system has multiple pools."
 msgstr ""
 
-#: ../../sysadmclient.rst:1451
-msgid ""
-"Snapshots are created on the entire pool as they are needed when "
-":ref:`Restoring the Operating System`."
-msgstr ""
-
-#: ../../sysadmclient.rst:1454
+#: ../../sysadmclient.rst:1453
 msgid ""
 "To create a snapshot schedule, click the :guilabel:`camera` icon in the "
 "lower left corner of this tab. This will activate the \"Setup Snapshot "
 "Schedule\" pane as seen in :numref:`Figure %s <lpreserver4>`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1465
+#: ../../sysadmclient.rst:1464
 msgid "This pane contains several options:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1470
+#: ../../sysadmclient.rst:1469
 msgid ""
 "**Snapshots to keep:** Snapshots are automatically pruned after the "
 "specified number of snapshots to prevent snapshots from eventually using up "
@@ -954,7 +948,7 @@ msgid ""
 "manually in the :guilabel:`Snapshots` tab."
 msgstr ""
 
-#: ../../sysadmclient.rst:1479
+#: ../../sysadmclient.rst:1478
 msgid ""
 "**Frequency:** Use the drop-down menu to select how often snapshots occur. "
 "Options include \"Daily\" (which will allow you to select the time of day), "
@@ -962,37 +956,37 @@ msgid ""
 "Minutes\"."
 msgstr ""
 
-#: ../../sysadmclient.rst:1484
+#: ../../sysadmclient.rst:1483
 msgid ""
 "Once you have created a snapshot schedule, you can use the \"gear\" icon "
 "next to the \"camera\" icon to modify the highlighted schedule or the \"X\" "
 "icon to delete the highlighted schedule."
 msgstr ""
 
-#: ../../sysadmclient.rst:1495
+#: ../../sysadmclient.rst:1494
 msgid ""
 "To schedule when the scrub occurs, click the third icon from the right which"
 " will activate the \"Setup Scrub Schedule\" screen shown in :numref:`Figure "
 "%s <lpreserver5>`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1514
+#: ../../sysadmclient.rst:1513
 msgid ""
 "Once you have created a scrub schedule, you can use the \"gear\" icon next "
 "to the \"schedule scrub\" icon to modify the highlighted schedule or the "
 "\"X\" icon to delete the highlighted schedule."
 msgstr ""
 
-#: ../../sysadmclient.rst:1524
+#: ../../sysadmclient.rst:1523
 msgid ""
 "The :guilabel:`Settings` tab is shown in :numref:`Figure %s <lpreserver6>`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1534
+#: ../../sysadmclient.rst:1533
 msgid "Many settings are configurable:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1536
+#: ../../sysadmclient.rst:1535
 msgid ""
 "**Disk Usage Warning:** Enter a number up to 99 to indicate at which "
 "percentage of disk space Life Preserver will display an alert in the system "
@@ -1000,81 +994,41 @@ msgid ""
 "space."
 msgstr ""
 
-#: ../../sysadmclient.rst:1541
+#: ../../sysadmclient.rst:1540
 msgid ""
 "**Email:** To receive an email when disk usage reaches the percentage "
 "configured in the \"Disk Usage Warning\", enter an email address."
 msgstr ""
 
-#: ../../sysadmclient.rst:1544
+#: ../../sysadmclient.rst:1543
 msgid ""
 "**Email Trigger:** This setting can be set to \"All\", \"Warn\", or "
 "\"Error\" and indicates the type of condition which will trigger an email "
 "message."
 msgstr ""
 
-#: ../../sysadmclient.rst:1547
+#: ../../sysadmclient.rst:1546
 msgid "**Recursive Management:**"
 msgstr ""
 
-#: ../../sysadmclient.rst:1549
+#: ../../sysadmclient.rst:1548
 msgid ""
 "If you make any changes in this screen, press :guilabel:`Save Settings` to "
 "apply them."
 msgstr ""
 
-#: ../../sysadmclient.rst:1558
+#: ../../sysadmclient.rst:1557
 msgid ""
 "The :command:`lpreserver` command line utility can also be used to manage "
 "snapshots and replication. This command needs to be run as the superuser. To"
 " display its usage, type the command without any arguments:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1578
+#: ../../sysadmclient.rst:1577
 msgid ""
 "Each command has its own help text that describes its parameters and "
 "provides a usage example. For example, to receive help on how to use the "
 ":command:`lpreserver cronsnap` command, type:"
-msgstr ""
-
-#: ../../sysadmclient.rst:1681
-msgid "Restoring the Operating System"
-msgstr ""
-
-#: ../../sysadmclient.rst:1683
-msgid ""
-"If you have replicated the system's snapshots to a remote backup server, you"
-" can use a |trueos| installation media to perform an operating system "
-"restore or to clone another system. Start the installation as usual until "
-"you get to the screen shown in :numref:`Figure %s <restore1>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:1696
-msgid ""
-"Before you can perform a restore, the network interface must be configured. "
-"Click :guilabel:`Network Connectivity` (second icon from the left) in order "
-"to determine if the network connection was automatically detected. If not, "
-"refer to the instructions in the `Network Manager "
-"<https://www.trueos.org/handbook/using.html#network-manager>`_ section of "
-"the |trueos| handbook and make sure that networking is working before "
-"continuing."
-msgstr ""
-
-#: ../../sysadmclient.rst:1704
-msgid ""
-"Once you are ready, click :guilabel:`Restore from Life-Preserver backup` and"
-" :guilabel:`Next`. This will start the Restore Wizard. In the screen shown "
-"in :numref:`Figure %s <restore2>`, input the IP address of the backup server"
-" and the name of the user account used to replicate the snapshots. If the "
-"server is listening on a non-standard SSH port, change the \"SSH port\" "
-"number."
-msgstr ""
-
-#: ../../sysadmclient.rst:1719
-msgid ""
-"Click :guilabel:`Next` and the wizard will provide a summary of your "
-"selections. If correct, click :guilabel:`Finish`; otherwise, click "
-":guilabel:`Back` to correct them."
 msgstr ""
 
 #: ../../sysadmclient.rst:54
@@ -1178,26 +1132,26 @@ msgid ""
 "snapshot."
 msgstr ""
 
-#: ../../sysadmclient.rst:1467
+#: ../../sysadmclient.rst:1466
 msgid ""
 "**Storage Pool:** Select the ZFS storage pool that contains the datasets "
 "that you wish to snapshot."
 msgstr ""
 
-#: ../../sysadmclient.rst:1488
+#: ../../sysadmclient.rst:1487
 msgid ""
 "This screen can also be used to manage the ZFS scrub schedule. Scrubs are "
 "recommended as they can provide an early indication of a potential disk "
 "failure. Scrubs can be scheduled on a per-pool basis."
 msgstr ""
 
-#: ../../sysadmclient.rst:1492
+#: ../../sysadmclient.rst:1491
 msgid ""
 "If you have multiple pools, be sure to create a scrub schedule for each "
 "pool."
 msgstr ""
 
-#: ../../sysadmclient.rst:1506
+#: ../../sysadmclient.rst:1505
 msgid ""
 "Select the pool from the :guilabel:`Storage Pool` drop-down menu, then "
 "select the :guilabel:`Frequency`. Supported frequencies are \"Daily\", "
@@ -1269,46 +1223,22 @@ msgstr ""
 msgid ": Scheduling a Replication"
 msgstr ""
 
-#: ../../sysadmclient.rst:1463
+#: ../../sysadmclient.rst:1462
 msgid ": Scheduling a Snapshot"
 msgstr ""
 
-#: ../../sysadmclient.rst:1504
+#: ../../sysadmclient.rst:1503
 msgid ": Scheduling a Scrub"
 msgstr ""
 
-#: ../../sysadmclient.rst:1532
+#: ../../sysadmclient.rst:1531
 msgid ": Life Preserver Settings"
 msgstr ""
 
-#: ../../sysadmclient.rst:1639
+#: ../../sysadmclient.rst:1638
 msgid ""
 ":numref:`Table %s <cmdgui>` shows the command line equivalents to the "
 "graphical options provided by the Life Preserver GUI."
-msgstr ""
-
-#: ../../sysadmclient.rst:1694
-msgid ": Selecting to Restore/Clone From Backup"
-msgstr ""
-
-#: ../../sysadmclient.rst:1717
-msgid ": Input the Information for a SSH Restore"
-msgstr ""
-
-#: ../../sysadmclient.rst:1723
-msgid ""
-"Once the connection to the backup server succeeds, you will be able to "
-"select which host to restore. After making your selection, click "
-":guilabel:`Next`. The restore wizard will provide a summary of which host it"
-" will restore from, the name of the user account associated with the "
-"replication, and the hostname of the target system. Click :guilabel:`Finish`"
-" and the installer will proceed to the `Disk Selection Screen "
-"<https://www.trueos.org/handbook/install.html#disk-selection-screen>`_. At "
-"this point, you can click the :guilabel:`Customize` button to customize the "
-"disk options. However, in the screen shown in Figure 3.3h, the ZFS datasets "
-"will be greyed out as they will be recreated from the backup during the "
-"restore. Once you are finished with any customizations, click "
-":guilabel:`Next` to perform the restore."
 msgstr ""
 
 #: ../../sysadmclient.rst:1130
@@ -1511,99 +1441,99 @@ msgstr ""
 msgid ": Command Line and GUI Equivalents"
 msgstr ""
 
-#: ../../sysadmclient.rst:1647
+#: ../../sysadmclient.rst:1646
 msgid "Command Line"
 msgstr ""
 
-#: ../../sysadmclient.rst:1647
+#: ../../sysadmclient.rst:1646
 msgid "GUI Tab"
 msgstr ""
 
 #: ../../sysadmclient.rst:550 ../../sysadmclient.rst:670
-#: ../../sysadmclient.rst:703 ../../sysadmclient.rst:1647
+#: ../../sysadmclient.rst:703 ../../sysadmclient.rst:1646
 msgid "Description"
 msgstr ""
 
-#: ../../sysadmclient.rst:1649
+#: ../../sysadmclient.rst:1648
 msgid "cronsnap"
 msgstr ""
 
-#: ../../sysadmclient.rst:1292 ../../sysadmclient.rst:1649
-#: ../../sysadmclient.rst:1667
+#: ../../sysadmclient.rst:1292 ../../sysadmclient.rst:1648
+#: ../../sysadmclient.rst:1666
 msgid "Snapshots"
 msgstr ""
 
-#: ../../sysadmclient.rst:1649
+#: ../../sysadmclient.rst:1648
 msgid ""
 "Schedule when snapshots occur and how long to keep them; the **stop** option"
 " can be used to disable snapshot creation"
 msgstr ""
 
-#: ../../sysadmclient.rst:1654
+#: ../../sysadmclient.rst:1653
 msgid "cronscrub"
 msgstr ""
 
-#: ../../sysadmclient.rst:1445 ../../sysadmclient.rst:1654
+#: ../../sysadmclient.rst:1445 ../../sysadmclient.rst:1653
 msgid "Schedules"
 msgstr ""
 
-#: ../../sysadmclient.rst:1654
+#: ../../sysadmclient.rst:1653
 msgid "Schedule a ZFS scrub"
 msgstr ""
 
-#: ../../sysadmclient.rst:1656
+#: ../../sysadmclient.rst:1655
 msgid "get"
 msgstr ""
 
-#: ../../sysadmclient.rst:1522 ../../sysadmclient.rst:1656
-#: ../../sysadmclient.rst:1663
+#: ../../sysadmclient.rst:1521 ../../sysadmclient.rst:1655
+#: ../../sysadmclient.rst:1662
 msgid "Settings"
 msgstr ""
 
-#: ../../sysadmclient.rst:1656
+#: ../../sysadmclient.rst:1655
 msgid "List Life Preserver options"
 msgstr ""
 
-#: ../../sysadmclient.rst:1658
+#: ../../sysadmclient.rst:1657
 msgid "replicate"
 msgstr ""
 
-#: ../../sysadmclient.rst:1334 ../../sysadmclient.rst:1658
+#: ../../sysadmclient.rst:1334 ../../sysadmclient.rst:1657
 msgid "Replication"
 msgstr ""
 
-#: ../../sysadmclient.rst:1658
+#: ../../sysadmclient.rst:1657
 msgid ""
 "Used to list, add, and remove backup server; read the **help** for this "
 "command for examples"
 msgstr ""
 
-#: ../../sysadmclient.rst:1663
+#: ../../sysadmclient.rst:1662
 msgid "set"
 msgstr ""
 
-#: ../../sysadmclient.rst:1663
+#: ../../sysadmclient.rst:1662
 msgid ""
 "Configures Life Preserver options; read **help** for the list of "
 "configurable options"
 msgstr ""
 
-#: ../../sysadmclient.rst:1667
+#: ../../sysadmclient.rst:1666
 msgid "snapshot"
 msgstr ""
 
-#: ../../sysadmclient.rst:1667
+#: ../../sysadmclient.rst:1666
 msgid ""
 "Create and replicate a new ZFS snapshot; by default, snapshots are "
 "recursive, meaning that a that a snapshot is taken of every dataset within a"
 " pool"
 msgstr ""
 
-#: ../../sysadmclient.rst:1673
+#: ../../sysadmclient.rst:1672
 msgid "status"
 msgstr ""
 
-#: ../../sysadmclient.rst:1673
+#: ../../sysadmclient.rst:1672
 msgid "Lists the last snapshot name and replication status"
 msgstr ""
 
@@ -1981,7 +1911,7 @@ msgstr ""
 msgid "Updates Tab"
 msgstr ""
 
-#: ../../sysadmclient.rst:1556
+#: ../../sysadmclient.rst:1555
 msgid "Using the CLI"
 msgstr ""
 
@@ -2320,6 +2250,71 @@ msgid ""
 "users and groups. To access this utility, open the |sysadm| client and click"
 " :menuselection:`Local System -> System Management --> User Manager`."
 msgstr ""
+
+#: ../../sysadmclient.rst:1451
+msgid "Snapshots are created on the entire pool."
+msgstr ""
+
+#~ msgid ""
+#~ "Snapshots are created on the entire pool as they are needed when "
+#~ ":ref:`Restoring the Operating System`."
+#~ msgstr ""
+
+#~ msgid "Restoring the Operating System"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have replicated the system's snapshots to a remote backup server, you"
+#~ " can use a |trueos| installation media to perform an operating system "
+#~ "restore or to clone another system. Start the installation as usual until "
+#~ "you get to the screen shown in :numref:`Figure %s <restore1>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before you can perform a restore, the network interface must be configured. "
+#~ "Click :guilabel:`Network Connectivity` (second icon from the left) in order "
+#~ "to determine if the network connection was automatically detected. If not, "
+#~ "refer to the instructions in the `Network Manager "
+#~ "<https://www.trueos.org/handbook/using.html#network-manager>`_ section of "
+#~ "the |trueos| handbook and make sure that networking is working before "
+#~ "continuing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you are ready, click :guilabel:`Restore from Life-Preserver backup` and"
+#~ " :guilabel:`Next`. This will start the Restore Wizard. In the screen shown "
+#~ "in :numref:`Figure %s <restore2>`, input the IP address of the backup server"
+#~ " and the name of the user account used to replicate the snapshots. If the "
+#~ "server is listening on a non-standard SSH port, change the \"SSH port\" "
+#~ "number."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :guilabel:`Next` and the wizard will provide a summary of your "
+#~ "selections. If correct, click :guilabel:`Finish`; otherwise, click "
+#~ ":guilabel:`Back` to correct them."
+#~ msgstr ""
+
+#~ msgid ": Selecting to Restore/Clone From Backup"
+#~ msgstr ""
+
+#~ msgid ": Input the Information for a SSH Restore"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once the connection to the backup server succeeds, you will be able to "
+#~ "select which host to restore. After making your selection, click "
+#~ ":guilabel:`Next`. The restore wizard will provide a summary of which host it"
+#~ " will restore from, the name of the user account associated with the "
+#~ "replication, and the hostname of the target system. Click :guilabel:`Finish`"
+#~ " and the installer will proceed to the `Disk Selection Screen "
+#~ "<https://www.trueos.org/handbook/install.html#disk-selection-screen>`_. At "
+#~ "this point, you can click the :guilabel:`Customize` button to customize the "
+#~ "disk options. However, in the screen shown in Figure 3.3h, the ZFS datasets "
+#~ "will be greyed out as they will be recreated from the backup during the "
+#~ "restore. Once you are finished with any customizations, click "
+#~ ":guilabel:`Next` to perform the restore."
+#~ msgstr ""
 
 #~ msgid "Upgrading from |pcbsd| 10.x to |trueos|"
 #~ msgstr ""
