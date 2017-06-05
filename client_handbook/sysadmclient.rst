@@ -1439,8 +1439,7 @@ This tab is used to manage when snapshots of the ZFS pool are created.
 Multiple snapshot schedules are supported if the system has multiple
 pools.
 
-.. note:: Snapshots are created on the entire pool as they are needed
-   when :ref:`Restoring the Operating System`.
+.. note:: Snapshots are created on the entire pool.
 
 To create a snapshot schedule, click the :guilabel:`camera` icon in the
 lower left corner of this tab. This will activate the "Setup Snapshot
