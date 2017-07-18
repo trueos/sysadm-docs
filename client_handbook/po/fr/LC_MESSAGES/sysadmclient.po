@@ -890,13 +890,6 @@ msgid ""
 "uses:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1425
-msgid ""
-"**+ icon:** Sdd a replication schedule. Multiple schedules are supported, "
-"meaning you can replicate to multiple systems or replicate different \"Local"
-" DS\" datasets at different times."
-msgstr ""
-
 #: ../../sysadmclient.rst:1429
 msgid ""
 "**- icon:** Remove an already created, and highlighted, replication "
@@ -2254,6 +2247,19 @@ msgstr ""
 #: ../../sysadmclient.rst:1451
 msgid "Snapshots are created on the entire pool."
 msgstr ""
+
+#: ../../sysadmclient.rst:1425
+msgid ""
+"**+ icon:** Add a replication schedule. Multiple schedules are supported, "
+"meaning you can replicate to multiple systems or replicate different \"Local"
+" DS\" datasets at different times."
+msgstr ""
+
+#~ msgid ""
+#~ "**+ icon:** Sdd a replication schedule. Multiple schedules are supported, "
+#~ "meaning you can replicate to multiple systems or replicate different \"Local"
+#~ " DS\" datasets at different times."
+#~ msgstr ""
 
 #~ msgid ""
 #~ "Snapshots are created on the entire pool as they are needed when "
