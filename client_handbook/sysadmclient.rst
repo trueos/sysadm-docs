@@ -1413,7 +1413,7 @@ Input this information:
 The buttons at the top of the "Setup Replication" screen have several
 uses:
 
-* **+ icon:** Sdd a replication schedule. Multiple schedules are
+* **+ icon:** Add a replication schedule. Multiple schedules are
   supported, meaning you can replicate to multiple systems or replicate
   different "Local DS" datasets at different times.
 
