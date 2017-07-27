@@ -1,22 +1,48 @@
-.. index:: introduction
+.. index:: introducing SysAdm
 .. _What is SysAdm:
 
 What is |sysadm|?
 *****************
 
+SysAdm is a FreeBSD-based service which provides a stable API for
+administrating FreeBSD and TrueOS systems. It consists primarily of a
+headless daemon that runs in the background on any system to be
+administrated, providing both WebSocket and REST network services for
+**both** remote and local administration.
+
+SysAdm is split into two elements, server and client. The client,
+described in this handbook, is a cross-platform graphical application
+which communicates with multiple servers for administration, status
+updates, and system heath.
+
+The SysAdm server is a web server based on the Qt5 core libraries. It
+provides built-in security handling through automatic blacklisting, SSL
+certificate validation, and login verification with PAM or SSL
+certificates. The server can also run in REST mode, providing a
+standardized REST web server with JSON input arguments, or it can start
+in WebSocket mode, which takes pure JSON input and output with
+persistent sessions.
+
+In its "back end", the server acts as a "middleware", providing a static
+API for interacting with base system services and functionality. The
+server can also interface with optional utilities the user installs on
+the system. |sysadm| reports services based on the currently available
+system services.
+
+As part of the |trueos| project, |sysadm| focuses on stable
+functionality, security, and customizability.
+
+**History**
+
 Beginning with |trueos|, most of the system management utilities
-previously available in the |pcbsd| Control Panel are rewritten to use
+previously available in the |pcbsd| Control Panel were rewritten to use
 the |sysadm| API. This API is designed to simplify the management of any
 FreeBSD, |trueos| desktop, or |trueos| server system, either locally or
 remotely. Remote management is done via a secure connection from any
 operating system with the |sysadm| application installed. The |sysadm|
 client is built into |trueos|, but downloadable packages for other
-operating systems are available from the
+operating systems, when finished, will be available from the
 `SysAdm Website <https://sysadm.us/>`_.
-
-.. note:: Packages for Windows and MacOS are in development, but are not
-   available yet. When ready, these packages will be uploaded to
-   https://sysadm.us.
 
 .. note:: By default, |sysadm| does **not** allow for remote access to
    the system. Please review the
