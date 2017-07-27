@@ -98,7 +98,8 @@ for FreeBSD-based operating systems. This interface displays extra
 meta-data, such as application screenshots and lists of similar
 applications.
 
-The rest of this section describes how to manage software using |appcafe|.
+The rest of this section describes how to manage software using
+|appcafe|.
 
 .. index:: appcafe, find software
 .. _Finding Software:
@@ -563,28 +564,28 @@ management options, described in :numref:`Table %s <conops>`
 
 .. table:: : SSL Connection tab Options
 
-   +--------------------+---------------------------------------------------+
-   | Option             | Description                                       |
-   +====================+===================================================+
-   | Add Group          | Creates an overarching group for bundling         |
-   |                    | connections.                                      |
-   +--------------------+---------------------------------------------------+
-   | Remove Group       | Deletes a created group.                          |
-   +--------------------+---------------------------------------------------+
-   | Add Connection     | Opens windows to nickname and configure a         |
-   |                    | new server connection or bridge relay.            |
-   +--------------------+---------------------------------------------------+
-   | Remove Connection  | Deletes a single created connection.              |
-   +--------------------+---------------------------------------------------+
-   | Reset Settings     | Opens the connection setup window to              |
-   |                    | reconfigure a created connection.                 |
-   +--------------------+---------------------------------------------------+
-   | Rename Selection   | Renames a created group or connection.            |
-   +--------------------+---------------------------------------------------+
-   | Export Connections | Exports the SysAdm settings to a default          |
-   |                    | location:                                         |
-   |                    | :file:`/usr/home/<username>/sysadm_client.export` |
-   +--------------------+---------------------------------------------------+
+   +--------------------+----------------------------------------------+
+   | Option             | Description                                  |
+   +====================+==============================================+
+   | Add Group          | Creates an overarching group for bundling    |
+   |                    | connections.                                 |
+   +--------------------+----------------------------------------------+
+   | Remove Group       | Deletes a created group.                     |
+   +--------------------+----------------------------------------------+
+   | Add Connection     | Opens windows to nickname and configure a    |
+   |                    | new server connection or bridge relay.       |
+   +--------------------+----------------------------------------------+
+   | Remove Connection  | Deletes a single created connection.         |
+   +--------------------+----------------------------------------------+
+   | Reset Settings     | Opens the connection setup window to         |
+   |                    | reconfigure a created connection.            |
+   +--------------------+----------------------------------------------+
+   | Rename Selection   | Renames a created group or connection.       |
+   +--------------------+----------------------------------------------+
+   | Export Connections | Exports the :file:`sysadm_client.export`     |
+   |                    | settings file to a default location:         |
+   |                    | :file:`/usr/home/[username]/`                |
+   +--------------------+----------------------------------------------+
 
 Creating groups or connections adds their respective nicknames to the
 large box to the left of the options column. Highlight an existing group
@@ -659,10 +660,11 @@ is **not** included in the boot environment. This means
 which boot environment is selected at system boot.
 
 To view, manage, and create boot environments using the |sysadm|
-graphical client, go to
-:menuselection:`Local System --> System Management --> Boot Environment Manager`.
-In the example shown in :numref:`Figure %s <be1>`, there is a
-highlighted entry named *initial* which represents the original |trueos|
+graphical client, open the client and navigate to the
+:guilabel:`Boot Environment Manager` from
+:menuselection:`Local System --> System Management`.
+:numref:`Figure %s <be1>` shows an example where there is a highlighted
+entry named :guilabel:`initial` representing the original |trueos|
 installation.
 
 .. _be1:
@@ -683,29 +685,29 @@ Each entry contains the same information, displayed here in
 
 .. table:: : Individual Boot Environment information
 
-   +------------+---------------------------------------------------------+
-   | Column     | Description                                             |
-   +============+=========================================================+
-   | Name       | The name of the boot entry as it appears in the boot    |
-   |            | menu.                                                   |
-   +------------+---------------------------------------------------------+
-   | Nickname   | A description which can be different from the           |
-   |            | :guilabel:`Name`.                                       |
-   +------------+---------------------------------------------------------+
-   | Active     | The possible values of this field are *R* (active on    |
-   |            | reboot), *N* (active now), *NR* (active now and on      |
-   |            | reboot), or *-* (inactive). In this                     |
-   |            | :ref:`example <be1>`, the system booted from            |
-   |            | *12.0-CURRENT-up-20161215_101908* and also uses this BE |
-   |            | for the next boot.                                      |
-   +------------+---------------------------------------------------------+
-   | Space      | The size of the boot environment.                       |
-   +------------+---------------------------------------------------------+
-   | Mountpoint | Indicates whether or not the BE is mounted, and if so,  |
-   |            | where.                                                  |
-   +------------+---------------------------------------------------------+
-   | Date       | The date and time the BE was created.                   |
-   +------------+---------------------------------------------------------+
+   +------------+------------------------------------------------------+
+   | Column     | Description                                          |
+   +============+======================================================+
+   | Name       | The name of the boot entry as it appears in the boot |
+   |            | menu.                                                |
+   +------------+------------------------------------------------------+
+   | Nickname   | A description which can be different from the        |
+   |            | :guilabel:`Name`.                                    |
+   +------------+------------------------------------------------------+
+   | Active     | The possible values of this field are *R* (active on |
+   |            | reboot), *N* (active now), *NR* (active now and on   |
+   |            | reboot), or *-* (inactive). In this                  |
+   |            | :ref:`example <be1>`, the system booted from         |
+   |            | *12.0-CURRENT-up-20161215_101908* and also uses this |
+   |            | BE for the next boot.                                |
+   +------------+------------------------------------------------------+
+   | Space      | The size of the boot environment.                    |
+   +------------+------------------------------------------------------+
+   | Mountpoint | Indicates whether or not the BE is mounted, and if   |
+   |            | so, where.                                           |
+   +------------+------------------------------------------------------+
+   | Date       | The date and time the BE was created.                |
+   +------------+------------------------------------------------------+
 
 Sort the list of BEs by clicking the column names.
 
@@ -716,32 +718,34 @@ described in :numref:`Table %s <mbetable2>`
 
 .. table:: : Options for managing boot environments (BE)
 
-   +-------------+---------------------------------------------------------+
-   | Button      | Description                                             |
-   +=============+=========================================================+
-   | Create BE   | Creates a new BE. Fill the prompt with a name           |
-   |             | containing only letters or numbers and click            |
-   |             | :guilabel:`Ok` to create the BE and add it to the list. |
-   +-------------+---------------------------------------------------------+
-   | Clone BE    | Creates a copy of the highlighted BE.                   |
-   +-------------+---------------------------------------------------------+
-   | Delete BE   | Deletes the highlighted BE. The boot environment(s)     |
-   |             | marked as *N*, *R*, or *NR* in the :guilabel:`Active`   |
-   |             | column cannot be deleted.                               |
-   +-------------+---------------------------------------------------------+
-   | Rename BE   | Renames the highlighed BE. The name appears in the boot |
-   |             | menu when the system boots. The currently booted BE     |
-   |             | cannot be renamed.                                      |
-   +-------------+---------------------------------------------------------+
-   | Mount BE    | Mounts the highlighted BE in :file:`/tmp` to browse     |
-   |             | its contents. This option only applies to inactive BEs. |
-   +-------------+---------------------------------------------------------+
-   | Unmount BE  | Unmounts the previously mounted BE.                     |
-   +-------------+---------------------------------------------------------+
-   | Activate BE | Notifies the system to boot into the highlighted BE     |
-   |             | next system boot. This alters the :guilabel:`Active`    |
-   |             | column to *R*.                                          |
-   +-------------+---------------------------------------------------------+
+   +-------------+-----------------------------------------------------+
+   | Button      | Description                                         |
+   +=============+=====================================================+
+   | Create BE   | Creates a new BE. Type a name containing only       |
+   |             | containing only letters or numbers and click        |
+   |             | :guilabel:`Ok` to create the BE and add it to the   |
+   |             | list.                                               |
+   +-------------+-----------------------------------------------------+
+   | Clone BE    | Creates a copy of the highlighted BE.               |
+   +-------------+-----------------------------------------------------+
+   | Delete BE   | Deletes the highlighted BE. The boot environment(s) |
+   |             | marked as *N*, *R*, or *NR* in the                  |
+   |             | :guilabel:`Active` column cannot be deleted.        |
+   +-------------+-----------------------------------------------------+
+   | Rename BE   | Renames the highlighed BE. The name appears in the  |
+   |             | boot menu when the system boots. The currently      |
+   |             | booted BE cannot be renamed.                        |
+   +-------------+-----------------------------------------------------+
+   | Mount BE    | Mounts the highlighted BE in :file:`/tmp` to browse |
+   |             | its contents. This option only applies to an        |
+   |             | inactive BE.                                        |
+   +-------------+-----------------------------------------------------+
+   | Unmount BE  | Unmounts the previously mounted BE.                 |
+   +-------------+-----------------------------------------------------+
+   | Activate BE | Notifies the system to boot into the highlighted BE |
+   |             | next system boot. This alters the                   |
+   |             | :guilabel:`Active` column to *R*.                   |
+   +-------------+-----------------------------------------------------+
 
 .. _install1(1):
 
@@ -794,9 +798,9 @@ off. On the right side of the row are two buttons, :guilabel:`Power On`
 and :guilabel:`Power Off`.
 
 .. note:: In :numref:`Figure %s <firewall1>`, the :guilabel:`Start`
-   option is greyed out, as the firewall is currently active. Additionally,
-   :guilabel:`Power On` is also greyed out as the firewall is configured
-   to start on bootup.
+   option is greyed out, as the firewall is currently active.
+   Additionally, :guilabel:`Power On` is also greyed out as the firewall
+   is configured to start on bootup.
 
 The central window describes all added services. The list can be sorted
 by clicking :guilabel:`Open Ports`. Next, the :guilabel:`Used By` column
@@ -1145,10 +1149,10 @@ device. Once initialization is complete, the User Manager screen
 will change to allow removal of PersonaCrypt.
 
 Once a user has been initialized for PersonaCrypt on the system, their
-user account will no longer be displayed when logging in, **unless**
-their PersonaCrypt device is inserted. Once the USB device is inserted,
-the login screen will add an extra field, as seen in the example shown
-in :numref:`Figure %s <troslogin5>`.
+user account is no longer be displayed when logging in, *unless* their
+PersonaCrypt device is inserted. Once the USB device is inserted, the
+login screen will add an extra field, as seen in the example shown in
+:numref:`Figure %s <troslogin5>`.
 
 .. _troslogin5:
 
@@ -1196,15 +1200,13 @@ enabling PEFS through PersonaCrypt is accomplished in a CLI with
 :command:`personacrypt init <username> <pfile> PEFS`.
 
 For example, the user account **test** has a pfile named
-:file:`testpfile.txt`, which contains the single text string of **test's**
-chosen password. Next, the administrator adds PEFS encryption to the
-**test** acount by opening a CLI, logging in as root, and typing:
+:file:`testpfile.txt`, which contains the single text string of
+**test's** chosen password. Next, the administrator adds PEFS encryption
+to the **test** acount by opening a CLI, logging in as root, and typing:
 
-.. code-block:: none
+:samp:`# personacrypt init test testpfile.txt PEFS`
 
- # personacrypt init test testpfile.txt PEFS
-
-PersonaCrypt will initialize the account **test** with PEFS, using the
+PersonaCrypt then initializes the account **test** with PEFS, using the
 string in :file:`testpfile.txt` as the new password.
 
 The |sysadm| User Manager can also initialize a user account with PEFS
