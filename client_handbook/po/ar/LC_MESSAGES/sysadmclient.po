@@ -408,11 +408,11 @@ msgid ""
 "regardless of which boot environment is selected at system boot."
 msgstr ""
 
-#: ../../sysadmclient.rst:790
+#: ../../sysadmclient.rst:790 ../../sysadmclient.rst:801
 msgid "Firewall Manager"
 msgstr ""
 
-#: ../../sysadmclient.rst:890
+#: ../../sysadmclient.rst:890 ../../sysadmclient.rst:901
 msgid "Service Manager"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 msgid "**Description:** If available, displays text describing the server."
 msgstr ""
 
-#: ../../sysadmclient.rst:936
+#: ../../sysadmclient.rst:936 ../../sysadmclient.rst:947
 msgid "Task Manager"
 msgstr ""
 
@@ -637,14 +637,6 @@ msgid ""
 "logged in."
 msgstr ""
 
-#: ../../sysadmclient.rst:1173
-msgid ""
-"When stealth sessions have been configured, PersonaCrypt users will still be"
-" displayed in the login menu, even if their USB device is not inserted. This"
-" is to allow those users the option to instead login using a stealth "
-"session."
-msgstr ""
-
 #: ../../sysadmclient.rst:1178
 msgid ""
 "In the field with the yellow padlock icon, input the password for the user "
@@ -661,13 +653,6 @@ msgstr ""
 
 #: ../../sysadmclient.rst:1234
 msgid "Managing Groups"
-msgstr ""
-
-#: ../../sysadmclient.rst:1236
-msgid ""
-"Click the :guilabel:`Groups` tab to view and manage the groups on the "
-"system. The :guilabel:`Standard` tab, seen in :numref:`Figure %s <user4>`, "
-"shows the group membership for the *operator* and *wheel* groups:"
 msgstr ""
 
 #: ../../sysadmclient.rst:1248
@@ -747,12 +732,7 @@ msgid ""
 "Preserver."
 msgstr ""
 
-#: ../../sysadmclient.rst:1332
-msgid ""
-"This screen will display any created snapshots and provides buttons to:"
-msgstr ""
-
-#: ../../sysadmclient.rst:1334
+#: ../../sysadmclient.rst:1335
 msgid ""
 "**Create:** Used to create a manual snapshot of the specified pool now. For "
 "example, you could create a snapshot before making changes to an important "
@@ -766,14 +746,14 @@ msgid ""
 "snapshot was created."
 msgstr ""
 
-#: ../../sysadmclient.rst:1345
+#: ../../sysadmclient.rst:1346
 msgid ""
 "**Remove:** Used to delete a highlighted snapshot. **This is a permanent "
 "change that can not be reversed.** In other words, the versions of files at "
 "the point in time the snapshot was created will be lost."
 msgstr ""
 
-#: ../../sysadmclient.rst:1350
+#: ../../sysadmclient.rst:1351
 msgid ""
 "**Revert:** If you highlight a snapshot entry, this button and the drop-down"
 " menu next to it will activate. You can use the drop-down menu to specify "
@@ -783,7 +763,7 @@ msgid ""
 " after the snapshot was taken will be lost."
 msgstr ""
 
-#: ../../sysadmclient.rst:1364
+#: ../../sysadmclient.rst:1365
 msgid ""
 "Life Preserver can be configured to replicate snapshots to another system "
 "over an encrypted SSH connection, though the backup itself is stored in an "
@@ -791,13 +771,13 @@ msgid ""
 " another system."
 msgstr ""
 
-#: ../../sysadmclient.rst:1369
+#: ../../sysadmclient.rst:1370
 msgid ""
 "In order to configure replication, the remote system to hold a copy of the "
 "snapshots must first meet several requirements:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1376
+#: ../../sysadmclient.rst:1377
 msgid ""
 "The backup server **must be formatted with the latest version of ZFS,** also"
 " known as ZFS feature flags or ZFSv5000. Operating systems that support this"
@@ -805,14 +785,14 @@ msgid ""
 "FreeNAS 9.1.x or higher."
 msgstr ""
 
-#: ../../sysadmclient.rst:1382
+#: ../../sysadmclient.rst:1383
 msgid ""
 "The system must have SSH installed and the SSH service must be running. If "
 "the backup server is running |trueos|, |pcbsd|, |freenas| or FreeBSD, SSH is"
 " already installed, but you will need to start the SSH service."
 msgstr ""
 
-#: ../../sysadmclient.rst:1387
+#: ../../sysadmclient.rst:1388
 msgid ""
 "If the backup server is running |trueos| or |pcbsd|, you will need to open "
 "TCP port 22 (SSH) using the :guilabel:`Firewall Manager`. If the server is "
@@ -822,33 +802,19 @@ msgid ""
 "backup system, make sure it has a rule to allow SSH."
 msgstr ""
 
-#: ../../sysadmclient.rst:1395
-msgid ""
-":numref:`Figure %s <lpreserver2>` shows the initial :guilabel:`Replication` "
-"tab on a system that has not yet been configured for replication. This "
-"screen is used to create, view, remove, and configure the replication "
-"schedule."
-msgstr ""
-
-#: ../../sysadmclient.rst:1407
-msgid ""
-"To schedule the replication, click :guilabel:`+` to display the \"Setup "
-"Replication\" screen shown in :numref:`Figure %s <lpreserver3>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:1420
+#: ../../sysadmclient.rst:1411
 msgid ""
 "**Host IP:** The IP address of the remote system to store the replicated "
 "snapshots."
 msgstr ""
 
-#: ../../sysadmclient.rst:1423
+#: ../../sysadmclient.rst:1414
 msgid ""
 "**SSH Port:** The port number, if the remote system is running SSH on a port"
 " other than the default of 22."
 msgstr ""
 
-#: ../../sysadmclient.rst:1426
+#: ../../sysadmclient.rst:1417
 msgid ""
 "**Dataset:** The name of the ZFS pool and optional dataset on the remote "
 "system. For example, \"remotetank\" will save the snapshots to a ZFS pool of"
@@ -856,7 +822,7 @@ msgid ""
 "existing dataset named \"mybackups\" on the pool named \"remotetank\"."
 msgstr ""
 
-#: ../../sysadmclient.rst:1432
+#: ../../sysadmclient.rst:1423
 msgid ""
 "**Frequency:** Use the drop-down menu to select how often to initiate the "
 "replication. Available choices are :guilabel:`Sync with snapshot` (at the "
@@ -867,81 +833,30 @@ msgid ""
 ":guilabel:`Start`) in this screen."
 msgstr ""
 
-#: ../../sysadmclient.rst:1441
+#: ../../sysadmclient.rst:1432
 msgid ""
 "**Username:** The username must already exist on the remote system, have "
 "write access to the specified \"Dataset\", and have permission to SSH into "
 "that system."
 msgstr ""
 
-#: ../../sysadmclient.rst:1445
+#: ../../sysadmclient.rst:1436
 msgid "**Password:** The password associated with the \"Username\"."
 msgstr ""
 
-#: ../../sysadmclient.rst:1447
+#: ../../sysadmclient.rst:1438
 msgid ""
 "**Local DS:** Use the drop-down menu to select the pool or dataset to "
 "replicate to the remote system."
 msgstr ""
 
-#: ../../sysadmclient.rst:1450
-msgid ""
-"The buttons at the top of the \"Setup Replication\" screen have several "
-"uses:"
-msgstr ""
-
-#: ../../sysadmclient.rst:1457
-msgid ""
-"**- icon:** Remove an already created, and highlighted, replication "
-"schedule."
-msgstr ""
-
-#: ../../sysadmclient.rst:1460
-msgid "**gear icon:** Modify the schedule for the highlighted replication."
-msgstr ""
-
-#: ../../sysadmclient.rst:1462
-msgid ""
-"**Start:** Manually starts a replication to the system specified in the "
-"highlighted replication."
-msgstr ""
-
-#: ../../sysadmclient.rst:1465
-msgid ""
-"**Initialize:** Deletes the existing replicated snapshots on the remote "
-"system and starts a new replication. This is useful if a replication gets "
-"stuck and will not complete."
-msgstr ""
-
-#: ../../sysadmclient.rst:1475
+#: ../../sysadmclient.rst:1466
 msgid ""
 "This tab is used to manage when snapshots of the ZFS pool are created. "
 "Multiple snapshot schedules are supported if the system has multiple pools."
 msgstr ""
 
-#: ../../sysadmclient.rst:1481
-msgid ""
-"To create a snapshot schedule, click the :guilabel:`camera` icon in the "
-"lower left corner of this tab. This will activate the \"Setup Snapshot "
-"Schedule\" pane as seen in :numref:`Figure %s <lpreserver4>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:1492
-msgid "This pane contains several options:"
-msgstr ""
-
-#: ../../sysadmclient.rst:1497
-msgid ""
-"**Snapshots to keep:** Snapshots are automatically pruned after the "
-"specified number of snapshots to prevent snapshots from eventually using up "
-"all of your disk space. If you would like to have multiple versions of files"
-" to choose from, select the number of snapshots to keep. Note auto-pruning "
-"only occurs on the snapshots generated by Life Preserver according to the "
-"configured schedule. Auto-pruning will not delete any snapshots you create "
-"manually in the :guilabel:`Snapshots` tab."
-msgstr ""
-
-#: ../../sysadmclient.rst:1506
+#: ../../sysadmclient.rst:1498
 msgid ""
 "**Frequency:** Use the drop-down menu to select how often snapshots occur. "
 "Options include \"Daily\" (which will allow you to select the time of day), "
@@ -949,75 +864,29 @@ msgid ""
 "Minutes\"."
 msgstr ""
 
-#: ../../sysadmclient.rst:1511
-msgid ""
-"Once you have created a snapshot schedule, you can use the \"gear\" icon "
-"next to the \"camera\" icon to modify the highlighted schedule or the \"X\" "
-"icon to delete the highlighted schedule."
-msgstr ""
-
-#: ../../sysadmclient.rst:1522
-msgid ""
-"To schedule when the scrub occurs, click the third icon from the right which"
-" will activate the \"Setup Scrub Schedule\" screen shown in :numref:`Figure "
-"%s <lpreserver5>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:1541
-msgid ""
-"Once you have created a scrub schedule, you can use the \"gear\" icon next "
-"to the \"schedule scrub\" icon to modify the highlighted schedule or the "
-"\"X\" icon to delete the highlighted schedule."
-msgstr ""
-
-#: ../../sysadmclient.rst:1551
+#: ../../sysadmclient.rst:1544
 msgid ""
 "The :guilabel:`Settings` tab is shown in :numref:`Figure %s <lpreserver6>`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1561
+#: ../../sysadmclient.rst:1554
 msgid "Many settings are configurable:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1563
-msgid ""
-"**Disk Usage Warning:** Enter a number up to 99 to indicate at which "
-"percentage of disk space Life Preserver will display an alert in the system "
-"tray. This is useful to prevent snapshots from using up all available disk "
-"space."
-msgstr ""
-
-#: ../../sysadmclient.rst:1568
+#: ../../sysadmclient.rst:1561
 msgid ""
 "**Email:** To receive an email when disk usage reaches the percentage "
 "configured in the \"Disk Usage Warning\", enter an email address."
 msgstr ""
 
-#: ../../sysadmclient.rst:1571
-msgid ""
-"**Email Trigger:** This setting can be set to \"All\", \"Warn\", or "
-"\"Error\" and indicates the type of condition which will trigger an email "
-"message."
-msgstr ""
-
-#: ../../sysadmclient.rst:1574
-msgid "**Recursive Management:**"
-msgstr ""
-
 #: ../../sysadmclient.rst:1576
-msgid ""
-"If you make any changes in this screen, press :guilabel:`Save Settings` to "
-"apply them."
-msgstr ""
-
-#: ../../sysadmclient.rst:1585
 msgid ""
 "The :command:`lpreserver` command line utility can also be used to manage "
 "snapshots and replication. This command needs to be run as the superuser. To"
 " display its usage, type the command without any arguments:"
 msgstr ""
 
-#: ../../sysadmclient.rst:1605
+#: ../../sysadmclient.rst:1599
 msgid ""
 "Each command has its own help text that describes its parameters and "
 "provides a usage example. For example, to receive help on how to use the "
@@ -1100,7 +969,7 @@ msgid ""
 "press :guilabel:`Close Ports`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1372
+#: ../../sysadmclient.rst:1373
 msgid ""
 "Snapshots occurring too frequently can introduce errors in replication. To "
 "avoid errors, ensure snapshots are configured to take place slower than the "
@@ -1125,34 +994,10 @@ msgid ""
 "snapshot."
 msgstr ""
 
-#: ../../sysadmclient.rst:1494
-msgid ""
-"**Storage Pool:** Select the ZFS storage pool that contains the datasets "
-"that you wish to snapshot."
-msgstr ""
-
-#: ../../sysadmclient.rst:1515
-msgid ""
-"This screen can also be used to manage the ZFS scrub schedule. Scrubs are "
-"recommended as they can provide an early indication of a potential disk "
-"failure. Scrubs can be scheduled on a per-pool basis."
-msgstr ""
-
-#: ../../sysadmclient.rst:1519
+#: ../../sysadmclient.rst:1512
 msgid ""
 "If you have multiple pools, be sure to create a scrub schedule for each "
 "pool."
-msgstr ""
-
-#: ../../sysadmclient.rst:1533
-msgid ""
-"Select the pool from the :guilabel:`Storage Pool` drop-down menu, then "
-"select the :guilabel:`Frequency`. Supported frequencies are \"Daily\", "
-"\"Weekly\", or \"Monthly\". If you select \"Daily\", you can configure the "
-"\"Hour\". If you select \"Weekly\", you can configure the \"Day of week\" "
-"and the \"Hour\".  If you select \"Monthly\", you can configure the \"Date\""
-" and \"Hour\". Since a scrub can be disk I/O intensive, it is recommended to"
-" pick a time when the system will not be in heavy use."
 msgstr ""
 
 #: ../../sysadmclient.rst:162
@@ -1160,30 +1005,6 @@ msgid ""
 "Click the name of an application to view more information about the "
 "application. In the example shown in :numref:`Figure %s <appcafe2>`, the "
 "user has clicked :guilabel:`Firefox` on a system that has Firefox installed."
-msgstr ""
-
-#: ../../sysadmclient.rst:684
-msgid ": Managing Boot Environments"
-msgstr ""
-
-#: ../../sysadmclient.rst:778
-msgid ": Boot Environments Menu"
-msgstr ""
-
-#: ../../sysadmclient.rst:975
-msgid ": Viewing User Accounts in User Manager"
-msgstr ""
-
-#: ../../sysadmclient.rst:1011
-msgid ": Creating a New User Account"
-msgstr ""
-
-#: ../../sysadmclient.rst:1065
-msgid ": Viewing All Accounts and Their Details"
-msgstr ""
-
-#: ../../sysadmclient.rst:1128
-msgid ": Initialize PersonaCrypt Device"
 msgstr ""
 
 #: ../../sysadmclient.rst:1145
@@ -1200,56 +1021,14 @@ msgid ""
 " to allow removal of PersonaCrypt."
 msgstr ""
 
-#: ../../sysadmclient.rst:1246
-msgid ": Managing Groups Using User Manager"
-msgstr ""
-
-#: ../../sysadmclient.rst:1330
-msgid ": Snapshot Tab"
-msgstr ""
-
-#: ../../sysadmclient.rst:1405
-msgid ": Replication Tab"
-msgstr ""
-
-#: ../../sysadmclient.rst:1416
-msgid ": Scheduling a Replication"
-msgstr ""
-
-#: ../../sysadmclient.rst:1490
-msgid ": Scheduling a Snapshot"
-msgstr ""
-
-#: ../../sysadmclient.rst:1531
-msgid ": Scheduling a Scrub"
-msgstr ""
-
-#: ../../sysadmclient.rst:1559
-msgid ": Life Preserver Settings"
-msgstr ""
-
-#: ../../sysadmclient.rst:1666
+#: ../../sysadmclient.rst:1662
 msgid ""
 ":numref:`Table %s <cmdgui>` shows the command line equivalents to the "
 "graphical options provided by the Life Preserver GUI."
 msgstr ""
 
-#: ../../sysadmclient.rst:1171
-msgid ": |trueos| Login Screen with PersonaCrypt"
-msgstr ""
-
 #: ../../sysadmclient.rst:102
 msgid "|appcafe|"
-msgstr ""
-
-#: ../../sysadmclient.rst:764
-msgid ": |trueos| Boot Menu"
-msgstr ""
-
-#: ../../sysadmclient.rst:1322
-msgid ""
-":numref:`Figure %s <lpreserver1>` shows the :guilabel:`Snapshots` tab on a "
-"system not yet configured. This system has a \"ZFS Pool\" named \"tank1\"."
 msgstr ""
 
 #: ../../sysadmclient.rst:460
@@ -1407,111 +1186,103 @@ msgid ""
 "packages on each."
 msgstr ""
 
-#: ../../sysadmclient.rst:128
-msgid ": Browse Tab of |appcafe|"
-msgstr ""
-
 #: ../../sysadmclient.rst:130
 msgid "This screen contains these options:"
 msgstr ""
 
-#: ../../sysadmclient.rst:0
-msgid ": Command Line and GUI Equivalents"
-msgstr ""
-
-#: ../../sysadmclient.rst:1674
+#: ../../sysadmclient.rst:1670
 msgid "Command Line"
 msgstr ""
 
-#: ../../sysadmclient.rst:1674
+#: ../../sysadmclient.rst:1670
 msgid "GUI Tab"
 msgstr ""
 
 #: ../../sysadmclient.rst:577 ../../sysadmclient.rst:698
-#: ../../sysadmclient.rst:731 ../../sysadmclient.rst:1674
+#: ../../sysadmclient.rst:731 ../../sysadmclient.rst:1670
 msgid "Description"
 msgstr ""
 
-#: ../../sysadmclient.rst:1676
+#: ../../sysadmclient.rst:1672
 msgid "cronsnap"
 msgstr ""
 
-#: ../../sysadmclient.rst:1320 ../../sysadmclient.rst:1676
-#: ../../sysadmclient.rst:1694
+#: ../../sysadmclient.rst:1320 ../../sysadmclient.rst:1672
+#: ../../sysadmclient.rst:1690
 msgid "Snapshots"
 msgstr ""
 
-#: ../../sysadmclient.rst:1676
+#: ../../sysadmclient.rst:1672
 msgid ""
 "Schedule when snapshots occur and how long to keep them; the **stop** option"
 " can be used to disable snapshot creation"
 msgstr ""
 
-#: ../../sysadmclient.rst:1681
+#: ../../sysadmclient.rst:1677
 msgid "cronscrub"
 msgstr ""
 
-#: ../../sysadmclient.rst:1473 ../../sysadmclient.rst:1681
+#: ../../sysadmclient.rst:1464 ../../sysadmclient.rst:1677
 msgid "Schedules"
 msgstr ""
 
-#: ../../sysadmclient.rst:1681
+#: ../../sysadmclient.rst:1677
 msgid "Schedule a ZFS scrub"
 msgstr ""
 
-#: ../../sysadmclient.rst:1683
+#: ../../sysadmclient.rst:1679
 msgid "get"
 msgstr ""
 
-#: ../../sysadmclient.rst:1549 ../../sysadmclient.rst:1683
-#: ../../sysadmclient.rst:1690
+#: ../../sysadmclient.rst:1542 ../../sysadmclient.rst:1679
+#: ../../sysadmclient.rst:1686
 msgid "Settings"
 msgstr ""
 
-#: ../../sysadmclient.rst:1683
+#: ../../sysadmclient.rst:1679
 msgid "List Life Preserver options"
 msgstr ""
 
-#: ../../sysadmclient.rst:1685
+#: ../../sysadmclient.rst:1681
 msgid "replicate"
 msgstr ""
 
-#: ../../sysadmclient.rst:1362 ../../sysadmclient.rst:1685
+#: ../../sysadmclient.rst:1363 ../../sysadmclient.rst:1681
 msgid "Replication"
 msgstr ""
 
-#: ../../sysadmclient.rst:1685
+#: ../../sysadmclient.rst:1681
 msgid ""
 "Used to list, add, and remove backup server; read the **help** for this "
 "command for examples"
 msgstr ""
 
-#: ../../sysadmclient.rst:1690
+#: ../../sysadmclient.rst:1686
 msgid "set"
 msgstr ""
 
-#: ../../sysadmclient.rst:1690
+#: ../../sysadmclient.rst:1686
 msgid ""
 "Configures Life Preserver options; read **help** for the list of "
 "configurable options"
 msgstr ""
 
-#: ../../sysadmclient.rst:1694
+#: ../../sysadmclient.rst:1690
 msgid "snapshot"
 msgstr ""
 
-#: ../../sysadmclient.rst:1694
+#: ../../sysadmclient.rst:1690
 msgid ""
 "Create and replicate a new ZFS snapshot; by default, snapshots are "
 "recursive, meaning that a that a snapshot is taken of every dataset within a"
 " pool"
 msgstr ""
 
-#: ../../sysadmclient.rst:1700
+#: ../../sysadmclient.rst:1696
 msgid "status"
 msgstr ""
 
-#: ../../sysadmclient.rst:1700
+#: ../../sysadmclient.rst:1696
 msgid "Lists the last snapshot name and replication status"
 msgstr ""
 
@@ -1545,10 +1316,6 @@ msgid ""
 ":guilabel:`Connections` aids the user in creating and managing secure "
 "connections. A column on the left side of the window contains all management"
 " options, described in :numref:`Table %s <conops>`"
-msgstr ""
-
-#: ../../sysadmclient.rst:0
-msgid ": SSL Connection tab Options"
 msgstr ""
 
 #: ../../sysadmclient.rst:577
@@ -1626,10 +1393,6 @@ msgid ""
 "seen in :numref:`Figure %s <addconconf>`"
 msgstr ""
 
-#: ../../sysadmclient.rst:616
-msgid ": |sysadm| new connection configuration"
-msgstr ""
-
 #: ../../sysadmclient.rst:618
 msgid ""
 "The first element to configuring a new connection is to input a Host IP "
@@ -1699,10 +1462,6 @@ msgid ""
 "%s <mbetable1>`:"
 msgstr ""
 
-#: ../../sysadmclient.rst:0
-msgid ": Individual Boot Environment information"
-msgstr ""
-
 #: ../../sysadmclient.rst:698
 msgid "Column"
 msgstr ""
@@ -1767,10 +1526,6 @@ msgstr ""
 msgid ""
 "Manage these boot environments using the buttons across the top bar as "
 "described in :numref:`Table %s <mbetable2>`"
-msgstr ""
-
-#: ../../sysadmclient.rst:0
-msgid ": Options for managing boot environments (BE)"
 msgstr ""
 
 #: ../../sysadmclient.rst:731
@@ -1862,7 +1617,7 @@ msgstr ""
 msgid "Updates Tab"
 msgstr ""
 
-#: ../../sysadmclient.rst:1583
+#: ../../sysadmclient.rst:1574
 msgid "Using the CLI"
 msgstr ""
 
@@ -1870,17 +1625,9 @@ msgstr ""
 msgid "Settings Tab"
 msgstr ""
 
-#: ../../sysadmclient.rst:417
-msgid ": Update Manager \"Updates\" tab"
-msgstr ""
-
 #: ../../sysadmclient.rst:448
 msgid ""
 "The :guilabel:`Settings` tab is shown in :numref:`Figure %s <update2>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:456
-msgid ": Update Manager \"Settings\" tab"
 msgstr ""
 
 #: ../../sysadmclient.rst:504
@@ -1893,10 +1640,6 @@ msgid ""
 "update attempts. :numref:`Figure %s <recups>` shows two window areas: one to"
 " display the available :file:`.log` files, and another to show the contents "
 "of the selected :file:`.log`."
-msgstr ""
-
-#: ../../sysadmclient.rst:516
-msgid ": Update Manager \"Recent Updates\" tab"
 msgstr ""
 
 #: ../../sysadmclient.rst:518
@@ -1923,18 +1666,10 @@ msgstr ""
 msgid ":ref:`Mouse Settings`"
 msgstr ""
 
-#: ../../sysadmclient.rst:180
-msgid ": |appcafe| - Firefox Details"
-msgstr ""
-
 #: ../../sysadmclient.rst:193
 msgid ""
 "An example of the :guilabel:`?` tab is shown in :numref:`Figure %s "
 "<appcafe3>`"
-msgstr ""
-
-#: ../../sysadmclient.rst:201
-msgid ": |appcafe| - More Firefox Details"
 msgstr ""
 
 #: ../../sysadmclient.rst:220
@@ -1942,10 +1677,6 @@ msgid ""
 "If the package includes screenshots of the application, click the "
 ":guilabel:`image` tab to view and scroll through the screenshots. An example"
 " is shown in :numref:`Figure %s <appcafe4>`"
-msgstr ""
-
-#: ../../sysadmclient.rst:229
-msgid ": |appcafe| - Viewing Firefox's Screenshots"
 msgstr ""
 
 #: ../../sysadmclient.rst:231
@@ -1958,10 +1689,6 @@ msgstr ""
 msgid ""
 "An example of the :guilabel:`list` tab is shown in :numref:`Figure %s "
 "<appcafe5>`."
-msgstr ""
-
-#: ../../sysadmclient.rst:242
-msgid ": |appcafe| - Firefox Build Options and Dependencies"
 msgstr ""
 
 #: ../../sysadmclient.rst:244
@@ -1995,38 +1722,10 @@ msgid ""
 "application requires."
 msgstr ""
 
-#: ../../sysadmclient.rst:275
-msgid ": |appcafe| - \"Installed\" Tab"
-msgstr ""
-
-#: ../../sysadmclient.rst:328
-msgid ": |appcafe| - Viewing Applications (All Options Checked)"
-msgstr ""
-
-#: ../../sysadmclient.rst:343
-msgid ": |appcafe| - Installation Status"
-msgstr ""
-
-#: ../../sysadmclient.rst:536
-msgid ": Setup SSL - \"Configure Certificates\" tab"
-msgstr ""
-
-#: ../../sysadmclient.rst:556
-msgid ": Setup SSL - \"View Public Certificates\" tab"
-msgstr ""
-
 #: ../../sysadmclient.rst:558
 msgid ""
 "Once a certificate is created, the :guilabel:`Connections` menu, seen in "
 ":numref:`Figure %s <ssl3>`, immediately opens."
-msgstr ""
-
-#: ../../sysadmclient.rst:566
-msgid ": \"Connections\" menu"
-msgstr ""
-
-#: ../../sysadmclient.rst:801
-msgid ": Firewall Manager"
 msgstr ""
 
 #: ../../sysadmclient.rst:846
@@ -2037,10 +1736,6 @@ msgstr ""
 msgid ""
 "Adjust the settings of any connected mouse using this tool. :numref:`Figure "
 "%s <mset1>` shows the various tunables:"
-msgstr ""
-
-#: ../../sysadmclient.rst:855
-msgid ": Mouse Settings Window"
 msgstr ""
 
 #: ../../sysadmclient.rst:857
@@ -2096,10 +1791,6 @@ msgstr ""
 msgid "Be sure to click :guilabel:`Apply Settings` to save any changes."
 msgstr ""
 
-#: ../../sysadmclient.rst:901
-msgid ": Service Manager"
-msgstr ""
-
 #: ../../sysadmclient.rst:916
 msgid ""
 "Underneath the chart is a row with multiple buttons. They are, from left to "
@@ -2130,10 +1821,6 @@ msgstr ""
 msgid ""
 "Hovering over any of these icons displays a helpful description across the "
 "bottom of the window."
-msgstr ""
-
-#: ../../sysadmclient.rst:947
-msgid ": Task Manager"
 msgstr ""
 
 #: ../../sysadmclient.rst:977
@@ -2173,10 +1860,6 @@ msgid ""
 ":guilabel:`Save`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1418
-msgid "Input this information:"
-msgstr ""
-
 #: ../../sysadmclient.rst:961
 msgid ""
 "The User Manager utility allows you to easily add, configure, and delete "
@@ -2184,15 +1867,8 @@ msgid ""
 " :menuselection:`Local System -> System Management --> User Manager`."
 msgstr ""
 
-#: ../../sysadmclient.rst:1479
+#: ../../sysadmclient.rst:1470
 msgid "Snapshots are created on the entire pool."
-msgstr ""
-
-#: ../../sysadmclient.rst:1453
-msgid ""
-"**+ icon:** Add a replication schedule. Multiple schedules are supported, "
-"meaning you can replicate to multiple systems or replicate different \"Local"
-" DS\" datasets at different times."
 msgstr ""
 
 #: ../../sysadmclient.rst:16
@@ -2298,6 +1974,568 @@ msgid ""
 "PersonaCrypt then initializes the account **test** with PEFS, using the "
 "string in :file:`testpfile.txt` as the new password."
 msgstr ""
+
+#: ../../sysadmclient.rst:0
+msgid "Command Line and GUI Equivalents"
+msgstr ""
+
+#: ../../sysadmclient.rst:684
+msgid "Managing Boot Environments"
+msgstr ""
+
+#: ../../sysadmclient.rst:778
+msgid "Boot Environments Menu"
+msgstr ""
+
+#: ../../sysadmclient.rst:975
+msgid "Viewing User Accounts in User Manager"
+msgstr ""
+
+#: ../../sysadmclient.rst:1011
+msgid "Creating a New User Account"
+msgstr ""
+
+#: ../../sysadmclient.rst:1065
+msgid "Viewing All Accounts and Their Details"
+msgstr ""
+
+#: ../../sysadmclient.rst:1128
+msgid "Initialize PersonaCrypt Device"
+msgstr ""
+
+#: ../../sysadmclient.rst:1246
+msgid "Managing Groups Using User Manager"
+msgstr ""
+
+#: ../../sysadmclient.rst:1331
+msgid "Snapshot Tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:1481
+msgid "Scheduling a Snapshot"
+msgstr ""
+
+#: ../../sysadmclient.rst:1524
+msgid "Scheduling a Scrub"
+msgstr ""
+
+#: ../../sysadmclient.rst:1552
+msgid "Life Preserver Settings"
+msgstr ""
+
+#: ../../sysadmclient.rst:128
+msgid "Browse Tab of |appcafe|"
+msgstr ""
+
+#: ../../sysadmclient.rst:180
+msgid "|appcafe| - Firefox Details"
+msgstr ""
+
+#: ../../sysadmclient.rst:201
+msgid "|appcafe| - More Firefox Details"
+msgstr ""
+
+#: ../../sysadmclient.rst:229
+msgid "|appcafe| - Viewing Firefox's Screenshots"
+msgstr ""
+
+#: ../../sysadmclient.rst:242
+msgid "|appcafe| - Firefox Build Options and Dependencies"
+msgstr ""
+
+#: ../../sysadmclient.rst:275
+msgid "|appcafe| - \"Installed\" Tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:328
+msgid "|appcafe| - Viewing Applications (All Options Checked)"
+msgstr ""
+
+#: ../../sysadmclient.rst:343
+msgid "|appcafe| - Installation Status"
+msgstr ""
+
+#: ../../sysadmclient.rst:417
+msgid "Update Manager \"Updates\" tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:456
+msgid "Update Manager \"Settings\" tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:516
+msgid "Update Manager \"Recent Updates\" tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:536
+msgid "Setup SSL - \"Configure Certificates\" tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:556
+msgid "Setup SSL - \"View Public Certificates\" tab"
+msgstr ""
+
+#: ../../sysadmclient.rst:566
+msgid "\"Connections\" menu"
+msgstr ""
+
+#: ../../sysadmclient.rst:0
+msgid "SSL Connection tab Options"
+msgstr ""
+
+#: ../../sysadmclient.rst:616
+msgid "|sysadm| new connection configuration"
+msgstr ""
+
+#: ../../sysadmclient.rst:0
+msgid "Individual Boot Environment information"
+msgstr ""
+
+#: ../../sysadmclient.rst:0
+msgid "Options for managing boot environments (BE)"
+msgstr ""
+
+#: ../../sysadmclient.rst:764
+msgid "|trueos| Boot Menu"
+msgstr ""
+
+#: ../../sysadmclient.rst:855
+msgid "Mouse Settings Window"
+msgstr ""
+
+#: ../../sysadmclient.rst:1171
+msgid "|trueos| Login Screen with PersonaCrypt"
+msgstr ""
+
+#: ../../sysadmclient.rst:1173
+msgid ""
+"When stealth sessions have been configured, PersonaCrypt users are still "
+"displayed in the login menu, even if their USB device is not inserted. This "
+"is to allow those users the option to instead login using a stealth session."
+msgstr ""
+
+#: ../../sysadmclient.rst:1236
+msgid ""
+"Click the :guilabel:`Groups` tab to view and manage the groups on the "
+"system. The :guilabel:`Standard` tab, seen in :numref:`Figure %s <user4>`, "
+"shows the group membership for the *operator*, *vboxusers*, and *wheel* "
+"groups:"
+msgstr ""
+
+#: ../../sysadmclient.rst:1322
+msgid ""
+":numref:`Figure %s <lpreserver1>` shows the :guilabel:`Snapshots` tab on a "
+"system with automated snapshots. This system has a \"ZFS Pool\" named "
+"*tank*."
+msgstr ""
+
+#: ../../sysadmclient.rst:1333
+msgid "This screen displays any created snapshots and provides buttons to:"
+msgstr ""
+
+#: ../../sysadmclient.rst:1396
+msgid ""
+":numref:`Figure %s <lpreserver2>` shows the initial :guilabel:`Replication` "
+"tab on a system that has not yet been configured for replication. This "
+"screen is used to create, view, remove, and configure the replication "
+"schedule. The user has pressed the :guilabel:`+` to open the *Setup "
+"Replication* area."
+msgstr ""
+
+#: ../../sysadmclient.rst:1407
+msgid "Replication Tab, with :guilabel:`+` selected"
+msgstr ""
+
+#: ../../sysadmclient.rst:1409
+msgid "Setting up a new replication requires some information:"
+msgstr ""
+
+#: ../../sysadmclient.rst:1441
+msgid ""
+"The buttons at the top of the *Setup Replication* area have several uses:"
+msgstr ""
+
+#: ../../sysadmclient.rst:1444
+msgid ""
+":guilabel:`+`: Add a replication schedule. Multiple schedules are supported,"
+" meaning you can replicate to multiple systems or replicate different "
+"\"Local DS\" datasets at different times."
+msgstr ""
+
+#: ../../sysadmclient.rst:1448
+msgid ""
+":guilabel:`-`: Remove an already created, and highlighted, replication "
+"schedule."
+msgstr ""
+
+#: ../../sysadmclient.rst:1451
+msgid ":guilabel:`Gear`: Modify the schedule for the highlighted replication."
+msgstr ""
+
+#: ../../sysadmclient.rst:1453
+msgid ""
+":guilabel:`Start`: Manually starts a replication to the system specified in "
+"the highlighted replication."
+msgstr ""
+
+#: ../../sysadmclient.rst:1456
+msgid ""
+":guilabel:`Initialize`: Deletes the existing replicated snapshots on the "
+"remote system and starts a new replication. This is useful if a replication "
+"gets stuck and will not complete."
+msgstr ""
+
+#: ../../sysadmclient.rst:1472
+msgid ""
+"To create a snapshot schedule, click the :guilabel:`camera` icon in the "
+"lower left corner of this tab. This activates the *Setup Snapshot* "
+"*Schedule* area, seen here in :numref:`Figure %s <lpreserver4>`."
+msgstr ""
+
+#: ../../sysadmclient.rst:1483
+msgid "This panel contains several options:"
+msgstr ""
+
+#: ../../sysadmclient.rst:1485
+msgid ""
+"**Storage Pool:** Select the ZFS storage pool containing the datasets to "
+"snapshot."
+msgstr ""
+
+#: ../../sysadmclient.rst:1488
+msgid ""
+"**Snapshots to keep:** Snapshots are automatically pruned after a specified "
+"number of snapshots. This prevents snapshots from eventually using all "
+"available disk space. To have multiple versions of files to choose from, "
+"select a number of snapshots to keep."
+msgstr ""
+
+#: ../../sysadmclient.rst:1493
+msgid ""
+"Auto-pruning only occurs on snapshots generated by **Life Preserver** "
+"according to the configured schedule. Auto-pruning does not delete any "
+"snapshots manually created with the :guilabel:`Snapshots` tab."
+msgstr ""
+
+#: ../../sysadmclient.rst:1503
+msgid ""
+"Once a snapshot schedule is created, the :guilabel:`Gear` button next to the"
+" :guilabel:`Camera` button is used to modify a highlighted schedule. Click "
+"the adjacent :guilabel:`X` button to delete a highlighted schedule."
+msgstr ""
+
+#: ../../sysadmclient.rst:1508
+msgid ""
+"This screen can also be used to manage the ZFS scrub schedule. Periodic "
+"scrubs are recommended as they provide early indications of potential disk "
+"failure. Scrubs can be scheduled on a per-pool basis."
+msgstr ""
+
+#: ../../sysadmclient.rst:1515
+msgid ""
+"To schedule when the scrub occurs, click the :guilabel:`Dial` button to "
+"activate the *Setup Scrub Schedule* area, seen here in :numref:`Figure %s "
+"<lpreserver5>`."
+msgstr ""
+
+#: ../../sysadmclient.rst:1526
+msgid ""
+"Select the pool from the :guilabel:`Storage Pool` drop-down menu, then "
+"select the :guilabel:`Frequency`. Supported frequencies are *Daily*, "
+"*Weekly*, or *Monthly*. When choosing *Daily*, adjust the desired hour in "
+"the final field. With *Weekly*, the day of week and hour are selectable. "
+"*Monthly* allows choosing a specific day and hour. As a scrub can be disk "
+"I/O intensive, it is recommended to pick a time when the system is not in "
+"heavy use."
+msgstr ""
+
+#: ../../sysadmclient.rst:1534
+msgid ""
+"After creating a scrub schedule, use the :guilabel:`Gear` button next to the"
+" :guilabel:`Dial` button to modify a highlighted schedule or the "
+":guilabel:`X` button to delete the highlighted schedule."
+msgstr ""
+
+#: ../../sysadmclient.rst:1556
+msgid ""
+"**Disk Usage Warning:** Enter a number up to 99 to indicate at which "
+"percentage of disk space Life Preserver displays an alert in the system "
+"tray. This is useful to help prevent snapshots from using up all available "
+"disk space."
+msgstr ""
+
+#: ../../sysadmclient.rst:1564
+msgid ""
+"**Email Trigger:** This setting can be set to \"All\", \"Warn\", or "
+"\"Error\" and indicates the type of condition which triggers an email "
+"message."
+msgstr ""
+
+#: ../../sysadmclient.rst:1567
+msgid ""
+"After making any changes in this screen, be sure to click :guilabel:`Save "
+"Settings`."
+msgstr ""
+
+#~ msgid ""
+#~ "When stealth sessions have been configured, PersonaCrypt users will still be"
+#~ " displayed in the login menu, even if their USB device is not inserted. This"
+#~ " is to allow those users the option to instead login using a stealth "
+#~ "session."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click the :guilabel:`Groups` tab to view and manage the groups on the "
+#~ "system. The :guilabel:`Standard` tab, seen in :numref:`Figure %s <user4>`, "
+#~ "shows the group membership for the *operator* and *wheel* groups:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This screen will display any created snapshots and provides buttons to:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":numref:`Figure %s <lpreserver2>` shows the initial :guilabel:`Replication` "
+#~ "tab on a system that has not yet been configured for replication. This "
+#~ "screen is used to create, view, remove, and configure the replication "
+#~ "schedule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To schedule the replication, click :guilabel:`+` to display the \"Setup "
+#~ "Replication\" screen shown in :numref:`Figure %s <lpreserver3>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The buttons at the top of the \"Setup Replication\" screen have several "
+#~ "uses:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**- icon:** Remove an already created, and highlighted, replication "
+#~ "schedule."
+#~ msgstr ""
+
+#~ msgid "**gear icon:** Modify the schedule for the highlighted replication."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Start:** Manually starts a replication to the system specified in the "
+#~ "highlighted replication."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Initialize:** Deletes the existing replicated snapshots on the remote "
+#~ "system and starts a new replication. This is useful if a replication gets "
+#~ "stuck and will not complete."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To create a snapshot schedule, click the :guilabel:`camera` icon in the "
+#~ "lower left corner of this tab. This will activate the \"Setup Snapshot "
+#~ "Schedule\" pane as seen in :numref:`Figure %s <lpreserver4>`."
+#~ msgstr ""
+
+#~ msgid "This pane contains several options:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Snapshots to keep:** Snapshots are automatically pruned after the "
+#~ "specified number of snapshots to prevent snapshots from eventually using up "
+#~ "all of your disk space. If you would like to have multiple versions of files"
+#~ " to choose from, select the number of snapshots to keep. Note auto-pruning "
+#~ "only occurs on the snapshots generated by Life Preserver according to the "
+#~ "configured schedule. Auto-pruning will not delete any snapshots you create "
+#~ "manually in the :guilabel:`Snapshots` tab."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you have created a snapshot schedule, you can use the \"gear\" icon "
+#~ "next to the \"camera\" icon to modify the highlighted schedule or the \"X\" "
+#~ "icon to delete the highlighted schedule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To schedule when the scrub occurs, click the third icon from the right which"
+#~ " will activate the \"Setup Scrub Schedule\" screen shown in :numref:`Figure "
+#~ "%s <lpreserver5>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Once you have created a scrub schedule, you can use the \"gear\" icon next "
+#~ "to the \"schedule scrub\" icon to modify the highlighted schedule or the "
+#~ "\"X\" icon to delete the highlighted schedule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Disk Usage Warning:** Enter a number up to 99 to indicate at which "
+#~ "percentage of disk space Life Preserver will display an alert in the system "
+#~ "tray. This is useful to prevent snapshots from using up all available disk "
+#~ "space."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Email Trigger:** This setting can be set to \"All\", \"Warn\", or "
+#~ "\"Error\" and indicates the type of condition which will trigger an email "
+#~ "message."
+#~ msgstr ""
+
+#~ msgid "**Recursive Management:**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you make any changes in this screen, press :guilabel:`Save Settings` to "
+#~ "apply them."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Storage Pool:** Select the ZFS storage pool that contains the datasets "
+#~ "that you wish to snapshot."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This screen can also be used to manage the ZFS scrub schedule. Scrubs are "
+#~ "recommended as they can provide an early indication of a potential disk "
+#~ "failure. Scrubs can be scheduled on a per-pool basis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Select the pool from the :guilabel:`Storage Pool` drop-down menu, then "
+#~ "select the :guilabel:`Frequency`. Supported frequencies are \"Daily\", "
+#~ "\"Weekly\", or \"Monthly\". If you select \"Daily\", you can configure the "
+#~ "\"Hour\". If you select \"Weekly\", you can configure the \"Day of week\" "
+#~ "and the \"Hour\".  If you select \"Monthly\", you can configure the \"Date\""
+#~ " and \"Hour\". Since a scrub can be disk I/O intensive, it is recommended to"
+#~ " pick a time when the system will not be in heavy use."
+#~ msgstr ""
+
+#~ msgid ": Managing Boot Environments"
+#~ msgstr ""
+
+#~ msgid ": Boot Environments Menu"
+#~ msgstr ""
+
+#~ msgid ": Viewing User Accounts in User Manager"
+#~ msgstr ""
+
+#~ msgid ": Creating a New User Account"
+#~ msgstr ""
+
+#~ msgid ": Viewing All Accounts and Their Details"
+#~ msgstr ""
+
+#~ msgid ": Initialize PersonaCrypt Device"
+#~ msgstr ""
+
+#~ msgid ": Managing Groups Using User Manager"
+#~ msgstr ""
+
+#~ msgid ": Snapshot Tab"
+#~ msgstr ""
+
+#~ msgid ": Replication Tab"
+#~ msgstr ""
+
+#~ msgid ": Scheduling a Replication"
+#~ msgstr ""
+
+#~ msgid ": Scheduling a Snapshot"
+#~ msgstr ""
+
+#~ msgid ": Scheduling a Scrub"
+#~ msgstr ""
+
+#~ msgid ": Life Preserver Settings"
+#~ msgstr ""
+
+#~ msgid ": |trueos| Login Screen with PersonaCrypt"
+#~ msgstr ""
+
+#~ msgid ": |trueos| Boot Menu"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":numref:`Figure %s <lpreserver1>` shows the :guilabel:`Snapshots` tab on a "
+#~ "system not yet configured. This system has a \"ZFS Pool\" named \"tank1\"."
+#~ msgstr ""
+
+#~ msgid ": Browse Tab of |appcafe|"
+#~ msgstr ""
+
+#~ msgid ": Command Line and GUI Equivalents"
+#~ msgstr ""
+
+#~ msgid ": SSL Connection tab Options"
+#~ msgstr ""
+
+#~ msgid ": |sysadm| new connection configuration"
+#~ msgstr ""
+
+#~ msgid ": Individual Boot Environment information"
+#~ msgstr ""
+
+#~ msgid ": Options for managing boot environments (BE)"
+#~ msgstr ""
+
+#~ msgid ": Update Manager \"Updates\" tab"
+#~ msgstr ""
+
+#~ msgid ": Update Manager \"Settings\" tab"
+#~ msgstr ""
+
+#~ msgid ": Update Manager \"Recent Updates\" tab"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - Firefox Details"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - More Firefox Details"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - Viewing Firefox's Screenshots"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - Firefox Build Options and Dependencies"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - \"Installed\" Tab"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - Viewing Applications (All Options Checked)"
+#~ msgstr ""
+
+#~ msgid ": |appcafe| - Installation Status"
+#~ msgstr ""
+
+#~ msgid ": Setup SSL - \"Configure Certificates\" tab"
+#~ msgstr ""
+
+#~ msgid ": Setup SSL - \"View Public Certificates\" tab"
+#~ msgstr ""
+
+#~ msgid ": \"Connections\" menu"
+#~ msgstr ""
+
+#~ msgid ": Firewall Manager"
+#~ msgstr ""
+
+#~ msgid ": Mouse Settings Window"
+#~ msgstr ""
+
+#~ msgid ": Service Manager"
+#~ msgstr ""
+
+#~ msgid ": Task Manager"
+#~ msgstr ""
+
+#~ msgid "Input this information:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**+ icon:** Add a replication schedule. Multiple schedules are supported, "
+#~ "meaning you can replicate to multiple systems or replicate different \"Local"
+#~ " DS\" datasets at different times."
+#~ msgstr ""
 
 #~ msgid ""
 #~ "Once a user has been initialized for PersonaCrypt on the system, their user "
@@ -2846,9 +3084,6 @@ msgstr ""
 #~ msgid "This screen contains the following options:"
 #~ msgstr ""
 
-#~ msgid "Command Line and GUI Equivalents"
-#~ msgstr ""
-
 #~ msgid "**Command Line**"
 #~ msgstr ""
 
@@ -3169,9 +3404,6 @@ msgstr ""
 #~ "additional mount points, just don't delete the default ones."
 #~ msgstr ""
 
-#~ msgid "Managing Boot Environments"
-#~ msgstr ""
-
 #~ msgid ""
 #~ "To boot into another boot environment, press :kbd:`7` at the :numref:`Figure"
 #~ " %s: TrueOS® Boot Menu <install1b>` to access the boot menu selection "
@@ -3186,25 +3418,10 @@ msgstr ""
 #~ ":kbd:`Enter` to continue booting into the selected boot environment."
 #~ msgstr ""
 
-#~ msgid "Boot Environments Menu"
-#~ msgstr ""
-
 #~ msgid "SysAdm™ Service Manager"
 #~ msgstr ""
 
 #~ msgid "SysAdm™ Task Manager"
-#~ msgstr ""
-
-#~ msgid "Viewing User Accounts in User Manager"
-#~ msgstr ""
-
-#~ msgid "Creating a New User Account"
-#~ msgstr ""
-
-#~ msgid "Viewing All Accounts and Their Details"
-#~ msgstr ""
-
-#~ msgid "Initialize PersonaCrypt Device"
 #~ msgstr ""
 
 #~ msgid ""
@@ -3261,22 +3478,7 @@ msgstr ""
 #~ "screen will add an extra field, as seen in the example shown in Figure 4.8b."
 #~ msgstr ""
 
-#~ msgid "Managing Groups Using User Manager"
-#~ msgstr ""
-
-#~ msgid "Snapshot Tab"
-#~ msgstr ""
-
 #~ msgid "Scheduling a Replication"
-#~ msgstr ""
-
-#~ msgid "Scheduling a Snapshot"
-#~ msgstr ""
-
-#~ msgid "Scheduling a Scrub"
-#~ msgstr ""
-
-#~ msgid "Life Preserver Settings"
 #~ msgstr ""
 
 #~ msgid ""
