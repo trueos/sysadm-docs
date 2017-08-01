@@ -113,10 +113,10 @@ available software.
 
 .. _appcafe1:
 
-.. figure:: images/appcafe1a.png
+.. figure:: images/appcafe1b.png
    :scale: 100%
 
-   : Browse Tab of |appcafe|
+   Browse Tab of |appcafe|
 
 This screen contains these options:
 
@@ -168,7 +168,7 @@ installed.
 .. figure:: images/appcafe2a.png
    :scale: 100%
 
-   : |appcafe| - Firefox Details
+   |appcafe| - Firefox Details
 
 As seen in this example, the information for an application includes
 the application's icon, name, and description. Click the application's
@@ -189,7 +189,7 @@ An example of the :guilabel:`?` tab is shown in
 .. figure:: images/appcafe3a.png
    :scale: 100%
 
-   : |appcafe| - More Firefox Details
+   |appcafe| - More Firefox Details
 
 This tab displays a variety of information:
 
@@ -217,7 +217,7 @@ screenshots. An example is shown in :numref:`Figure %s <appcafe4>`
 .. figure:: images/appcafe4a.png
    :scale: 100%
 
-   : |appcafe| - Viewing Firefox's Screenshots
+   |appcafe| - Viewing Firefox's Screenshots
 
 Use the arrows on the left side of the window to browse through the
 screenshots.
@@ -230,7 +230,7 @@ An example of the :guilabel:`list` tab is shown in
 .. figure:: images/appcafe5a.png
    :scale: 100%
 
-   : |appcafe| - Firefox Build Options and Dependencies
+   |appcafe| - Firefox Build Options and Dependencies
 
 This tab contains several categories of system related information.
 Click the arrow next to an entry to expand or collapse it. Here is the
@@ -263,7 +263,7 @@ click the :guilabel:`Installed` tab.  An example is seen in
 .. figure:: images/appcafe6a.png
    :scale: 100%
 
-   : |appcafe| - "Installed" Tab
+   |appcafe| - "Installed" Tab
 
 This screen offers several actions:
 
@@ -316,7 +316,7 @@ has been locked, and :guilabel:`alsa-plugins` is an orphan (flag icon).
 .. figure:: images/appcafe7a.png
    :scale: 100%
 
-   : |appcafe| - Viewing Applications (All Options Checked)
+   |appcafe| - Viewing Applications (All Options Checked)
 
 If you install or uninstall any software, click the :guilabel:`Pending`
 tab to view the details of the operation. In the example shown in
@@ -331,7 +331,7 @@ operation.
 .. figure:: images/appcafe8.png
    :scale: 100%
 
-   : |appcafe| - Installation Status
+   |appcafe| - Installation Status
 
 .. index:: update manager
 .. _Update Manager:
@@ -405,7 +405,7 @@ An example of the :guilabel:`Updates` tab is shown in
 .. figure:: images/update1a.png
    :scale: 100%
 
-   : Update Manager "Updates" tab
+   Update Manager "Updates" tab
 
 In this example, updates are available for installed packages. If a
 security update is available, it will be listed as such. Apply the
@@ -444,7 +444,7 @@ The :guilabel:`Settings` tab is shown in
 .. figure:: images/update2c.png
    :scale: 100%
 
-   : Update Manager "Settings" tab
+   Update Manager "Settings" tab
 
 This tab contains several configurable options:
 
@@ -504,7 +504,7 @@ show the contents of the selected :file:`.log`.
 .. figure:: images/update3.png
    :scale: 100%
 
-   : Update Manager "Recent Updates" tab
+   Update Manager "Recent Updates" tab
 
 This tab is useful to review previous updates for errors and check when
 previous updates were applied. These timestamps are especially useful
@@ -524,7 +524,7 @@ bundle, as seen in :numref:`Figure %s <ssl1>`.
 .. figure:: images/ssl1.png
    :scale: 100%
 
-   : Setup SSL - "Configure Certificates" tab
+   Setup SSL - "Configure Certificates" tab
 
 This window is accessible by clicking the |sysadm| tray icon, then
 :guilabel:`Manage Connections`. Press :guilabel:`Import Certificate`
@@ -544,7 +544,7 @@ export a public key for a Server or Bridge Certificate, seen in
 .. figure:: images/ssl2.png
    :scale: 100%
 
-   : Setup SSL - "View Public Certificates" tab
+   Setup SSL - "View Public Certificates" tab
 
 Once a certificate is created, the :guilabel:`Connections` menu, seen in
 :numref:`Figure %s <ssl3>`, immediately opens.
@@ -554,7 +554,7 @@ Once a certificate is created, the :guilabel:`Connections` menu, seen in
 .. figure:: images/ssl3.png
    :scale: 100%
 
-   : "Connections" menu
+   "Connections" menu
 
 :guilabel:`Connections` aids the user in creating and managing
 secure connections. A column on the left side of the window contains all
@@ -562,7 +562,7 @@ management options, described in :numref:`Table %s <conops>`
 
 .. _conops:
 
-.. table:: : SSL Connection tab Options
+.. table:: SSL Connection tab Options
 
    +--------------------+----------------------------------------------+
    | Option             | Description                                  |
@@ -604,7 +604,7 @@ screen, seen in :numref:`Figure %s <addconconf>`
 .. figure:: images/ssl4.png
    :scale: 100%
 
-   : |sysadm| new connection configuration
+   |sysadm| new connection configuration
 
 The first element to configuring a new connection is to input a Host IP
 address. Then, choose the connection type: :guilabel:`Server Connection`
@@ -672,7 +672,7 @@ installation.
 .. figure:: images/be1a.png
    :scale: 100%
 
-   : Managing Boot Environments
+   Managing Boot Environments
 
 .. tip:: An automatically generated boot environment is generally named
    with a version and date stamp. It is recommended to note the desired
@@ -683,7 +683,7 @@ Each entry contains the same information, displayed here in
 
 .. _mbetable1:
 
-.. table:: : Individual Boot Environment information
+.. table:: Individual Boot Environment information
 
    +------------+------------------------------------------------------+
    | Column     | Description                                          |
@@ -716,7 +716,7 @@ described in :numref:`Table %s <mbetable2>`
 
 .. _mbetable2:
 
-.. table:: : Options for managing boot environments (BE)
+.. table:: Options for managing boot environments (BE)
 
    +-------------+-----------------------------------------------------+
    | Button      | Description                                         |
@@ -752,7 +752,7 @@ described in :numref:`Table %s <mbetable2>`
 .. figure:: images/install1b.png
    :scale: 100%
 
-   : |trueos| Boot Menu
+   |trueos| Boot Menu
 
 Boot into another boot environment at startup by pressing :kbd:`7` at
 the :ref:`TrueOS Boot Menu <install1(1)>` to access the boot menu
@@ -766,7 +766,7 @@ was manually created using the Boot Environment Manager.
 .. figure:: images/be2.png
    :scale: 100%
 
-   : Boot Environments Menu
+   Boot Environments Menu
 
 The upper section of this menu indicates the *initial* boot environment
 is set to **active**, or the one the system is configured to boot into,
@@ -786,10 +786,10 @@ is active and using port 5353 is open, with the firewall started.
 
 .. _firewall1:
 
-.. figure:: images/firewall1.png
+.. figure:: images/firewall1a.png
    :scale: 100%
 
-   : Firewall Manager
+   Firewall Manager
 
 The top row of the interface has options to configure the firewall.
 :guilabel:`Start` turns on the firewall, :guilabel:`Restart` will turn
@@ -843,7 +843,7 @@ Adjust the settings of any connected mouse using this tool.
 .. figure:: /images/mset1.png
    :scale: 100%
 
-   : Mouse Settings Window
+   Mouse Settings Window
 
 Use the :guilabel:`Mouse Device` bar to choose the mouse to adjust.
 Activate or disable mice with the :guilabel:`Active` checkbox. If the
@@ -889,7 +889,7 @@ several options to configure these services.
 .. figure:: images/service1.png
    :scale: 100%
 
-   : Service Manager
+   Service Manager
 
 Services are listed in a chart with four columns:
 
@@ -932,10 +932,10 @@ a listing of currently running applications. An example is shown in
 
 .. _task1:
 
-.. figure:: images/task1.png
+.. figure:: images/task1a.png
    :scale: 100%
 
-   : Task Manager
+   Task Manager
 
 The "Running Programs:" section provides a graphical front-end to
 `top(1) <https://www.freebsd.org/cgi/man.cgi?query=top>`_.
@@ -960,10 +960,10 @@ installation.
 
 .. _user1:
 
-.. figure:: images/user1.png
+.. figure:: images/user1a.png
    :scale: 100%
 
-   : Viewing User Accounts in User Manager
+   Viewing User Accounts in User Manager
 
 The :guilabel:`Standard` view has several options:
 
@@ -996,10 +996,10 @@ clicking :guilabel:`New User`.
 
 .. _user2:
 
-.. figure:: images/user2.png
+.. figure:: images/user2a.png
    :scale: 100%
 
-   : Creating a New User Account
+   Creating a New User Account
 
 Fields outlined in red are required when creating a user. The
 :guilabel:`User Name`, :guilabel:`Full Name`, and :guilabel:`Password`
@@ -1050,10 +1050,10 @@ system, not just the user accounts you created. An example is seen in
 
 .. _user3:
 
-.. figure:: images/user3.png
+.. figure:: images/user3a.png
    :scale: 100%
 
-   : Viewing All Accounts and Their Details
+   Viewing All Accounts and Their Details
 
 The accounts you did not create are known as system accounts and are
 needed by the operating system or installed applications. Do **not**
@@ -1116,7 +1116,7 @@ created and the entry for the user has been clicked.
 .. figure:: images/user5.png
    :scale: 100%
 
-   : Initialize PersonaCrypt Device
+   Initialize PersonaCrypt Device
 
 Before a user is configured to use PersonaCrypt on a |trueos| system,
 two buttons are available in the :guilabel:`PersonaCrypt` tab of
@@ -1159,10 +1159,10 @@ login screen will add an extra field, as seen in the example shown in
 .. figure:: images/login5.png
    :scale: 100%
 
-   : |trueos| Login Screen with PersonaCrypt
+   |trueos| Login Screen with PersonaCrypt
 
 .. note:: When stealth sessions have been configured, PersonaCrypt
-   users will still be displayed in the login menu, even if their USB
+   users are still displayed in the login menu, even if their USB
    device is not inserted. This is to allow those users the option to
    instead login using a stealth session.
 
@@ -1227,14 +1227,14 @@ Managing Groups
 Click the :guilabel:`Groups` tab to view and manage the groups on the
 system. The :guilabel:`Standard` tab, seen in
 :numref:`Figure %s <user4>`, shows the group membership for the
-*operator* and *wheel* groups:
+*operator*, *vboxusers*, and *wheel* groups:
 
 .. _user4:
 
-.. figure:: images/user4.png
+.. figure:: images/user4a.png
    :scale: 100%
 
-   : Managing Groups Using User Manager
+   Managing Groups Using User Manager
 
 This screen has 2 columns:
 
@@ -1311,16 +1311,17 @@ Snapshots
 =========
 
 :numref:`Figure %s <lpreserver1>` shows the :guilabel:`Snapshots` tab on
-a system not yet configured. This system has a "ZFS Pool" named "tank1".
+a system with automated snapshots. This system has a "ZFS Pool" named
+*tank*.
 
 .. _lpreserver1:
 
-.. figure:: images/lpreserver1.png
+.. figure:: images/lpreserver1a.png
    :scale: 100%
 
-   : Snapshot Tab
+   Snapshot Tab
 
-This screen will display any created snapshots and provides buttons to:
+This screen displays any created snapshots and provides buttons to:
 
 **Create:** Used to create a manual snapshot of the specified pool
 now. For example, you could create a snapshot before making changes to
@@ -1386,27 +1387,17 @@ the snapshots must first meet several requirements:
 :numref:`Figure %s <lpreserver2>` shows the initial
 :guilabel:`Replication` tab on a system that has not yet been configured
 for replication. This screen is used to create, view, remove, and
-configure the replication schedule.
+configure the replication schedule. The user has pressed the
+:guilabel:`+` to open the *Setup Replication* area.
 
 .. _lpreserver2:
 
-.. figure:: images/lpreserver2.png
+.. figure:: images/lpreserver2a.png
    :scale: 100%
 
-   : Replication Tab
+   Replication Tab, with :guilabel:`+` selected
 
-To schedule the replication, click :guilabel:`+` to display the
-"Setup Replication" screen shown in
-:numref:`Figure %s <lpreserver3>`.
-
-.. _lpreserver3:
-
-.. figure:: images/lpreserver3.png
-   :scale: 100%
-
-   : Scheduling a Replication
-
-Input this information:
+Setting up a new replication requires some information:
 
 * **Host IP:** The IP address of the remote system to store the
   replicated snapshots.
@@ -1438,23 +1429,23 @@ Input this information:
 * **Local DS:** Use the drop-down menu to select the pool or dataset
   to replicate to the remote system.
 
-The buttons at the top of the "Setup Replication" screen have several
+The buttons at the top of the *Setup Replication* area have several
 uses:
 
-* **+ icon:** Add a replication schedule. Multiple schedules are
+* :guilabel:`+`: Add a replication schedule. Multiple schedules are
   supported, meaning you can replicate to multiple systems or replicate
   different "Local DS" datasets at different times.
 
-* **- icon:** Remove an already created, and highlighted, replication
+* :guilabel:`-`: Remove an already created, and highlighted, replication
   schedule.
 
-* **gear icon:** Modify the schedule for the highlighted replication.
+* :guilabel:`Gear`: Modify the schedule for the highlighted replication.
 
-* **Start:** Manually starts a replication to the system specified in
-  the highlighted replication.
+* :guilabel:`Start`: Manually starts a replication to the system
+  specified in the highlighted replication.
 
-* **Initialize:** Deletes the existing replicated snapshots on the
-  remote system and starts a new replication. This is useful if a
+* :guilabel:`Initialize`: Deletes the existing replicated snapshots on
+  the remote system and starts a new replication. This is useful if a
   replication gets stuck and will not complete.
 
 .. index:: sysadm, life preserver, schedules, configuration
@@ -1470,68 +1461,70 @@ pools.
 .. note:: Snapshots are created on the entire pool.
 
 To create a snapshot schedule, click the :guilabel:`camera` icon in the
-lower left corner of this tab. This will activate the "Setup Snapshot
-Schedule" pane as seen in :numref:`Figure %s <lpreserver4>`.
+lower left corner of this tab. This activates the *Setup Snapshot*
+*Schedule* area, seen here in :numref:`Figure %s <lpreserver4>`.
 
 .. _lpreserver4:
 
-.. figure:: images/lpreserver4.png
+.. figure:: images/lpreserver4a.png
    :scale: 100%
 
-   : Scheduling a Snapshot
+   Scheduling a Snapshot
 
-This pane contains several options:
+This panel contains several options:
 
-**Storage Pool:** Select the ZFS storage pool that contains the datasets
-that you wish to snapshot.
+**Storage Pool:** Select the ZFS storage pool containing the datasets to
+snapshot.
 
-**Snapshots to keep:** Snapshots are automatically pruned after the
-specified number of snapshots to prevent snapshots from eventually
-using up all of your disk space. If you would like to have multiple
-versions of files to choose from, select the number of snapshots to
-keep. Note auto-pruning only occurs on the snapshots generated by
-Life Preserver according to the configured schedule. Auto-pruning will
-not delete any snapshots you create manually in the
-:guilabel:`Snapshots` tab.
+**Snapshots to keep:** Snapshots are automatically pruned after a
+specified number of snapshots. This prevents snapshots from eventually
+using all available disk space. To have multiple versions of files to
+choose from, select a number of snapshots to keep.
+
+.. note:: Auto-pruning only occurs on snapshots generated by
+   **Life Preserver** according to the configured schedule. Auto-pruning
+   does not delete any snapshots manually created with the
+   :guilabel:`Snapshots` tab.
 
 **Frequency:** Use the drop-down menu to select how often snapshots
 occur. Options include "Daily" (which will allow you to select the time
 of day), "Hourly" every "30 Minutes", every "10 Minutes", or every "5
 Minutes".
 
-Once you have created a snapshot schedule, you can use the "gear" icon
-next to the "camera" icon to modify the highlighted schedule or the
-"X" icon to delete the highlighted schedule.
+Once a snapshot schedule is created, the :guilabel:`Gear` button next to
+the :guilabel:`Camera` button is used to modify a highlighted schedule.
+Click the adjacent :guilabel:`X` button to delete a highlighted
+schedule.
 
-This screen can also be used to manage the ZFS scrub schedule. Scrubs
-are recommended as they can provide an early indication of a potential
+This screen can also be used to manage the ZFS scrub schedule. Periodic
+scrubs are recommended as they provide early indications of potential
 disk failure. Scrubs can be scheduled on a per-pool basis.
 
 .. tip:: If you have multiple pools, be sure to create a scrub schedule
    for each pool.
 
-To schedule when the scrub occurs, click the third icon from the right
-which will activate the "Setup Scrub Schedule" screen shown in
+To schedule when the scrub occurs, click the :guilabel:`Dial` button
+to activate the *Setup Scrub Schedule* area, seen here in
 :numref:`Figure %s <lpreserver5>`.
 
 .. _lpreserver5:
 
-.. figure:: images/lpreserver5.png
+.. figure:: images/lpreserver5a.png
    :scale: 100%
 
-   : Scheduling a Scrub
+   Scheduling a Scrub
 
 Select the pool from the :guilabel:`Storage Pool` drop-down menu, then
-select the :guilabel:`Frequency`. Supported frequencies are "Daily",
-"Weekly", or "Monthly". If you select "Daily", you can configure the
-"Hour". If you select "Weekly", you can configure the "Day of week" and
-the "Hour".  If you select "Monthly", you can configure the "Date" and
-"Hour". Since a scrub can be disk I/O intensive, it is recommended to
-pick a time when the system will not be in heavy use.
+select the :guilabel:`Frequency`. Supported frequencies are *Daily*,
+*Weekly*, or *Monthly*. When choosing *Daily*, adjust the desired hour
+in the final field. With *Weekly*, the day of week and hour are
+selectable. *Monthly* allows choosing a specific day and hour. As a
+scrub can be disk I/O intensive, it is recommended to pick a time when
+the system is not in heavy use.
 
-Once you have created a scrub schedule, you can use the "gear" icon
-next to the "schedule scrub" icon to modify the highlighted schedule or
-the "X" icon to delete the highlighted schedule.
+After creating a scrub schedule, use the :guilabel:`Gear` button next to
+the :guilabel:`Dial` button to modify a highlighted schedule or the
+:guilabel:`X` button to delete the highlighted schedule.
 
 .. index:: sysadm, life preserver, settings, configuration
 .. _Settings:
@@ -1544,28 +1537,26 @@ The :guilabel:`Settings` tab is shown in
 
 .. _lpreserver6:
 
-.. figure:: images/lpreserver6.png
+.. figure:: images/lpreserver6a.png
    :scale: 100%
 
-   : Life Preserver Settings
+   Life Preserver Settings
 
 Many settings are configurable:
 
 **Disk Usage Warning:** Enter a number up to 99 to indicate at which
-percentage of disk space Life Preserver will display an alert in the
-system tray. This is useful to prevent snapshots from using up all
+percentage of disk space Life Preserver displays an alert in the
+system tray. This is useful to help prevent snapshots from using up all
 available disk space.
 
 **Email:** To receive an email when disk usage reaches the percentage
 configured in the "Disk Usage Warning", enter an email address.
 
 **Email Trigger:** This setting can be set to "All", "Warn", or "Error"
-and indicates the type of condition which will trigger an email message.
+and indicates the type of condition which triggers an email message.
 
-**Recursive Management:**
-
-If you make any changes in this screen, press :guilabel:`Save Settings`
-to apply them.
+After making any changes in this screen, be sure to click
+:guilabel:`Save Settings`.
 
 .. index:: sysadm, life preserver, cli, backup
 .. _Using the CLI:
@@ -1579,19 +1570,22 @@ superuser. To display its usage, type the command without any arguments:
 
 .. code-block:: none
 
- lpreserver
- Life-Preserver
- ---------------------------------
- Available commands
- Type in help <command> for information and usage about that command
-       help - This help file or the help for the specified command
-   cronsnap - Manage scheduled snapshots
-  cronscrub - Manage scheduled scrubs
-   snapshot - Manage snapshot tasks
-  replicate - Manage replication tasks
-        set - Set lpreserver options
-        get - Get list of lpreserver options
-     status - List datasets, along with last snapshot / replication date
+   [user@Example] ~% lpreserver
+   Life-Preserver
+   ---------------------------------
+   Available commands
+
+   Type in help <command> for information and usage about that command
+
+          help - This help file or the help for the specified command
+
+      cronsnap - Manage scheduled snapshots
+     cronscrub - Manage scheduled scrubs
+      snapshot - Manage snapshot tasks
+     replicate - Manage replication tasks
+           set - Set lpreserver options
+           get - Get list of lpreserver options
+        status - List datasets, along with last snapshot / replication date
 
 Each command has its own help text that describes its parameters and
 provides a usage example. For example, to receive help on how to use
@@ -1599,67 +1593,69 @@ the :command:`lpreserver cronsnap` command, type:
 
 .. code-block:: none
 
- lpreserver help cronsnap
- Life-Preserver
- ---------------------------------
- Help cronsnap
- Schedule a ZFS snapshot
- Usage:
-  lpreserver cronsnap <subcommand> <options>
- Available subcommands:
-        start - Schedule snapshots for a dataset
-         stop - Stop scheduled snapshots for a dataset.
-         list - List scheduled snapshots
-      exclude - Exclude datasets for scheduled snapshots
-    rmexclude - Remove datasets from exclude list for scheduled snapshots
-  listexclude - List excluded datasets for scheduled snapshots
- start options:
-  start <dataset> <frequency> <numToKeep>
-  frequency = auto / daily@XX / hourly / 30min / 10min / 5min
-                                ^^ Hour to execute
-  numToKeep = Number of snapshots to keep total
- NOTE: When frequency is set to auto the following will take place:
-  * Snapshots will be created every 5 minutes and kept for an hour.
-  * A hourly snapshot will be kept for a day.
-  * A daily snapshot will be kept for a month.
-  * A Monthly snapshot will be kept for a year.
-  * The life-preserver daemon will also keep track of the storage pool disk space.
-    If the capacity falls below 75%, the oldest snapshot will be auto-pruned.
- Examples:
-  lpreserver cronsnap start tank1/usr/home/kris daily@22 10
-  Schedule snapshots of dataset tank1/usr/home/kris daily at 22:00.
-  10 snapshots will be kept.
- stop options:
-  stop <dataset>
- list options:
-  list <dataset>
-  List all snapshot schedules for a dataset.
-  If no dataset is given it will list schedules for all datasets.
- exclude options:
-  exclude <dataset> <exclude dataset> <exclude dataset> ...
-  Exclude one or more datasets from scheduled snapshots.
- Examples:
-  lpreserver cronsnap exclude tank1/usr/home/kris tank1/usr/home/kris/tmp tank1/usr/home/kris/test
-  Exclude dataset tank1/usr/home/kris/tmp and tank1/usr/home/kris/test from scheduled snapshots
-  on dataset tank1/usr/home/kris.
- rmexclude options:
-  rmexclude <dataset> <excluded dataset> <excluded dataset> ...
-  Remove exclude for one or more datasets that was previously excluded from scheduled snapshots.
-  This removes the datasets from the exclude list.
- Examples:
-  lpreserver cronsnap rmexclude tank1/usr/home/kris tank1/usr/home/kris/tmp tank1/usr/home/kris/test
-  Dataset tank1/usr/home/kris/tmp and tank1/usr/home/kris/test on dataset tank1/usr/home/kris
-  are no longer excluded for scheduled snapshots.
- listexclude options:
-  listexclude <dataset>
-  List which datasets are excluded from schedule snapshots.
+   [user@Example] ~% lpreserver help cronsnap
+   Life-Preserver
+   ---------------------------------
+   Help cronsnap
+   Schedule a ZFS snapshot
+   Usage:
+     lpreserver cronsnap <subcommand> <options>
+   Available subcommands:
+           start - Schedule snapshots for a dataset
+            stop - Stop scheduled snapshots for a dataset.
+            list - List scheduled snapshots
+         exclude - Exclude datasets for scheduled snapshots
+       rmexclude - Remove datasets from exclude list for scheduled snapshots
+     listexclude - List excluded datasets for scheduled snapshots
+   start options:
+    start <dataset> <frequency> <numToKeep>
+    frequency = auto / daily@XX / hourly / 30min / 10min / 5min
+                                  ^^ Hour to execute
+    numToKeep = Number of snapshots to keep total
+   NOTE: When frequency is set to auto the following will take place:
+     * Snapshots will be created every 5 minutes and kept for an hour.
+     * A hourly snapshot will be kept for a day.
+     * A daily snapshot will be kept for a month.
+     * A Monthly snapshot will be kept for a year.
+     * The life-preserver daemon will also keep track of the zpool disk
+       space, if the capacity falls below 75%, the oldest snapshot will be
+       auto-pruned.
+   Examples:
+     lpreserver cronsnap start tank1/usr/home/kris daily@22 10
+       Schedule snapshots of dataset tank1/usr/home/kris daily at 22:00.
+       10 snapshots will be kept.
+   stop options:
+     stop <dataset>
+   list options:
+     list <dataset>
+       List all snapshot schedules for a dataset.
+       If no dataset is given it will list schedules for all datasets.
+   exclude options:
+     exclude <dataset> <exclude dataset> <exclude dataset> ...
+       Exclude one or more datasets from scheduled snapshots.
+       Examples:
+        lpreserver cronsnap exclude tank1/usr/home/kris tank1/usr/home/kris/tmp tank1/usr/home/kris/test
+        Exclude dataset tank1/usr/home/kris/tmp and tank1/usr/home/kris/test
+        from scheduled snapshots on dataset tank1/usr/home/kris.
+   rmexclude options:
+     rmexclude <dataset> <excluded dataset> <excluded dataset> ...
+       Remove exclusion for one or more datasets that was previously excluded
+       from scheduled snapshots.  This removes the datasets from the exclude
+       list.
+       Examples:
+         lpreserver cronsnap rmexclude tank1/usr/home/kris tank1/usr/home/kris/tmp tank1/usr/home/kris/test
+           Dataset tank1/usr/home/kris/tmp and tank1/usr/home/kris/test on dataset
+           tank1/usr/home/kris are no longer excluded for scheduled snapshots.
+   listexclude options:
+     listexclude <dataset>
+        List which datasets are excluded from schedule snapshots.
 
 :numref:`Table %s <cmdgui>` shows the command line equivalents to the
 graphical options provided by the Life Preserver GUI.
 
 .. _cmdgui:
 
-.. table:: : Command Line and GUI Equivalents
+.. table:: Command Line and GUI Equivalents
 
    +--------------+-------------+------------------------------------+
    | Command Line | GUI Tab     | Description                        |
