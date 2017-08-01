@@ -527,14 +527,16 @@ bundle, as seen in :numref:`Figure %s <ssl1>`.
    Setup SSL - "Configure Certificates" tab
 
 This window is accessible by clicking the |sysadm| tray icon, then
-:guilabel:`Manage Connections`. Press :guilabel:`Import Certificate`
-to open a window to choose an :file:`.export` file. Type a valid Email
-Address and memorable nickname for :guilabel:`Create Certificate` to
-activate. Click :guilabel:`Create Certificate` to open the
-:guilabel:`SSL Passphrase` window. This window requests a password, then
-requests the password to be re-entered for confirmation. Enter the
-second password and click :guilabel:`Ok` to create the certificate.
-Upon certificate creation, the user can navigate to
+typing the system **root** password in the text field. This unlocks the
+:guilabel:`Manage Connections` options. Press
+:guilabel:`Import Certificate` to open a window to choose an
+:file:`.export` file. Type a valid Email Address and memorable nickname
+for :guilabel:`Create Certificate` to activate. Click
+:guilabel:`Create Certificate` to open the :guilabel:`SSL Passphrase`
+window. This window requests a password, then requests the password to
+be re-entered for confirmation. Enter the second password and click
+:guilabel:`Ok` to create the certificate. Upon certificate creation, the
+user can navigate to
 :menuselection:`Setup SSL --> View Public Certificates` to view and
 export a public key for a Server or Bridge Certificate, seen in
 :numref:`Figure %s <ssl2>`.
