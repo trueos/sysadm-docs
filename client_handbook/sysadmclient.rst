@@ -1,4 +1,4 @@
-.. index:: introducing SysAdm
+.. index:: Introducing SysAdm
 .. _What is SysAdm:
 
 What is |sysadm|?
@@ -86,7 +86,7 @@ client and all of its functionality, beginning with |appcafe|.
 .. note:: Instructions for using the API in your own scripts can be
    found in the `SysAdm™ API Reference Guide <http://api.sysadm.us/>`_.
 
-.. index:: sysadm, appcafe, software
+.. index:: Appcafe
 .. _AppCafe:
 
 |appcafe|
@@ -101,7 +101,7 @@ applications.
 The rest of this section describes how to manage software using
 |appcafe|.
 
-.. index:: appcafe, find software
+.. index:: Finding software
 .. _Finding Software:
 
 Finding Software
@@ -248,7 +248,7 @@ information available in this tab:
 * **Shared Libraries (Required):** Lists the names of the libraries
   this application requires.
 
-.. index:: appcafe, manage software
+.. index:: Manage software
 .. _Manage Installed Software:
 
 Managing Installed Software
@@ -333,7 +333,7 @@ operation.
 
    |appcafe| - Installation Status
 
-.. index:: update manager
+.. index:: Update manager
 .. _Update Manager:
 
 Update Manager
@@ -391,7 +391,7 @@ The following steps occur automatically during an update:
   you will return the system to its previous state, before the update
   was applied.
 
-.. index:: update manager updates tab
+.. index:: Check for updates
 .. _Updates Tab:
 
 Updates Tab
@@ -430,7 +430,7 @@ The :guilabel:`Latest Check` field indicates the date and time the
 system last checked for updates. To manually check for updates, click
 :guilabel:`Check for Updates`.
 
-.. index:: Update manager settings tab
+.. index:: Updater settings
 .. _Settings Tab:
 
 Settings Tab
@@ -488,7 +488,7 @@ This tab contains several configurable options:
 Once all options are configured to their desired settings, click
 :guilabel:`Save Settings`.
 
-.. index:: update manager recent updates
+.. index:: View recent updates
 .. _Recent Updates:
 
 Recent Updates
@@ -510,7 +510,7 @@ This tab is useful to review previous updates for errors and check when
 previous updates were applied. These timestamps are especially useful
 when using :ref:`Life Preserver` to roll back to a previous update.
 
-.. index:: sysadm, remote connections
+.. index:: Manage remote connections
 .. _Managing Remote Connections:
 
 Managing Remote Connections
@@ -613,7 +613,7 @@ click :guilabel:`Test Settings` to test the settings. Upon a successful
 connection test, the settings area greys out and the only option is to
 click :guilabel:`Finished`.
 
-.. index:: sysadm, boot environments, ZFS
+.. index:: Boot environment manager
 .. _Boot Environment Manager:
 
 Boot Environment Manager
@@ -774,7 +774,7 @@ unless another BE is manually selected in this menu. Use the arrow keys
 to highlight the desired boot environment and press :kbd:`Enter` to
 continue booting into the selected boot environment.
 
-.. index:: sysadm, configuration, firewall
+.. index:: Firewall manager
 .. _Firewall Manager:
 
 Firewall Manager
@@ -830,7 +830,7 @@ to confirm the selections and open the desired port.
 To close a port, select a port from the :guilabel:`Open Ports`
 column and press :guilabel:`Close Ports`.
 
-.. index:: mouse settings
+.. index:: Mouse settings
 .. _Mouse Settings:
 
 Mouse Settings
@@ -874,7 +874,7 @@ These are the adjustable mouse settings:
 
 Be sure to click :guilabel:`Apply Settings` to save any changes.
 
-.. index:: service manager
+.. index:: Manage system services
 .. _Service Manager:
 
 Service Manager
@@ -920,7 +920,7 @@ left to right:
 Hovering over any of these icons displays a helpful description across
 the bottom of the window.
 
-.. index:: task manager
+.. index:: View system tasks
 .. _Task Manager:
 
 Task Manager
@@ -943,7 +943,7 @@ The "Running Programs:" section provides a graphical front-end to
 The :guilabel:`Kill Selected Process` button can be used to terminate
 the selected process.
 
-.. index:: user manager
+.. index:: Add and configure users
 .. _User Manager:
 
 User Manager
@@ -1065,7 +1065,7 @@ home directory, default shell, and primary group. System accounts
 usually have a shell of *nologin* for security reasons, indicating an
 attacker can not login to the system using that account name.
 
-.. index:: users, personacrypt
+.. index:: Security with PersonaCrypt
 .. _PersonaCrypt:
 
 PersonaCrypt
@@ -1089,7 +1089,7 @@ password.
    unencrypted sessions on the same system, create two different user
    accounts, one for each type of session.
 
-.. index:: users, personacrypt, geli
+.. index:: GELI
 .. _GELI:
 
 GELI
@@ -1174,7 +1174,7 @@ password associated with the PersonaCrypt device.
    **DO NOT** remove the PersonaCrypt device while logged in! Always log
    out of your session before physically removing the device.
 
-.. index:: users, personacrypt, pefs
+.. index:: PEFS
 .. _PEFS Encryption:
 
 PEFS
@@ -1218,7 +1218,7 @@ supports importing and exporting PEFS on-disk keyfiles with
 :command:`personacrypt export <username>` and
 :command:`personacrypt import <keyfile>`, respectively.
 
-.. index:: users, manage groups
+.. index:: Manage system groups
 .. _Managing Groups:
 
 Managing Groups
@@ -1260,7 +1260,7 @@ needs to be added to a group.
 
 To view all of the groups on the system, click :guilabel:`Advanced`.
 
-.. index:: sysadm, life preserver
+.. index:: Life Preserver
 .. _Life Preserver:
 
 Life Preserver
@@ -1304,7 +1304,7 @@ go to :menuselection:`Utilities --> Life Preserver`. The rest of this
 section describes where to find and how to use the features built into
 Life Preserver.
 
-.. index:: sysadm, life preserver, snapshots
+.. index:: ZFS snapshots
 .. _Snapshots:
 
 Snapshots
@@ -1347,7 +1347,7 @@ selected pool or dataset to the point in time the snapshot was created.**
 This means files changes occurring after the snapshot was taken will be
 lost.
 
-.. index:: sysadm, life preserver, replication
+.. index:: ZFS replication
 .. _Replication:
 
 Replication
@@ -1448,7 +1448,7 @@ uses:
   the remote system and starts a new replication. This is useful if a
   replication gets stuck and will not complete.
 
-.. index:: sysadm, life preserver, schedules, configuration
+.. index:: ZFS scheduling
 .. _Schedules:
 
 Schedules
@@ -1526,7 +1526,7 @@ After creating a scrub schedule, use the :guilabel:`Gear` button next to
 the :guilabel:`Dial` button to modify a highlighted schedule or the
 :guilabel:`X` button to delete the highlighted schedule.
 
-.. index:: sysadm, life preserver, settings, configuration
+.. index:: Life Preserver settings
 .. _Settings:
 
 Settings
@@ -1558,7 +1558,7 @@ and indicates the type of condition which triggers an email message.
 After making any changes in this screen, be sure to click
 :guilabel:`Save Settings`.
 
-.. index:: sysadm, life preserver, cli, backup
+.. index:: Life Preserver command line
 .. _Using the CLI:
 
 Using the CLI
