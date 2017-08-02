@@ -630,8 +630,7 @@ environment. Other examples of using boot environments include:
 * When making software changes, it is possible to take a snapshot of the
   boot environment at any stage during the modifications. In the event
   of undesirable results, the user can roll back to a previous BE by
-  activating a different BE according to the instructions under the
-  :ref:`TrueOS Boot Menu image <install1(1)>`.
+  activating a different BE.
 
 * Save multiple boot environments on the system and perform various
   updates on each of them as needed. Install, test, and update different
@@ -748,33 +747,6 @@ described in :numref:`Table %s <mbetable2>`
    |             | next system boot. This alters the                   |
    |             | :guilabel:`Active` column to *R*.                   |
    +-------------+-----------------------------------------------------+
-
-.. _install1(1):
-
-.. figure:: images/install1b.png
-   :scale: 100%
-
-   |trueos| Boot Menu
-
-Boot into another boot environment at startup by pressing :kbd:`7` at
-the :ref:`TrueOS Boot Menu <install1(1)>` to access the boot menu
-selection screen. In the example shown in :numref:`Figure %s <be2>`, two
-boot environments are available in :guilabel:`Boot Environments`:
-*initial* represents the initial installation and *mybootenvironment*
-was manually created using the Boot Environment Manager.
-
-.. _be2:
-
-.. figure:: images/be2.png
-   :scale: 100%
-
-   Boot Environments Menu
-
-The upper section of this menu indicates the *initial* boot environment
-is set to **active**, or the one the system is configured to boot into,
-unless another BE is manually selected in this menu. Use the arrow keys
-to highlight the desired boot environment and press :kbd:`Enter` to
-continue booting into the selected boot environment.
 
 .. index:: Firewall manager
 .. _Firewall Manager:
