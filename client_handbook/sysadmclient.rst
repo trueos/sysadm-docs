@@ -562,9 +562,13 @@ Once a certificate is created, the :guilabel:`Connections` menu, seen in
 secure connections. A column on the left side of the window contains all
 management options, described in :numref:`Table %s <conops>`
 
+.. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.35\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.65\linewidth-2\tabcolsep}|
+
 .. _conops:
 
 .. table:: SSL Connection tab Options
+   :class: longtable
 
    +--------------------+----------------------------------------------+
    | Option             | Description                                  |
@@ -682,9 +686,13 @@ installation.
 Each entry contains the same information, displayed here in
 :numref:`Table %s <mbetable1>`:
 
+.. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.35\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.65\linewidth-2\tabcolsep}|
+
 .. _mbetable1:
 
 .. table:: Individual Boot Environment information
+   :class: longtable
 
    +------------+------------------------------------------------------+
    | Column     | Description                                          |
@@ -715,9 +723,13 @@ Sort the list of BEs by clicking the column names.
 Manage these boot environments using the buttons across the top bar as
 described in :numref:`Table %s <mbetable2>`
 
+.. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.35\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.65\linewidth-2\tabcolsep}|
+
 .. _mbetable2:
 
 .. table:: Options for managing boot environments (BE)
+   :class: longtable
 
    +-------------+-----------------------------------------------------+
    | Button      | Description                                         |
@@ -1627,9 +1639,14 @@ the :command:`lpreserver cronsnap` command, type:
 :numref:`Table %s <cmdgui>` shows the command line equivalents to the
 graphical options provided by the Life Preserver GUI.
 
+.. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.25\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.25\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.50\linewidth-2\tabcolsep}|
+
 .. _cmdgui:
 
 .. table:: Command Line and GUI Equivalents
+   :class: longtable
 
    +--------------+-------------+------------------------------------+
    | Command Line | GUI Tab     | Description                        |

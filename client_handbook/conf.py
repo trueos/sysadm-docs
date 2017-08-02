@@ -16,8 +16,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import six
+import string
+import sys
+import time
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration ------------------------------------------------
@@ -289,22 +292,82 @@ htmlhelp_basename = 'SysAdmClientHandbookdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
+if six.PY3:
+    texproject = project.replace('®', r'''\textsuperscript{\textregistered}''')
+else:
+    texproject = project.replace(u'®', r'''\textsuperscript{\textregistered}''')
+
+PREAMBLE = r'''\def\docname{''' + texproject + '}'
+
+PREAMBLE = (PREAMBLE
+            + r'''\def\docdate{'''
+            + time.strftime("%B %Y")
+            + ' Edition}')
+
+# define custom title page
+PREAMBLE = PREAMBLE + r'''
+% FreeNAS/TrueNAS LaTeX preamble
+\usepackage[default,scale=0.95]{opensans}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%for ragged right tables
+\usepackage{array,ragged2e}
+\definecolor{ixblue}{cmyk}{0.85,0.24,0,0}
+\newenvironment{widemargins}{%
+\begin{list}{}{%
+  \setlength{\leftmargin}{-0.5in}%
+  \setlength{\rightmargin}{-0.5in}%
+  }\item}%
+  {\end{list}%
+}
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \newlength{\thistitlewidth}%
+    \begin{widemargins}%
+      \usefont{T1}{fos}{l}{n}%
+      \vspace*{-6mm}%
+      \fontsize{32}{36}\selectfont%
+      \docname\par%
+      \vspace*{-4.5mm}%
+      \settowidth{\thistitlewidth}{\docname}%
+      {\color{ixblue}\rule{\thistitlewidth}{1.5pt}}\par%
+      \vspace*{4.5mm}%
+      \fontsize{18}{22}\fontseries{sbc}\selectfont%
+      \docdate\par%
+    \end{widemargins}%
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill [ixblue] (current page.south west) rectangle ($(current page.south east) + (0, 2in)$);
+    \end{tikzpicture}
+  \end{titlepage}
+}
+\makeatother
+% a plain page style for front matter
+\fancypagestyle{frontmatter}{%
+  \fancyhf{}
+  \fancyhf[FCO,FCE]{}
+  \fancyhf[FLE,FRO]{\textbf{\thepage}}
+  \fancyhf[FLO,FRE]{}
+}
+'''
+
 latex_elements = {
-     # The paper size ('letterpaper' or 'a4paper').
-     #
-     # 'papersize': 'letterpaper',
+# The paper size ('letterpaper' or 'a4paper').
+#'papersize': 'letterpaper',
+# The font size ('10pt', '11pt' or '12pt').
+#'pointsize': '10pt',
 
-     # The font size ('10pt', '11pt' or '12pt').
-     #
-     # 'pointsize': '10pt',
+# Additional stuff for the LaTeX preamble.
+'preamble': PREAMBLE,
 
-     # Additional stuff for the LaTeX preamble.
-     #
-     # 'preamble': '',
+# remove blank pages
+'classoptions': ',openany',
+'babel': r'''\usepackage[english]{babel}''',
 
-     # Latex figure (float) alignment
-     #
-     # 'figure_align': 'htbp',
+# strict positioning of figures
+'figure_align': 'H'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -325,9 +388,8 @@ latex_documents = [
 #
 # latex_use_parts = False
 
-# If true, show page references after internal links.
-#
-# latex_show_pagerefs = False
+# If true, show page references after internal links.#
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #
