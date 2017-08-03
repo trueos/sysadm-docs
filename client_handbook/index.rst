@@ -1,9 +1,9 @@
 Welcome to the |sysadm| Client Handbook!
 ========================================
 
-* Authored by the Users of |sysadm|
-* Edited by Tim Moore
-* © Copyright 2016-2017, iX Systems
+Authored by the Users of |sysadm|
+Edited by Tim Moore
+© Copyright 2016-2017, iX Systems
 
 The |sysadm| Client Handbook is freely available for sharing and
 redistribution under the terms of the
@@ -17,10 +17,3 @@ source of the Handbook.
    :maxdepth: 4
 
    sysadmclient
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
