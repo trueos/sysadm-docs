@@ -8,56 +8,414 @@ The pkg class is used to manage software packages.
 
 Every pkg class request contains several parameters:
 
-+---------------+-----------+-------------------------------------------+
-| Parameter     | Value     | Description                               |
-|               |           |                                           |
-+===============+===========+===========================================+
-| id            |           | Any unique value for the request,         |
-|               |           | including a hash, checksum, or uuid.      |
-+---------------+-----------+-------------------------------------------+
-| name          | pkg       |                                           |
-|               |           |                                           |
-+---------------+-----------+-------------------------------------------+
-| namespace     | sysadm    |                                           |
-|               |           |                                           |
-+---------------+-----------+-------------------------------------------+
-| action        |           | Supported actions include                 |
-|               |           | "list_categories", "list_repos",          |
-|               |           | "pkg_audit", "pkg_autoremove",            |
-|               |           | "pkg_check_upgrade", "pkg_info",          |
-|               |           | "pkg_install", "pkg_lock", "pkg_remove",  |
-|               |           | "pkg_search", "pkg_unlock", "pkg_update", |
-|               |           | and "pkg_upgrade"                         |
-|               |           |                                           |
-+---------------+-----------+-------------------------------------------+
+.. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.15\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.15\linewidth-2\tabcolsep}
+                    |>{\RaggedRight}p{\dimexpr 0.70\linewidth-2\tabcolsep}|
+
+.. table:: pkg class overview
+   :class: longtable
+
+   +-----------+--------+---------------------------------------------+
+   | Parameter | Value  | Description                                 |
+   +===========+========+=============================================+
+   | id        |        | Any unique value for the request, including |
+   |           |        | a hash, checksum, or uuid.                  |
+   +-----------+--------+---------------------------------------------+
+   | name      | pkg    |                                             |
+   |           |        |                                             |
+   +-----------+--------+---------------------------------------------+
+   | namespace | sysadm |                                             |
+   |           |        |                                             |
+   +-----------+--------+---------------------------------------------+
+   | action    |        | Supported actions include "list_categories" |
+   |           |        | , "list_repos", "pkg_audit",                |
+   |           |        | "pkg_autoremove", "pkg_check_upgrade",      |
+   |           |        | "pkg_info", "pkg_install",                  |
+   |           |        | "pkg_install_verify", "pkg_lock",           |
+   |           |        | "pkg_remove", "pkg_search", "pkg_unlock",   |
+   |           |        | "pkg_update", and "pkg_upgrade"             |
+   +-----------+--------+---------------------------------------------+
 
 The rest of this section provides examples of the available *actions*
 for each type of request, along with their responses.
 
-.. index:: pkg_info, pkg
+.. index:: list_categories
+.. _List Categories:
+
+List Categories
+===============
+
+The :command:`"list_categories"` action lists all the known, non-empty
+categories within the specified repository or, if no repository is
+specified, the local repository.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "repo" : "local",
+   "action" : "list_categories"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "args" : {
+      "action" : "list_categories",
+      "repo" : "local"
+   },
+   "namespace" : "sysadm",
+   "name" : "pkg"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "list_categories": [
+      "ports-mgmt",
+      "x11",
+      "gnome",
+      "textproc",
+      "devel",
+      "python",
+      "misc",
+      "print",
+      "graphics",
+      "security",
+      "x11-fonts",
+      "lang",
+      "ipv6",
+      "perl5",
+      "converters",
+      "math",
+      "x11-toolkits",
+      "sysutils",
+      "dns",
+      "net",
+      "accessibility",
+      "databases",
+      "shells",
+      "x11-themes",
+      "multimedia",
+      "audio",
+      "www",
+      "ftp",
+      "net-im",
+      "archivers",
+      "comms",
+      "java",
+      "deskutils",
+      "kde",
+      "mail",
+      "editors",
+      "emulators",
+      "games",
+      "irc",
+      "japanese",
+      "news",
+      "x11-servers",
+      "tk",
+      "net-mgmt",
+      "ruby",
+      "x11-drivers",
+      "x11-wm",
+      "x11-clocks",
+      "kld",
+      "tcl",
+      "enlightenment",
+      "linux"
+    ]
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+.. index:: list_repos
+.. _List Repositories:
+
+List Repositories
+=================
+
+The :command:`"list_repositories"` action scans the package repository
+configuration files and returns the names of the available repositories.
+All of the repositories returned by this action are valid as the
+optional "repo" argument for the other pkg API actions.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "action" : "list_repos"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "namespace" : "sysadm",
+   "name" : "pkg",
+   "args" : {
+      "action" : "list_repos"
+   }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "list_repos": [
+      "local",
+      "pcbsd-major"
+    ]
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+.. index:: pkg_audit
+.. _Audit Packages:
+
+Audit Packages
+==============
+
+The :command:`"pkg_audit"` action performs an audit of all installed
+packages and reports any packages with known vulnerabilities as well as
+other packages which are impacted by those vulnerabilities.
+
+.. note:: The vulnerability information is returned as a dispatcher
+   event as this action just queues up the results of the :command:`pkg`
+   operation. This is due to a limitation of :command:`pkg`, as it only
+   supports one process call at a time. Refer to the
+   :ref:`Dispatcher Subsystem` for instructions on how to subscribe to
+   and query dispatcher events.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "action" : "pkg_audit"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "args" : {
+      "action" : "pkg_audit"
+   },
+   "name" : "pkg",
+   "id" : "fooid",
+   "namespace" : "sysadm"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_audit": {
+      "proc_cmd": "pkg audit -qr",
+      "proc_id": "sysadm_pkg_audit-{257cc46b-9178-4990-810a-12416ddfad79}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_audit",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+.. index:: pkg_autoremove
+.. _Autoremove Packages:
+
+Autoremove Packages
+===================
+
+The :command:`"pkg_autoremove"` action prunes all orphaned packages on
+the system.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+  "action" : "pkg_autoremove"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+  "args" : {
+     "action" : "pkg_autoremove"
+  },
+  "name" : "pkg",
+  "namespace" : "sysadm",
+  "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+ "args": {
+   "pkg_autoremove": {
+     "proc_cmd": "pkg autoremove -y",
+     "proc_id": "sysadm_pkg_autoremove-{19ace7c9-0d83-4a0d-9249-0b56cb105762}",
+     "status": "pending"
+   }
+ },
+ "id": "fooid",
+ "name": "response",
+ "namespace": "sysadm"
+ }
+
+.. index:: pkg_check_upgrade
+.. _Check Packages:
+
+Check Packages
+==============
+
+The :command:`pkg_check_upgrade` action checks to see if there are any
+package updates available and returns that information as a dispatcher
+event. Refer to the :ref:`Dispatcher Subsystem` for instructions on how
+to subscribe to and query dispatcher events.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "action" : "pkg_check_upgrade"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "args" : {
+      "action" : "pkg_check_upgrade"
+   },
+   "namespace" : "sysadm",
+   "name" : "pkg",
+   "id" : "fooid"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_check_upgrade": {
+      "proc_cmd": "pkg upgrade -n",
+      "proc_id": "sysadm_pkg_check_upgrade-{c5e9d9a1-7c49-4a70-9d7c-4a84277c83b0}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_check_upgrade",
+    "updates_available" : "true/false",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+.. index:: pkg_info
 .. _Package Information:
 
 Package Information
 ===================
 
-The "pkg_info" action reads the pkg database directly and returns any
-relevant information. The following arguments are optional:
+The :command:`"pkg_info"` action reads the pkg database directly and
+returns any relevant information. These arguments are optional:
 
-* **"repo"**: Unless specified, defaults to the local package repository.
+* **"repo"**: Unless specified, defaults to the local package
+  repository.
 
 * **"pkg_origins"**: Unless specified, information for all installed
-  packages will be listed.
+  packages is listed.
 
 * **"category"**: Limits the results to packages within the specified
   category.
 
 * **"result"**: Must be set to "full" to retrieve all of the information
   with multiple possible values, such as "dependencies", "options", and
-  "licences".
+  "licenses".
 
 **REST Request**
 
-::
+.. code-block:: none
 
  PUT /sysadm/pkg
  {
@@ -87,7 +445,7 @@ relevant information. The following arguments are optional:
 
 **Response**
 
-::
+.. code-block:: none
 
  {
   "args": {
@@ -167,24 +525,412 @@ relevant information. The following arguments are optional:
   "namespace": "sysadm"
  }
 
-.. index:: pkg_search, pkg
+.. index:: pkg_install
+.. _Install Packages:
+
+Install Packages
+================
+
+The :command:`"pkg_install"` action installs the specified
+:command:`"pkg_origins"` on the system. When using
+:command:`"pkg_origins"`, specify either a single package origin string
+or an array of package origins. Unless the :command:`"repo"` is
+specified, :command:`pkg` automatically determines the repository. The
+install messages are returned as a dispatcher event. Refer to the
+:ref:`Dispatcher Subsystem` for instructions how to subscribe and query
+dispatcher events.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "pkg_origins" : "games/angband",
+   "action" : "pkg_install",
+   "repo" : "pcbsd-major"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "name" : "pkg",
+   "namespace" : "sysadm",
+   "id" : "fooid",
+   "args" : {
+      "action" : "pkg_install",
+      "pkg_origins" : "games/angband",
+      "repo" : "pcbsd-major"
+   }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_install": {
+      "proc_cmd": "pkg install -y --repository \"pcbsd-major\" games/angband",
+      "proc_id": "sysadm_pkg_install-{ae444472-47df-4a65-91eb-013cc82ce4ad}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_install",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+.. index:: pkg_install_verify
+.. _Verify Installed Packages:
+
+Verify Installed Packages
+=========================
+
+:command:`"pkg_install_verify"` checks for conflicts with already
+installed packages when installing a new package. The
+:command:`"pkg_origins"` and :command:`"repo"` arguments are required
+when using this action.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+    "repo" : "trueos-major",
+    "action" : "pkg_install_verify",
+    "pkg_origins" : [
+       "www/qupzilla-qt5-webkit"
+    ]
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+    "name" : "pkg",
+    "namespace" : "sysadm",
+    "id" : "fooid",
+    "args" : {
+       "action" : "pkg_install_verify",
+       "pkg_origins" : [
+          "www/qupzilla-qt5-webkit"
+       ],
+       "repo" : "trueos-major"
+    }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+   "args": {
+     "pkg_install_verify": {
+       "conflicts": [],
+       "install": {
+         "qupzilla-qt5-webkit": {
+           "comment": "Web browser based on WebKit engine and Qt Framework",
+           "flatsize": "13380132",
+           "name": "qupzilla-qt5-webkit",
+           "origin": "www/qupzilla-qt5-webkit",
+           "pkgsize": "2574460",
+           "version": "1.8.9_3"
+         }
+       }
+     }
+   },
+   "id": "fooid",
+   "name": "response",
+   "namespace": "sysadm"
+ }
+
+.. index:: pkg_lock, pkg_unlock
+.. _LockUnlock Packages:
+
+Lock/Unlock Packages
+====================
+
+The :command:`"pkg_lock"` action locks the specified
+:command:`"pkg_origins"` so it is skipped during a package upgrade and
+remains at its current version. When using :command:`"pkg_origins"`,
+specify either a single package origin string or an array of package
+origins.
+
+The :command:`"pkg_unlock"` action unlocks the previously locked
+:command:`"pkg_origins"` so it is no longer skipped during a package
+upgrade.
+
+Both actions return any information as a dispatcher event. Refer to the
+:ref:`Dispatcher Subsystem` for instructions how to subscribe and
+query dispatcher events.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "pkg_origins" : [
+      "misc/pcbsd-base"
+   ],
+   "action" : "pkg_lock"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "namespace" : "sysadm",
+   "id" : "fooid",
+   "name" : "pkg",
+   "args" : {
+      "pkg_origins" : [
+         "misc/pcbsd-base"
+      ],
+      "action" : "pkg_lock"
+   }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_lock": {
+      "proc_cmd": "pkg lock -y misc/pcbsd-base",
+      "proc_id": "sysadm_pkg_lock-{352f7f66-d036-4c16-8978-67950957bf22}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_lock",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+**REST Request**
+
+::
+
+ PUT /sysadm/pkg
+ {
+   "action" : "pkg_unlock",
+   "pkg_origins" : "misc/pcbsd-base"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "args" : {
+      "action" : "pkg_unlock",
+      "pkg_origins" : "misc/pcbsd-base"
+   },
+   "name" : "pkg",
+   "namespace" : "sysadm"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_unlock": {
+      "proc_cmd": "pkg unlock -y misc/pcbsd-base",
+      "proc_id": "sysadm_pkg_unlock-{d1771b41-c1ca-480a-a3ce-42d4eddbfae8}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_unlock",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+.. index:: pkg_remove
+.. _Uninstall Packages:
+
+Uninstall Packages
+==================
+
+The :command:`"pkg_remove"` action uninstalls the specified
+:command:`"pkg_origins"` from the system. When using
+:command:`"pkg_origins"`, specify either a single package origin string
+or an array of package origins.
+
+The optional :command:`"recursive"` argument can be set to *"true"* or
+*"false"*. The default is *"true"*, which means other packages depending
+on this package are also removed so there are no broken dependencies.
+
+The uninstall messages are returned as a dispatcher event. Refer to the
+:ref:`Dispatcher Subsystem` for instructions how to subscribe and query
+dispatcher events.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/pkg
+ {
+   "recursive" : "false",
+   "action" : "pkg_remove",
+   "pkg_origins" : "games/angband"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "name" : "pkg",
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "pkg_remove",
+      "recursive" : "false",
+      "pkg_origins" : "games/angband"
+   }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "pkg_remove": {
+      "proc_cmd": "pkg delete -y games/angband",
+      "proc_id": "sysadm_pkg_remove-{2aa844aa-f6a8-4e8f-ae71-b56af735ccb8}",
+      "status": "pending"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+**Dispatcher Events System Reply**
+
+.. code-block:: json
+
+ {
+  "namespace" : "events",
+  "name" : "dispatcher",
+  "id" : "none",
+  "args" : {
+    "event_system" : "sysadm/pkg",
+    "state" : "finished",
+    "pkg_log" : "<process log>",
+    "action" : "pkg_remove",
+    "process_details" : {
+      "time_finished" : "<ISO 8601 time date string>",
+      "cmd_list" : ["<command 1>", "<command 2>"],
+      "return_codes/<command 1>" : "<code 1>",
+      "return_codes/<command 2>" : "<code 2>",
+      "process_id" : "<random>",
+      "state" : "finished"
+      }
+    }
+ }
+
+.. index:: pkg_search
 .. _Search Packages:
 
 Search Packages
 ===============
 
-The "pkg_search" action searches the package database for pkgs which
-match the given "search_term" (required). These parameters are optional:
+The :command:`"pkg_search"` action searches the package database for
+pkgs which match the given *"search_term"* (required). These parameters
+are optional:
 
-* **"repo"**: May be used to specify searching the specified repository.
-  If not specified, the local package database is searched.
+* **"repo"**: May be used to specify searching a desired repository. If
+  not specified, the local package database is searched.
 
-* **"category"**: May be used to restrict searches to the specified
-  package category.
+* **"category"**: Restricts searches to the specified package category.
 
 **REST Request**
 
-::
+.. code-block:: none
 
  PUT /sysadm/pkg
  {
@@ -350,402 +1096,24 @@ match the given "search_term" (required). These parameters are optional:
   "namespace": "sysadm"
  }
 
-.. index:: list_categories, pkg
-.. _List Categories:
-
-List Categories
-===============
-
-The "list_categories" action lists all the known, non-empty categories
-within the specified repository or, if no repository is specified, the
-local repository.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "repo" : "local",
-   "action" : "list_categories"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "id" : "fooid",
-   "args" : {
-      "action" : "list_categories",
-      "repo" : "local"
-   },
-   "namespace" : "sysadm",
-   "name" : "pkg"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "list_categories": [
-      "ports-mgmt",
-      "x11",
-      "gnome",
-      "textproc",
-      "devel",
-      "python",
-      "misc",
-      "print",
-      "graphics",
-      "security",
-      "x11-fonts",
-      "lang",
-      "ipv6",
-      "perl5",
-      "converters",
-      "math",
-      "x11-toolkits",
-      "sysutils",
-      "dns",
-      "net",
-      "accessibility",
-      "databases",
-      "shells",
-      "x11-themes",
-      "multimedia",
-      "audio",
-      "www",
-      "ftp",
-      "net-im",
-      "archivers",
-      "comms",
-      "java",
-      "deskutils",
-      "kde",
-      "mail",
-      "editors",
-      "emulators",
-      "games",
-      "irc",
-      "japanese",
-      "news",
-      "x11-servers",
-      "tk",
-      "net-mgmt",
-      "ruby",
-      "x11-drivers",
-      "x11-wm",
-      "x11-clocks",
-      "kld",
-      "tcl",
-      "enlightenment",
-      "linux"
-    ]
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-.. index:: list_repos, pkg
-.. _List Repositories:
-
-List Repositories
-=================
-
-The "list_repositories" action scans the package repository configuration
-files and returns the names of the available repositories. All of the
-repositories returned by this action are valid as the optional "repo"
-argument for the other pkg API actions.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "action" : "list_repos"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "id" : "fooid",
-   "namespace" : "sysadm",
-   "name" : "pkg",
-   "args" : {
-      "action" : "list_repos"
-   }
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "list_repos": [
-      "local",
-      "pcbsd-major"
-    ]
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-.. index:: pkg_audit, pkg
-.. _Audit Packages:
-
-Audit Packages
-==============
-
-The "pkg_audit" action performs an audit of all installed packages and
-reports any packages with known vulnerabilities as well as other
-packages which are impacted by those vulnerabilities.
-
-.. note:: The vulnerability information will be returned as a dispatcher
-   event as this action just queues up the results of the :command:`pkg`
-   operation. This is due to a limitation of :command:`pkg`, as it only
-   supports one process call at a time. Refer to the
-   :ref:`Dispatcher Subsystem` for instructions on how to subscribe to
-   and query dispatcher events.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "action" : "pkg_audit"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "args" : {
-      "action" : "pkg_audit"
-   },
-   "name" : "pkg",
-   "id" : "fooid",
-   "namespace" : "sysadm"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_audit": {
-      "proc_cmd": "pkg audit -qr",
-      "proc_id": "sysadm_pkg_audit-{257cc46b-9178-4990-810a-12416ddfad79}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_audit",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-.. index:: pkg_upgrade, pkg
-.. _Upgrade Packages:
-
-Upgrade Packages
-================
-
-The "pkg_upgrade" action upgrades all currently installed packages. The
-messages from the upgrade will be returned as a dispatcher event. Refer
-to the :ref:`Dispatcher Subsystem` for instructions on how to subscribe
-to and query dispatcher events.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "action" : "pkg_upgrade"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "args" : {
-      "action" : "pkg_upgrade"
-   },
-   "name" : "pkg",
-   "namespace" : "sysadm",
-   "id" : "fooid"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_upgrade": {
-      "proc_cmd": "pkg upgrade -y",
-      "proc_id": "sysadm_pkg_upgrade-{19ace7c9-0d83-4a0d-9249-0b56cb105762}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_upgrade",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-.. index:: pkg_check_upgrade, pkg
-.. _Check Packages:
-
-Check Packages
-==============
-
-The "pkg_check_upgrade" action checks to see if there are any package
-updates available and returns that information as a dispatcher event.
-Refer to the :ref:`Dispatcher Subsystem` for instructions on how to
-subscribe to and query dispatcher events.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "action" : "pkg_check_upgrade"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "args" : {
-      "action" : "pkg_check_upgrade"
-   },
-   "namespace" : "sysadm",
-   "name" : "pkg",
-   "id" : "fooid"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_check_upgrade": {
-      "proc_cmd": "pkg upgrade -n",
-      "proc_id": "sysadm_pkg_check_upgrade-{c5e9d9a1-7c49-4a70-9d7c-4a84277c83b0}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_check_upgrade",
-    "updates_available" : "true/false",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-.. index:: pkg_update, pkg
+.. index:: pkg_update
 .. _Update Package Database:
 
 Update Package Database
 =======================
 
-The "pkg_update" action instructs :command:`pkg` to update its databases.
-This action is typically not required.  It returns any information as a
-dispatcher event. Refer to the :ref:`Dispatcher Subsystem` for
-instructions on how to subscribe to and query dispatcher events.
+The :command:`"pkg_update"` action instructs :command:`pkg` to update
+its databases. This action is typically not required.  It returns any
+information as a dispatcher event. Refer to the
+:ref:`Dispatcher Subsystem` for instructions how to subscribe and query
+dispatcher events.
 
-If you include "force" = "true", it forces :command:`pkg` to completely
-resync all of its databases with all known repositories which may take
-some time.
+If *"force" = "true"*, it forces :command:`pkg` to completely resync all
+of its databases with all known repositories. This may take some time.
 
 **REST Request**
 
-::
+.. code-block:: none
 
  PUT /sysadm/pkg
  {
@@ -808,181 +1176,24 @@ some time.
     }
  }
 
-.. index:: pkg_lock, pkg_unlock, pkg
-.. _LockUnlock Packages:
+.. index:: pkg_upgrade
+.. _Upgrade Packages:
 
-Lock/Unlock Packages
-====================
-
-The "pkg_lock" action locks the specified "pkg_origins" so that it will
-be skipped during a package upgrade and remain at its current version.
-When using "pkg_origins", specify either a single package origin string
-or an array of package origins.
-
-The "pkg_unlock" action unlocks the previously locked "pkg_origins" so
-that it is no longer skipped during a package upgrade.
-
-Both actions return any information as a dispatcher event. Refer to the
-:ref:`Dispatcher Subsystem` for instructions on how to subscribe to and
-query dispatcher events.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "pkg_origins" : [
-      "misc/pcbsd-base"
-   ],
-   "action" : "pkg_lock"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "namespace" : "sysadm",
-   "id" : "fooid",
-   "name" : "pkg",
-   "args" : {
-      "pkg_origins" : [
-         "misc/pcbsd-base"
-      ],
-      "action" : "pkg_lock"
-   }
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_lock": {
-      "proc_cmd": "pkg lock -y misc/pcbsd-base",
-      "proc_id": "sysadm_pkg_lock-{352f7f66-d036-4c16-8978-67950957bf22}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_lock",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "action" : "pkg_unlock",
-   "pkg_origins" : "misc/pcbsd-base"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "id" : "fooid",
-   "args" : {
-      "action" : "pkg_unlock",
-      "pkg_origins" : "misc/pcbsd-base"
-   },
-   "name" : "pkg",
-   "namespace" : "sysadm"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_unlock": {
-      "proc_cmd": "pkg unlock -y misc/pcbsd-base",
-      "proc_id": "sysadm_pkg_unlock-{d1771b41-c1ca-480a-a3ce-42d4eddbfae8}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_unlock",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-.. index:: pkg_install, pkg
-.. _Install Packages:
-
-Install Packages
+Upgrade Packages
 ================
 
-The "pkg_install" action installs the specified "pkg_origins" on the
-system. When using "pkg_origins", specify either a single package origin
-string or an array of package origins. Unless the "repo" is specified,
-:command:`pkg` will automatically determine the repository. The install
-messages will be returned as a dispatcher event. Refer to the
-:ref:`Dispatcher Subsystem` for instructions on how to subscribe to and
-query dispatcher events.
+The :command:`"pkg_upgrade"` action upgrades all currently installed
+packages. The messages from the upgrade are returned as a dispatcher
+event. Refer to the :ref:`Dispatcher Subsystem` for instructions how to
+subscribe and query dispatcher events.
 
 **REST Request**
 
-::
+.. code-block:: none
 
  PUT /sysadm/pkg
  {
-   "pkg_origins" : "games/angband",
-   "action" : "pkg_install",
-   "repo" : "pcbsd-major"
+   "action" : "pkg_upgrade"
  }
 
 **WebSocket Request**
@@ -990,14 +1201,12 @@ query dispatcher events.
 .. code-block:: json
 
  {
+   "args" : {
+      "action" : "pkg_upgrade"
+   },
    "name" : "pkg",
    "namespace" : "sysadm",
-   "id" : "fooid",
-   "args" : {
-      "action" : "pkg_install",
-      "pkg_origins" : "games/angband",
-      "repo" : "pcbsd-major"
-   }
+   "id" : "fooid"
  }
 
 **Response**
@@ -1006,9 +1215,9 @@ query dispatcher events.
 
  {
   "args": {
-    "pkg_install": {
-      "proc_cmd": "pkg install -y --repository \"pcbsd-major\" games/angband",
-      "proc_id": "sysadm_pkg_install-{ae444472-47df-4a65-91eb-013cc82ce4ad}",
+    "pkg_upgrade": {
+      "proc_cmd": "pkg upgrade -y",
+      "proc_id": "sysadm_pkg_upgrade-{19ace7c9-0d83-4a0d-9249-0b56cb105762}",
       "status": "pending"
     }
   },
@@ -1029,7 +1238,7 @@ query dispatcher events.
     "event_system" : "sysadm/pkg",
     "state" : "finished",
     "pkg_log" : "<process log>",
-    "action" : "pkg_install",
+    "action" : "pkg_upgrade",
     "process_details" : {
       "time_finished" : "<ISO 8601 time date string>",
       "cmd_list" : ["<command 1>", "<command 2>"],
@@ -1039,136 +1248,4 @@ query dispatcher events.
       "state" : "finished"
       }
     }
- }
-
-.. index:: pkg_remove, pkg
-.. _Uninstall Packages:
-
-Uninstall Packages
-==================
-
-The "pkg_remove" action uninstalls the specified "pkg_origins" from the
-system. When using "pkg_origins", specify either a single package origin
-string or an array of package origins.
-
-The optional "recursive" argument can be set to "true" or "false". The
-default is "true", which means that other packages which depend on this
-package will also be removed so that there are no broken dependencies.
-
-The uninstall messages will be returned as a dispatcher event. Refer to
-the :ref:`Dispatcher Subsystem` for instructions on how to subscribe to
-and query dispatcher events.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-   "recursive" : "false",
-   "action" : "pkg_remove",
-   "pkg_origins" : "games/angband"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "id" : "fooid",
-   "name" : "pkg",
-   "namespace" : "sysadm",
-   "args" : {
-      "action" : "pkg_remove",
-      "recursive" : "false",
-      "pkg_origins" : "games/angband"
-   }
- }
-
-**Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "pkg_remove": {
-      "proc_cmd": "pkg delete -y games/angband",
-      "proc_id": "sysadm_pkg_remove-{2aa844aa-f6a8-4e8f-ae71-b56af735ccb8}",
-      "status": "pending"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
- }
-
-**Dispatcher Events System Reply**
-
-.. code-block:: json
-
- {
-  "namespace" : "events",
-  "name" : "dispatcher",
-  "id" : "none",
-  "args" : {
-    "event_system" : "sysadm/pkg",
-    "state" : "finished",
-    "pkg_log" : "<process log>",
-    "action" : "pkg_remove",
-    "process_details" : {
-      "time_finished" : "<ISO 8601 time date string>",
-      "cmd_list" : ["<command 1>", "<command 2>"],
-      "return_codes/<command 1>" : "<code 1>",
-      "return_codes/<command 2>" : "<code 2>",
-      "process_id" : "<random>",
-      "state" : "finished"
-      }
-    }
- }
-
-.. index:: pkg_autoremove, pkg
-.. _Prune Packages:
-
-Prune Packages
-==============
-
-The "pkg_autoremove" action prunes all orphaned packages on the system.
-
-**REST Request**
-
-::
-
- PUT /sysadm/pkg
- {
-  "action" : "pkg_autoremove"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-  "args" : {
-     "action" : "pkg_autoremove"
-  },
-  "name" : "pkg",
-  "namespace" : "sysadm",
-  "id" : "fooid"
- }
-
-**Response**
-
-.. code-block:: json
-
- {
- "args": {
-   "pkg_autoremove": {
-     "proc_cmd": "pkg autoremove -y",
-     "proc_id": "sysadm_pkg_autoremove-{19ace7c9-0d83-4a0d-9249-0b56cb105762}",
-     "status": "pending"
-   }
- },
- "id": "fooid",
- "name": "response",
- "namespace": "sysadm"
  }
