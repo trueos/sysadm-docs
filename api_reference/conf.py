@@ -10,8 +10,11 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-
-import sys, os
+import os
+import six
+import string
+import sys
+import time
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -46,7 +49,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'SysAdm™ API Reference Guide'
 copyright = u'2015 - 2017, iXsystems'
-author = u'Users of SysAdm™'
+author = u'SysAdm™ Users'
 editor = u'Tim Moore'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -220,6 +223,67 @@ htmlhelp_basename = 'SysAdm API'
 
 # -- Options for LaTeX output --------------------------------------------------
 
+if six.PY3:
+    texproject = project.replace('®', r'''\textsuperscript{\textregistered}''')
+else:
+    texproject = project.replace(u'®', r'''\textsuperscript{\textregistered}''')
+
+PREAMBLE = r'''\def\docname{''' + texproject + '}'
+
+PREAMBLE = (PREAMBLE
+            + r'''\def\docdate{'''
+            + time.strftime("%B %Y")
+            + ' Edition}')
+
+# define custom title page
+PREAMBLE = PREAMBLE + r'''
+% FreeNAS/TrueNAS LaTeX preamble
+\usepackage[default,scale=0.95]{opensans}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%for ragged right tables
+\usepackage{array,ragged2e}
+\definecolor{ixblue}{cmyk}{0.85,0.24,0,0}
+\newenvironment{widemargins}{%
+\begin{list}{}{%
+  \setlength{\leftmargin}{-0.5in}%
+  \setlength{\rightmargin}{-0.5in}%
+  }\item}%
+  {\end{list}%
+}
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \newlength{\thistitlewidth}%
+    \begin{widemargins}%
+      \usefont{T1}{fos}{l}{n}%
+      \vspace*{-6mm}%
+      \fontsize{32}{36}\selectfont%
+      \docname\par%
+      \vspace*{-4.5mm}%
+      \settowidth{\thistitlewidth}{\docname}%
+      {\color{ixblue}\rule{\thistitlewidth}{1.5pt}}\par%
+      \vspace*{4.5mm}%
+      \fontsize{18}{22}\fontseries{sbc}\selectfont%
+      \docdate\par%
+    \end{widemargins}%
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill [ixblue] (current page.south west) rectangle ($(current page.south east) + (0, 2in)$);
+    \end{tikzpicture}
+  \end{titlepage}
+}
+\makeatother
+% a plain page style for front matter
+\fancypagestyle{frontmatter}{%
+  \fancyhf{}
+  \fancyhf[FCO,FCE]{}
+  \fancyhf[FLE,FRO]{\textbf{\thepage}}
+  \fancyhf[FLO,FRE]{}
+}
+'''
+
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
@@ -227,15 +291,25 @@ latex_elements = {
 # The font size ('10pt', '11pt' or '12pt').
 #'pointsize': '10pt',
 
+# Disable Index Generation.
+#'printindex': '',
+
 # Additional stuff for the LaTeX preamble.
-#'preamble': '',
+'preamble': PREAMBLE,
+
+# remove blank pages
+'classoptions': ',openany',
+'babel': r'''\usepackage[english]{babel}''',
+
+# strict positioning of figures
+'figure_align': 'H'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'SysAdm.tex', u'SysAdm API',
-   u'iXsystems', 'manual'),
+  ('index', 'SysAdmAPIGuide.tex', u'SysAdm API Guide',
+   u'SysAdm Users', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -247,7 +321,7 @@ latex_documents = [
 #latex_use_parts = False
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #latex_show_urls = False

@@ -378,7 +378,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'SysAdmClientHandbook.tex', u'SysAdm Client Handbook Documentation',
-     u'Users of SysAdm', 'manual'),
+     u'SysAdm Users', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

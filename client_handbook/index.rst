@@ -12,6 +12,8 @@ This means you have permission to copy, distribute, translate, and adapt
 the work as long as you attribute the |sysadm| Project as the original
 source of the Handbook.
 
+:ref:`genindex`
+
 .. toctree::
    :numbered:
    :maxdepth: 4
