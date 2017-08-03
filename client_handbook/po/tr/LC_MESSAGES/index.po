@@ -11,36 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../index.rst:31
-msgid "Indices and tables"
-msgstr ""
-
-#: ../../index.rst:33
-msgid ":ref:`genindex`"
-msgstr ""
-
-#: ../../index.rst:34
-msgid ":ref:`modindex`"
-msgstr ""
-
-#: ../../index.rst:35
-msgid ":ref:`search`"
-msgstr ""
-
 #: ../../index.rst:11
 msgid "Welcome to the |sysadm| Client Handbook!"
-msgstr ""
-
-#: ../../index.rst:13
-msgid "Authored by the Users of |sysadm|"
-msgstr ""
-
-#: ../../index.rst:14
-msgid "Edited by Tim Moore"
-msgstr ""
-
-#: ../../index.rst:15
-msgid "© Copyright 2016-2017, iX Systems"
 msgstr ""
 
 #: ../../index.rst:17
@@ -51,6 +23,33 @@ msgid ""
 "permission to copy, distribute, translate, and adapt the work as long as you"
 " attribute the |sysadm| Project as the original source of the Handbook."
 msgstr ""
+
+#: ../../index.rst:13
+msgid ""
+"Authored by the Users of |sysadm| Edited by Tim Moore © Copyright 2016-2017,"
+" iX Systems"
+msgstr ""
+
+#~ msgid "Indices and tables"
+#~ msgstr ""
+
+#~ msgid ":ref:`genindex`"
+#~ msgstr ""
+
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""
+
+#~ msgid ":ref:`search`"
+#~ msgstr ""
+
+#~ msgid "Authored by the Users of |sysadm|"
+#~ msgstr ""
+
+#~ msgid "Edited by Tim Moore"
+#~ msgstr ""
+
+#~ msgid "© Copyright 2016-2017, iX Systems"
+#~ msgstr ""
 
 #~ msgid "Contents:"
 #~ msgstr ""
