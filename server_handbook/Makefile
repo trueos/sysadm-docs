@@ -91,7 +91,8 @@ html:
 	$(SPHINXBUILD) -D language='zh_HK' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html-zh_HK
 .endif
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in"
+	@ls $(BUILDDIR)/html/*.html
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
