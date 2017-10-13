@@ -66,6 +66,8 @@ Panel, as they are now available in the |sysadm| client:
 
 * :ref:`Boot Environment Manager`
 
+* :ref:`Device Manager`
+
 * :ref:`Mouse Settings`
 
 * :ref:`Firewall Manager`
@@ -759,6 +761,36 @@ described in :numref:`Table %s <mbetable2>`
    |             | next system boot. This alters the                   |
    |             | :guilabel:`Active` column to *R*.                   |
    +-------------+-----------------------------------------------------+
+
+.. index:: Device Manager
+.. _Device Manager:
+
+Device Manager
+**************
+
+The Device Manager displays everything connected to the PCI
+bus of the computer. It also functions as an information hub for the
+connected devices. For example, in :numref:`Figure %s <device_manager1>`
+the selected device category is :guilabel:`mass storage`. This leads to
+more information displaying it is a SATA drive.
+
+.. _device_manager1:
+
+.. figure:: images/device_manager1a.png
+   :scale: 100%
+
+   Device Manager
+
+Inside the terminal, the user can type :command:`pciconf -lv`. This
+gives detailed information about each PCI connection of the computer. An
+example is shown in :numref:`Figure %s <device_manager2>`:
+
+.. _device_manager2:
+
+.. figure:: images/device_manager2a.png
+   :scale: 100%
+
+   Output of :command:`pciconf -lv`
 
 .. index:: Firewall manager
 .. _Firewall Manager:
