@@ -983,14 +983,17 @@ RAM, and the system's uptime.
   "name": "response",
   "namespace": "sysadm"
  }
+ 
+.. index:: fetch_ports action
+.. _Fetch Ports:
 
 Fetch Ports
 ===========
 
-The :command:`"fetch_ports"` command is a call to fetch and install the
-ports from the port tree onto your machine.
+The :command:`"fetch_ports"` command fetches and installs the
+ports from the port tree onto the system.
 
-The optional argument, :command:`"ports_dir"`, specifies the directory
+The optional :command:`"ports_dir"` argument specifies the directory
 to place the ports tree.
 
 **REST Request**
@@ -1031,11 +1034,14 @@ to place the ports tree.
   "namespace": "sysadm"
 }
 
+.. index:: deviceinfo action
+.. _ Device Info:
+
 Device Info
 ===========
 
-The command :command:`"deviceinfo"` will return the full information
-about all devices attached to the system (via :command:`pciconf -lv`).
+Command :command:`"deviceinfo"` returns the full information
+about all devices attached to the system using :command:`pciconf -lv`.
 
 **REST Request**
 
