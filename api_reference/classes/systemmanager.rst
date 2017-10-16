@@ -32,8 +32,9 @@ system. Every systemmanager class request contains several parameters:
    |           |               | "deviceinfo", "externalmounts",       |
    |           |               | "halt", "killproc", "memorystats",    |
    |           |               | "procinfo", "reboot", "setsysctl",    |
-   |           |               | "sysctllist", "systemmanager", and    |
-   |           |               | "fetch_ports".                        |
+   |           |               | "sysctllist", "systemmanager",        |
+   |           |               | "fetch_ports", and "deviceinfo".      |
+   |           |               |                                       |
    +-----------+---------------+---------------------------------------+
 
 The rest of this section provides examples of the available *actions*
