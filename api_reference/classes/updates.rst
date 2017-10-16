@@ -261,7 +261,7 @@ List Logs
  }
 
 .. index:: listsettings, update
-.. _List Settings:
+.. _Update List Settings:
 
 List Settings
 =============

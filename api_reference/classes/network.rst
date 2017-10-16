@@ -99,7 +99,7 @@ subnet mask, and its current status.
  }
 
 .. index:: list-settings, network
-.. _List Settings:
+.. _Network List Settings:
 
 List Settings
 =============
