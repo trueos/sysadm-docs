@@ -31,7 +31,7 @@ system. Every systemmanager class request contains several parameters:
    |           |               | "cpupercentage", "cputemps",          |
    |           |               | "deviceinfo", "externalmounts",       |
    |           |               | "fetch_ports", "halt",                |
-   |           |               |  "killproc", "memorystats",           |
+   |           |               | "killproc", "memorystats",            |
    |           |               | "procinfo", "reboot", "setsysctl",    |
    |           |               | "sysctllist", and "systemmanager".    |
    +-----------+---------------+---------------------------------------+
@@ -509,7 +509,7 @@ to place the ports tree.
   "id": "fooid",
   "name": "response",
   "namespace": "sysadm"
-}
+ }
 
 Halt the System
 ===============
