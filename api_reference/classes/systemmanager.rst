@@ -30,11 +30,10 @@ system. Every systemmanager class request contains several parameters:
    | action    |               | Actions include "batteryinfo",        |
    |           |               | "cpupercentage", "cputemps",          |
    |           |               | "deviceinfo", "externalmounts",       |
-   |           |               | "halt", "killproc", "memorystats",    |
+   |           |               | "fetch_ports", "halt",                |
+   |           |               |  "killproc", "memorystats",           |
    |           |               | "procinfo", "reboot", "setsysctl",    |
-   |           |               | "sysctllist", "systemmanager", and    |
-   |           |               | "fetch_ports".                        |
-   |           |               |                                       |
+   |           |               | "sysctllist", and "systemmanager".    |
    +-----------+---------------+---------------------------------------+
 
 The rest of this section provides examples of the available *actions*
@@ -461,6 +460,56 @@ response includes the *device name*, *filesystem*, *mount path*, and
 
 .. index:: systemmanager halt
 .. _Halt the System:
+
+.. index:: fetch_ports action
+.. _Fetch Ports:
+
+Fetch Ports
+===========
+
+The :command:`"fetch_ports"` command fetches and installs the
+ports from the port tree onto the system.
+
+The optional :command:`"ports_dir"` argument specifies the directory
+to place the ports tree.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/systemmanager
+ {
+   "action" : "fetch_ports"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "fetch_ports"
+   },
+   "name" : "systemmanager",
+   "id" : "fooid"
+ }
+
+**WebSocket Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "fetch_ports": {
+      "process_id": "system_fetch_ports_tree",
+      "result": "process_started"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+}
 
 Halt the System
 ===============
@@ -983,53 +1032,3 @@ RAM, and the system's uptime.
   "name": "response",
   "namespace": "sysadm"
  }
- 
-.. index:: fetch_ports action
-.. _Fetch Ports:
-
-Fetch Ports
-===========
-
-The :command:`"fetch_ports"` command fetches and installs the
-ports from the port tree onto the system.
-
-The optional :command:`"ports_dir"` argument specifies the directory
-to place the ports tree.
-
-**REST Request**
-
-.. code-block:: none
-
- PUT /sysadm/systemmanager
- {
-   "action" : "fetch_ports"
- }
-
-**WebSocket Request**
-
-.. code-block:: json
-
- {
-   "namespace" : "sysadm",
-   "args" : {
-      "action" : "fetch_ports"
-   },
-   "name" : "systemmanager",
-   "id" : "fooid"
- }
-
-**WebSocket Response**
-
-.. code-block:: json
-
- {
-  "args": {
-    "fetch_ports": {
-      "process_id": "system_fetch_ports_tree",
-      "result": "process_started"
-    }
-  },
-  "id": "fooid",
-  "name": "response",
-  "namespace": "sysadm"
-}
