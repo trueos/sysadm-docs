@@ -32,7 +32,9 @@ system. Every systemmanager class request contains several parameters:
    |           |               | "deviceinfo", "externalmounts",       |
    |           |               | "halt", "killproc", "memorystats",    |
    |           |               | "procinfo", "reboot", "setsysctl",    |
-   |           |               | "sysctllist", and "systemmanager"     |
+   |           |               | "sysctllist", "systemmanager",        |
+   |           |               | "fetch_ports", and "deviceinfo".      |
+   |           |               |                                       |
    +-----------+---------------+---------------------------------------+
 
 The rest of this section provides examples of the available *actions*
@@ -975,6 +977,195 @@ RAM, and the system's uptime.
       "systemversion": "10.2-RELEASE-p12",
       "totalmem": 10720,
       "uptime": "up 2 days 5:09"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
+Fetch Ports
+===========
+
+The :command:`"fetch_ports"` command is a call to fetch and install the
+ports from the port tree onto your machine.
+
+The optional argument, :command:`"ports_dir"`, specifies the directory
+to place the ports tree.
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/systemmanager
+ {
+   "action" : "fetch_ports"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "fetch_ports"
+   },
+   "name" : "systemmanager",
+   "id" : "fooid"
+ }
+
+**WebSocket Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "fetch_ports": {
+      "process_id": "system_fetch_ports_tree",
+      "result": "process_started"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+}
+
+Device Info
+===========
+
+The command :command:`"deviceinfo"` will return the full information
+about all devices attached to the system (via :command:`pciconf -lv`).
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/systemmanager
+ {
+   "action" : "deviceinfo"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "name" : "systemmanager",
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "deviceinfo"
+   }
+ }
+
+**WebSocket Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "deviceinfo": {
+      "ahci0": {
+        "class": "mass storage",
+        "device": "8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode]",
+        "subclass": "SATA",
+        "vendor": "Intel Corporation"
+      },
+      "ehci0": {
+        "class": "serial bus",
+        "device": "8 Series/C220 Series Chipset Family USB EHCI",
+        "subclass": "USB",
+        "vendor": "Intel Corporation"
+      },
+      "ehci1": {
+        "class": "serial bus",
+        "device": "8 Series/C220 Series Chipset Family USB EHCI",
+        "subclass": "USB",
+        "vendor": "Intel Corporation"
+      },
+      "hdac0": {
+        "class": "multimedia",
+        "subclass": "HDA",
+        "vendor": "NVIDIA Corporation"
+      },
+      "hdac1": {
+        "class": "multimedia",
+        "device": "8 Series/C220 Series Chipset High Definition Audio Controller",
+        "subclass": "HDA",
+        "vendor": "Intel Corporation"
+      },
+      "hostb0": {
+        "class": "bridge",
+        "device": "4th Gen Core Processor DRAM Controller",
+        "subclass": "HOST-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "isab0": {
+        "class": "bridge",
+        "device": "B85 Express LPC Controller",
+        "subclass": "PCI-ISA",
+        "vendor": "Intel Corporation"
+      },
+      "none0": {
+        "class": "simple comms",
+        "device": "8 Series/C220 Series Chipset Family MEI Controller",
+        "vendor": "Intel Corporation"
+      },
+      "none1": {
+        "class": "serial bus",
+        "device": "8 Series/C220 Series Chipset Family SMBus Controller",
+        "subclass": "SMBus",
+        "vendor": "Intel Corporation"
+      },
+      "pcib1": {
+        "class": "bridge",
+        "device": "Xeon E3-1200 v3/4th Gen Core Processor PCI Express x16 Controller",
+        "subclass": "PCI-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "pcib2": {
+        "class": "bridge",
+        "device": "8 Series/C220 Series Chipset Family PCI Express Root Port",
+        "subclass": "PCI-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "pcib3": {
+        "class": "bridge",
+        "device": "8 Series/C220 Series Chipset Family PCI Express Root Port",
+        "subclass": "PCI-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "pcib4": {
+        "class": "bridge",
+        "device": "8 Series/C220 Series Chipset Family PCI Express Root Port",
+        "subclass": "PCI-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "pcib5": {
+        "class": "bridge",
+        "device": "82801 PCI Bridge",
+        "subclass": "PCI-PCI",
+        "vendor": "Intel Corporation"
+      },
+      "re0": {
+        "class": "network",
+        "device": "RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller",
+        "subclass": "ethernet",
+        "vendor": "Realtek Semiconductor Co., Ltd."
+      },
+      "vgapci0": {
+        "class": "display",
+        "device": "GM206 [GeForce GTX 960]",
+        "subclass": "VGA",
+        "vendor": "NVIDIA Corporation"
+      },
+      "xhci0": {
+        "class": "serial bus",
+        "device": "8 Series/C220 Series Chipset Family USB xHCI",
+        "subclass": "USB",
+        "vendor": "Intel Corporation"
+      }
     }
   },
   "id": "fooid",
