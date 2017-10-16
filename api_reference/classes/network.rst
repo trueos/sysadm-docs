@@ -22,8 +22,8 @@ Every network class request contains the following parameters:
 | namespace     | sysadm    |                                           |
 |               |           |                                           |
 +---------------+-----------+-------------------------------------------+
-| action        |           | Supported actions include "list-devices". |
-|               |           |                                           |
+| action        |           | Supported actions include "list-devices", |
+|               |           | "list-settings".                          |
 +---------------+-----------+-------------------------------------------+
 
 The rest of this section provides examples of the available *actions*
@@ -35,12 +35,12 @@ for each type of request, along with their responses.
 List Devices
 ============
 
-The "list-devices" action lists information about currently recognized
-network devices. For each network device, the response includes the
-device's MAC address, description, IPv4 address, IPv6 address, whether
-or not the device is active, whether or not the device is configured
-using DHCP, whether or not the device is wireless, its subnet mask, and
-its current status.
+The :command:`"list-devices"` action lists information about currently
+recognized network devices. For each network device, the response
+includes the device's MAC address, description, IPv4 address, IPv6
+address, whether or not the device is active, whether or not the device
+is configured using DHCP, whether or not the device is wireless, its
+subnet mask, and its current status.
 
 **REST Request**
 
@@ -96,4 +96,74 @@ its current status.
    "id": "fooid",
    "name": "response",
    "namespace": "sysadm"
+ }
+
+.. index:: list-settings, network
+.. _List Settings:
+
+List Settings
+=============
+
+The :command:`"list-settings"` list all the settings for network devices
+that are saved in :file:`/etc/rc.conf`.
+
+**REST Request**
+
+::
+
+ PUT /sysadm/network
+ {
+   "action" : "list-settings"
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "list-settings"
+   },
+   "name" : "network"
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "lo0": {
+      "associated_device": "",
+      "device": "lo0",
+      "static_gateway": "",
+      "static_ipv4": "",
+      "static_ipv6": "",
+      "static_netmask": "",
+      "use_dhcp": "false"
+    },
+    "re0": {
+      "associated_device": "",
+      "device": "re0",
+      "static_gateway": "",
+      "static_ipv4": "",
+      "static_ipv6": "",
+      "static_netmask": "",
+      "use_dhcp": "true"
+    },
+    "ue0": {
+      "associated_device": "",
+      "device": "ue0",
+      "static_gateway": "",
+      "static_ipv4": "",
+      "static_ipv6": "",
+      "static_netmask": "",
+      "use_dhcp": "true"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
  }
