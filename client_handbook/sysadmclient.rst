@@ -74,6 +74,8 @@ Panel, as they are now available in the |sysadm| client:
 
 * :ref:`Service Manager`
 
+* :ref:`System Control Manager`
+
 * :ref:`Task Manager`
 
 * :ref:`User Manager`
@@ -967,6 +969,25 @@ left to right:
 
 Hovering over any of these icons displays a helpful description across
 the bottom of the window.
+
+.. index:: System Control Manager
+.. _System Control Manager:
+
+System Control Manager
+**********************
+
+The sysadm client utility communicates with the sysadm api through
+WebSocket requests in order to retrieve information about a system and
+other services, and System Control Manager prepares a nice graphical
+view for the user. This is shown in :numref:`Figure %s <syscontrols1>`.
+
+.. _syscontrols1:
+
+.. figure:: images/syscontrols1a.png
+   :scale: 100%
+
+   System Control Manager
+
 
 .. index:: View system tasks
 .. _Task Manager:
