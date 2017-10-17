@@ -772,7 +772,7 @@ The Device Manager displays everything connected to the PCI
 bus of the computer. It also functions as an information hub for the
 connected devices. For example, in :numref:`Figure %s <device_manager1>`
 the selected device category is :guilabel:`mass storage`. This leads to
-more information displaying it is a SATA drive.
+more information displaying the fact it is a SATA drive.
 
 .. _device_manager1:
 
@@ -791,6 +791,36 @@ example is shown in :numref:`Figure %s <device_manager2>`:
    :scale: 100%
 
    Output of :command:`pciconf -lv`
+
+:numref:`Table %s <dmtable1>` below highlights a few of the important
+device categories and describes the functionality.
+
+.. _dmtable1:
+
+.. table:: Device Categories
+   :class: longtable
+
+   +-----------------+-----------------------------------------------------+
+   | Device Category | Description                                         |
+   +=================+=====================================================+
+   | Bridge          | The category :guilabel:`bridge` provides useful     |
+   |                 | information about :guilabel:`HOST-PCI`,             |
+   |                 | :guilabel:`PCI-ISA`, and :guilabel:`PCI-PCI` busses.|
+   |                 | The user is able to dropdown each bridge for        |
+   |                 | additonal information.                              |
+   +-----------------+-----------------------------------------------------+
+   | Display         | Provides information about the connected hardware   |
+   |                 | related to display. For example, it gives           |
+   |                 | information about video cards hooked into a VGA     |
+   |                 | bus.                                                |
+   +-----------------+-----------------------------------------------------+
+   | Mass Storage    | Displays connected storage devices such as hard     |
+   |                 | drives. Category :guilabel:`mass storage` also      |
+   |                 | provides information about the storage devices.     |
+   +-----------------+-----------------------------------------------------+
+   | Multimedia      | Displays media devices, such as speakers, connected |
+   |                 | to the system.                                      |
+   +-----------------+-----------------------------------------------------+
 
 .. index:: Firewall manager
 .. _Firewall Manager:
