@@ -30,7 +30,7 @@ system. Every systemmanager class request contains several parameters:
    | action    |               | Actions include "batteryinfo",        |
    |           |               | "cpupercentage", "cputemps",          |
    |           |               | "deviceinfo", "externalmounts",       |
-   |           |               | "fetch_ports", "halt",                |
+   |           |               | "fetch_ports", "getsysctl", "halt",   |
    |           |               | "killproc", "memorystats",            |
    |           |               | "procinfo", "reboot", "setsysctl",    |
    |           |               | "sysctllist", and "systemmanager".    |
@@ -458,9 +458,6 @@ response includes the *device name*, *filesystem*, *mount path*, and
   "namespace": "sysadm"
  }
 
-.. index:: systemmanager halt
-.. _Halt the System:
-
 .. index:: fetch_ports action
 .. _Fetch Ports:
 
@@ -510,6 +507,66 @@ to place the ports tree.
   "name": "response",
   "namespace": "sysadm"
  }
+
+.. index:: systemmanager getsysctl
+.. _Get System Ctl:
+
+Get System Ctl
+==============
+
+:command:`"getsysctl"` reports back the value of the requested
+sysctl(s).
+Required arguments: "sysctl" (string or array of strings).
+
+.. index:: systemmanager halt
+.. _Halt the System:
+
+**REST Request**
+
+.. code-block:: none
+
+ PUT /sysadm/systemmanager
+ {
+   "action" : "getsysctl",
+   "sysctl" : [
+      "hw.usb.atp.touch_timeout",
+      "hw.psm.tap_timeout"
+   ]
+ }
+
+**WebSocket Request**
+
+.. code-block:: json
+
+ {
+   "id" : "fooid",
+   "name" : "systemmanager",
+   "namespace" : "sysadm",
+   "args" : {
+      "action" : "getsysctl",
+      "sysctl" : [
+         "hw.usb.atp.touch_timeout",
+         "hw.psm.tap_timeout"
+      ]
+   }
+ }
+
+**Response**
+
+.. code-block:: json
+
+ {
+  "args": {
+    "getsysctl": {
+      "hw.psm.tap_timeout": "125000",
+      "hw.usb.atp.touch_timeout": "125000"
+    }
+  },
+  "id": "fooid",
+  "name": "response",
+  "namespace": "sysadm"
+ }
+
 
 Halt the System
 ===============
