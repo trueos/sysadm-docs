@@ -941,15 +941,33 @@ section are truncated.
  {
   "args": {
     "sysctllist": {
-      "compat.ia32.maxdsiz": "536870912",
-      "compat.ia32.maxssiz": "67108864",
-      "compat.ia32.maxvmem": "0",
-      "compat.linux.osname": "Linux",
-      "compat.linux.osrelease": "2.6.18",
-      "compat.linux.oss_version": "198144",
-      "compat.linux32.maxdsiz": "536870912",
-      "compat.linux32.maxssiz": "67108864",
-      "compat.linux32.maxvmem": "0",
+      "compat.ia32.maxdsiz": {
+        "type": "unsigned long",
+        "value": "536870912"
+      },
+      "compat.ia32.maxssiz": {
+        "type": "unsigned long",
+        "value": "67108864"
+      },
+      "compat.ia32.maxvmem": {
+        "type": "unsigned long",
+        "value": "0"
+      },
+      "compat.linux.osname": {
+        "description": "Linux kernel OS name",
+        "type": "string",
+        "value": "Linux"
+      },
+      "compat.linux.osrelease": {
+        "description": "Linux kernel OS release",
+        "type": "string",
+        "value": "2.6.32"
+      },
+      "compat.linux.oss_version": {
+        "description": "Linux OSS version",
+        "type": "integer",
+        "value": "198144"
+      }
     }
   },
   "id": "fooid",
