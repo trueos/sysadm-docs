@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ Server Handbook'
-copyright = u'2017, iXsystems'
+copyright = u'2018, iXsystems'
 author = u'Users of SysAdm™'
 editor = u'Tim Moore'
 
@@ -284,4 +284,3 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
-
