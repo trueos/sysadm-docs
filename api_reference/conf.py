@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ API Reference Guide'
-copyright = u'2015 - 2017, iXsystems'
+copyright = u'2015 - 2018, iXsystems'
 author = u'SysAdm™ Users'
 editor = u'Tim Moore'
 
