@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SysAdm™ Client Handbook'
-copyright = u'2017, iX Systems'
+copyright = u'2018, iX Systems'
 author = u'SysAdm™ Users'
 editor = u'Tim Moore'
 
